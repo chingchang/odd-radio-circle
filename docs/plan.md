@@ -26,3 +26,4 @@ calls. Background: the model tests in docs/reports/2026-10-31-probe-orc*.md (13 
 
 - 10-31 19:30 (person): fresh repo for the radio circle search only; earlier test workspace archived outside the repo.
 - 11-01 00:19 (person): use the cheaper contributor models (public data); the pre-filter must let the known circles through; reuse everything done so far (items 7 to 12).
+- 11-01 00:26 (person): work stopped after item 6; items 7 to 12 planned, not started. See docs/STATUS.md.
