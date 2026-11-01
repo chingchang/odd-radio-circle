@@ -236,7 +236,8 @@ are on the <a href="circles.html">circles page</a>.</p>
 candidate rows, {named} carry a class Wonder named on a vote, {jets} of them radio_galaxy; those sort after the {plain}
 with none. Wonder's class moves no verdict here. The {objects['board_rows']} rows on this board are
 {objects['board_objects']} objects when rows within 3 arcmin are linked. These maps went to Wonder with no name,
-position or survey; those shown here are for people.</p>"""
+position or survey; those shown here are for people. Wonder's reasons are shown as given and are not evidence: Wonder saw
+two images and nothing else, so a reason that cites other surveys, spectra or the literature is invented.</p>"""
     nav = '<a href="circles.html">The 18 known circles</a>'
     return page("Case board", nav, head + "\n" + "\n".join(map(_card, cards)))
 
@@ -283,7 +284,8 @@ def render_circles(summary: dict, circles: list[dict]) -> str:
 <tr><td>and a row at candidate grade</td><td>{share(c['candidate'])}</td></tr></table>
 <table><tr><th>where each ended</th><th>circles</th></tr>{stages}</table>
 <p>{summary['published_positions_removed']} of the 18 would be removed by a cut at their published positions, though
-neither is on the list. Wonder and the prompt were tuned with these circles in view, so these rates are not blind.</p>
+neither is on the list. The prompt and the pre-filter were tuned with known circles in view, so these rates are not
+blind. At candidate grade: {share(c['tuning_candidate'])} tuning circles, {share(c['heldout_candidate'])} held-out.</p>
 <table><tr><th>circle</th><th>group</th><th>earlier call, published position</th><th>pre-filter</th>
 <th>tuned annulus, through the list</th><th>listed rows: first vote; second vote; verdict</th>
 <th>cuts at the published position</th><th>ended at</th></tr>{rows}</table>
@@ -313,8 +315,9 @@ def results_section(summary: dict) -> str:
 | and a row at candidate grade (two ring-like votes) | {share(c['candidate'])} |
 
 Most of the loss is at the pre-filter, which ended {ended_early} of the 18. These rates are not blind: the prompt and
-the pre-filter's cuts were tuned with known circles in view. The [circles page]({folder}/circles.html) shows where each
-was kept or lost.
+the pre-filter's cuts were tuned with known circles in view. At candidate grade, by group:
+{share(c['tuning_candidate'])} tuning, {share(c['heldout_candidate'])} held-out. The
+[circles page]({folder}/circles.html) shows where each was kept or lost.
 
 **The search, in rows.** The money stopped at the plan's limit of {stop} USD ({ledger} USD on the ledger over all runs),
 so Wonder voted on {listed['voted']} of the {listed['rows']} rows, and {listed['ring_like']['called']} of those were
