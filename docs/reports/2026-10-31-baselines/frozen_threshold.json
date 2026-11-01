@@ -1,0 +1,10 @@
+{
+ "rule": "docs/proposals/baselines-v1.md",
+ "read_from": "docs/reports/2026-10-31-radio-inputs/items.json",
+ "threshold": 0.296504772665917,
+ "youden_j": 0.28888888888888875,
+ "circles_called": 5,
+ "circles": 9,
+ "lookalikes_not_called": 22,
+ "lookalikes": 30
+}
