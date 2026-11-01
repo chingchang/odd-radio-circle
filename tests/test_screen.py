@@ -212,6 +212,29 @@ def test_circles_count_as_objects_and_a_lost_or_rejected_circle_is_a_miss():
     assert counts["heldout"]["two_votes"]["called"] == 1
 
 
+def test_reading_counts_split_known_rows_and_name_a_ring_like_row_the_stop_left_with_one_vote():
+    records = [{"id": k} for k in ("a", "b", "c", "d")]
+    rows = {
+        **vote("a", 1, radio.RING, radio.RING),
+        **vote("a", 2, radio.NOT_RING, radio.RING),
+        **vote("b", 1, radio.RING),
+        **vote("b", 2, radio.RING),
+        **vote("c", 1, radio.RING),
+        **vote("d", 1, radio.NOT_RING),
+    }
+    rows["b", 1]["answer"]["reason"] = "an ORC, maybe NGC 2276"
+    counts = sc.reading_counts(records, rows)
+    assert counts["known_circle_rows_first_vote_ring_like"] == {"called": 1, "n": 1, "wilson_95": [0.2065, 1.0]}
+    assert counts["other_rows_first_vote_ring_like"]["called"] == 2
+    assert counts["other_rows_first_vote_ring_like"]["n"] == 3
+    assert counts["second_vote_agrees_all_rows"]["called"] == 1
+    assert counts["second_vote_agrees_all_rows"]["n"] == 2
+    assert counts["second_vote_agrees_known_circle_rows"]["called"] == 0
+    assert counts["ring_like_rows_with_no_second_vote"] == ["c"]
+    assert counts["votes_whose_reason_uses_the_class_name"] == 1
+    assert counts["votes_whose_reason_names_a_catalogue_object"] == {"b": "NGC 2276"}
+
+
 def test_a_row_with_no_valid_vote_is_not_assessed_and_counts_neither_way():
     records = [{"id": k} for k in ("a", "b", "c", "d", "e")]
     rows = {

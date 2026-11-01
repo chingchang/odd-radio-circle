@@ -9,6 +9,7 @@ verdict.
 from __future__ import annotations
 
 import json
+import re
 import time
 from pathlib import Path
 
@@ -52,6 +53,9 @@ SCHEMA = {
 }
 # The earlier prompt and the earlier schema name; the spec's own name goes to folders only, never to the model.
 SPEC = ProbeSpec("radio_screen", radio.PROMPT, SCHEMA, schema_name=f"{radio.SPEC.name}_answer")
+# Looked for in the model's reasons, which no request ever carries.
+CLASS_NAME = re.compile(r"\bORC\b|odd radio", re.I)
+OBJECT_NAME = re.compile(r"\b(PNG|NGC|3C|Abell|PN)\s?[\dA-Z.+-]{2,}")
 
 
 def open_clients(kind: str, out_root: Path, env: dict | None = None) -> dict[int, ProbeClient]:
@@ -216,6 +220,41 @@ def classes(rows: list[dict]) -> dict[str, int]:
         name = row.get("answer", {}).get("known_class")
         tally[name if name in tally else INVALID] = tally.get(name if name in tally else INVALID, 0) + 1
     return tally
+
+
+def reading_counts(records: list[dict], rows: dict) -> dict:
+    """Counts for reading the votes, added after the run; none changes a count the rule asks for. ``label`` tells known
+    circles' rows from the others. Second votes follow only a ring-like first, so their agreement is one-sided."""
+
+    def reason(row: dict) -> str:
+        return row.get("answer", {}).get("reason", "")
+
+    firsts = [rows[r["id"], FIRST] for r in records if valid(rows.get((r["id"], FIRST)))]
+    known = [row for row in firsts if row["label"] == radio.RING]
+    others = [row for row in firsts if row["label"] != radio.RING]
+    ring = [row for row in firsts if called(row)]
+    pairs = [(row, rows[row["item_id"], SECOND]) for row in ring if valid(rows.get((row["item_id"], SECOND)))]
+    votes = [row for row in rows.values() if valid(row)]
+    return {
+        "known_circle_rows_first_vote_ring_like": count(sum(called(row) for row in known), len(known)),
+        "other_rows_first_vote_ring_like": count(sum(called(row) for row in others), len(others)),
+        "second_vote_agrees_all_rows": count(sum(called(b) for _, b in pairs), len(pairs)),
+        "second_vote_agrees_known_circle_rows": count(
+            sum(called(b) for a, b in pairs if a["label"] == radio.RING),
+            sum(a["label"] == radio.RING for a, _ in pairs),
+        ),
+        "pairs_with_the_same_known_class": sum(
+            a["answer"]["known_class"] == b["answer"]["known_class"] for a, b in pairs
+        ),
+        "ring_like_rows_with_no_second_vote": [
+            row["item_id"] for row in ring if not valid(rows.get((row["item_id"], SECOND)))
+        ],
+        "votes_whose_reason_uses_the_class_name": sum(bool(CLASS_NAME.search(reason(row))) for row in votes),
+        "votes_whose_reason_names_a_catalogue_object": {
+            row["item_id"]: hit.group(0) for row in votes if (hit := OBJECT_NAME.search(reason(row)))
+        },
+        "reasons_over_1000_characters": sum(len(reason(row)) > 1000 for row in votes),
+    }
 
 
 def row_counts(records: list[dict], rows: dict) -> dict:

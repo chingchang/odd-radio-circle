@@ -1,0 +1,470 @@
+{
+ "rule": "docs/proposals/screen-v1.md",
+ "earlier_two_image_run": {
+  "circles_called_ring_like": 13,
+  "circles": 18,
+  "of_those_lost_by_the_prefilter": 8,
+  "listed_circles": 6,
+  "listed_circles_with_the_same_call_now": 6
+ },
+ "rows": {
+  "rows": 1200,
+  "reached": 934,
+  "valid_first_vote": 934,
+  "not_assessed": 266,
+  "failed_or_invalid_first_vote": 0,
+  "first_vote_ring_like": {
+   "called": 200,
+   "n": 934,
+   "wilson_95": [
+    0.189,
+    0.2416
+   ]
+  },
+  "first_vote_not_ring_like": 734,
+  "ring_like_without_a_valid_second_vote": 1,
+  "second_vote_valid": 199,
+  "second_vote_ring_like": 166,
+  "second_vote_not_ring_like": 33,
+  "two_ring_like_votes_on_known_circle_rows": 4,
+  "two_ring_like_votes_on_other_rows": 162,
+  "second_vote_identical_to_first": 0,
+  "known_class_all_first_votes": {
+   "radio_galaxy": 336,
+   "galaxy": 9,
+   "planetary_nebula": 31,
+   "supernova_remnant": 8,
+   "hii_region": 0,
+   "imaging_artefact": 7,
+   "no_known_class": 543
+  },
+  "known_class_ring_like_first_votes": {
+   "radio_galaxy": 70,
+   "galaxy": 2,
+   "planetary_nebula": 23,
+   "supernova_remnant": 8,
+   "hii_region": 0,
+   "imaging_artefact": 0,
+   "no_known_class": 97
+  }
+ },
+ "reading": {
+  "known_circle_rows_first_vote_ring_like": {
+   "called": 7,
+   "n": 8,
+   "wilson_95": [
+    0.5291,
+    0.9776
+   ]
+  },
+  "other_rows_first_vote_ring_like": {
+   "called": 193,
+   "n": 926,
+   "wilson_95": [
+    0.1835,
+    0.2358
+   ]
+  },
+  "second_vote_agrees_all_rows": {
+   "called": 166,
+   "n": 199,
+   "wilson_95": [
+    0.7763,
+    0.8794
+   ]
+  },
+  "second_vote_agrees_known_circle_rows": {
+   "called": 4,
+   "n": 7,
+   "wilson_95": [
+    0.2505,
+    0.8418
+   ]
+  },
+  "pairs_with_the_same_known_class": 84,
+  "ring_like_rows_with_no_second_vote": [
+   "list-0409"
+  ],
+  "votes_whose_reason_uses_the_class_name": 80,
+  "votes_whose_reason_names_a_catalogue_object": {
+   "list-0012": "PNG 001.7-04.4",
+   "list-0830": "3C 231",
+   "list-0775": "NGC 2276"
+  },
+  "reasons_over_1000_characters": 8
+ },
+ "tuned_annulus_calls_ring_like_of_rows": {
+  "first_vote_ring_like": [
+   32,
+   200
+  ],
+  "first_vote_not_ring_like": [
+   69,
+   734
+  ]
+ },
+ "ring_like_rows_with_another_within_3_arcmin": 18,
+ "circles_objects": {
+  "tuning": {
+   "on_list": {
+    "called": 4,
+    "n": 9,
+    "wilson_95": [
+     0.1888,
+     0.7333
+    ]
+   },
+   "one_vote": {
+    "called": 3,
+    "n": 9,
+    "wilson_95": [
+     0.1206,
+     0.6458
+    ]
+   },
+   "two_votes": {
+    "called": 3,
+    "n": 9,
+    "wilson_95": [
+     0.1206,
+     0.6458
+    ]
+   }
+  },
+  "heldout": {
+   "on_list": {
+    "called": 2,
+    "n": 9,
+    "wilson_95": [
+     0.0632,
+     0.5474
+    ]
+   },
+   "one_vote": {
+    "called": 2,
+    "n": 9,
+    "wilson_95": [
+     0.0632,
+     0.5474
+    ]
+   },
+   "two_votes": {
+    "called": 0,
+    "n": 9,
+    "wilson_95": [
+     0.0,
+     0.2991
+    ]
+   }
+  },
+  "all": {
+   "on_list": {
+    "called": 6,
+    "n": 18,
+    "wilson_95": [
+     0.1628,
+     0.5625
+    ]
+   },
+   "one_vote": {
+    "called": 5,
+    "n": 18,
+    "wilson_95": [
+     0.125,
+     0.5087
+    ]
+   },
+   "two_votes": {
+    "called": 3,
+    "n": 18,
+    "wilson_95": [
+     0.0584,
+     0.3922
+    ]
+   }
+  }
+ },
+ "circles": {
+  "J1555+2726": {
+   "group": "tuning",
+   "listed_rows": [
+    "list-0853",
+    "list-0854"
+   ],
+   "on_list": true,
+   "first_votes": {
+    "list-0853": "ring_like",
+    "list-0854": "ring_like"
+   },
+   "second_votes": {
+    "list-0853": "ring_like",
+    "list-0854": "ring_like"
+   },
+   "reasons": {
+    "list-0853": "Edge-brightened circular nebula with dark center and one-sided blow-out rim; second shell arcs visible at SW and N",
+    "list-0854": "A round disc of diffuse emission, about 1 to 1.5 arcminutes in diameter, is clearly visible at the centre of both the high-resolution and low-resolution images, with internal structure in the former and a filled, roughly circular appearance in the latter. It is distinct from surrounding point sources."
+   },
+   "one_vote": true,
+   "two_votes": true,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1313+5003": {
+   "group": "tuning",
+   "listed_rows": [
+    "list-0699"
+   ],
+   "on_list": true,
+   "first_votes": {
+    "list-0699": "not_ring_like"
+   },
+   "second_votes": {},
+   "reasons": {
+    "list-0699": "No ring. The centre is an elongated, inclined diffuse blob with a central compact peak, not a round ring or round edge-brightened disc of 1-3 arcmin."
+   },
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "not_ring_like"
+  },
+  "J0825+6132": {
+   "group": "tuning",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1633+1441": {
+   "group": "tuning",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J0823+6216": {
+   "group": "tuning",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J0016+2426": {
+   "group": "tuning",
+   "listed_rows": [
+    "list-0012"
+   ],
+   "on_list": true,
+   "first_votes": {
+    "list-0012": "ring_like"
+   },
+   "second_votes": {
+    "list-0012": "ring_like"
+   },
+   "reasons": {
+    "list-0012": "Round diffuse disc in the centre, about 1 arcminute across, brightening towards rim rather than centrally peaked. Structure is shell like. This is known object PNG 001.7-04.4, an optically identified planetary nebula. Point sources are round and small rather than being structured extended objects like this.Reasoning shows this is a ring-like planetary nebula."
+   },
+   "one_vote": true,
+   "two_votes": true,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J0324+8322": {
+   "group": "tuning",
+   "listed_rows": [
+    "list-0176"
+   ],
+   "on_list": true,
+   "first_votes": {
+    "list-0176": "ring_like"
+   },
+   "second_votes": {
+    "list-0176": "ring_like"
+   },
+   "reasons": {
+    "list-0176": "Edge-brightened shell with a central compact source, isolated from the main complex and with the wrong morphology and luminosity for a terminal deletion blob."
+   },
+   "one_vote": true,
+   "two_votes": true,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1436+4832": {
+   "group": "tuning",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "not_ring_like"
+  },
+  "J1608+6123": {
+   "group": "tuning",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "not_ring_like"
+  },
+  "J0847+7022": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "not_ring_like"
+  },
+  "J1134+6642": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1150+2449": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1222+6436": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J0320+1610": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "not_ring_like"
+  },
+  "J0801+5544": {
+   "group": "heldout",
+   "listed_rows": [
+    "list-0396"
+   ],
+   "on_list": true,
+   "first_votes": {
+    "list-0396": "ring_like"
+   },
+   "second_votes": {
+    "list-0396": "not_ring_like"
+   },
+   "reasons": {
+    "list-0396": "A round diffuse disc approximately 1-1.5 arcmin across is centred in the field, with mottled internal structure in the 6 arcsec image and a faint brighter outer edge/shell, confirmed as extended diffuse emission in the 20 arcsec image."
+   },
+   "one_vote": true,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J0940+6028": {
+   "group": "heldout",
+   "listed_rows": [
+    "list-0475",
+    "list-0476"
+   ],
+   "on_list": true,
+   "first_votes": {
+    "list-0475": "ring_like",
+    "list-0476": "ring_like"
+   },
+   "second_votes": {
+    "list-0475": "not_ring_like",
+    "list-0476": "not_ring_like"
+   },
+   "reasons": {
+    "list-0475": "The image shows a compact radio core coincident with a bright ERO and the classic bent, corkscrew jet plumes extending roughly symmetric to either side, forming a bent-tailed radio galaxy / head-tail type morphology. No radio-bright QSO/AGN with resolved jet sources was found in the bright candidate with corkscrew symmetry, and there is no compelling supernova-remnant-like morphology that would support a radio SN classification. This morphology is consistent with a radio galaxy.",
+    "list-0476": "Edge-brightened disc and circular stream morphology inconsistent with classical radio galaxy / jet-lobe emission"
+   },
+   "one_vote": true,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1458+4534": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  },
+  "J1559+2734": {
+   "group": "heldout",
+   "listed_rows": [],
+   "on_list": false,
+   "first_votes": {},
+   "second_votes": {},
+   "reasons": {},
+   "one_vote": false,
+   "two_votes": false,
+   "earlier_two_image_call_at_published_position": "ring_like"
+  }
+ },
+ "cost": {
+  "usd_per_row_reached": 0.0313,
+  "room_under_the_project_cap_usd": 4.029,
+  "not_assessed_rows_at_that_rate_usd": 8.32,
+  "api_reported_tokens_at_ledger_prices_usd": 22.2814,
+  "landers_register_total_without_this_project_usd": 55.5558,
+  "ledger_before_usd": 6.7601,
+  "ledger_after_usd": 35.971,
+  "this_run_usd": 29.2109,
+  "stop_usd": 36.0,
+  "votes_with_a_row": 1133,
+  "votes_failed": 0,
+  "ledger_calls_over_all_runs": {
+   "units": 1355,
+   "attempts": 1355,
+   "ok": 1355,
+   "failed": 0,
+   "refused": 1,
+   "input_tokens": 4218528,
+   "output_tokens": 954838,
+   "cost_usd": 35.971
+  },
+  "api_reported": {
+   "calls_recorded": 1133,
+   "input_tokens": 1666643,
+   "output_tokens": 780740
+  },
+  "median_seconds_per_call": 5.63
+ }
+}
