@@ -4,9 +4,14 @@ A blind search of public LOFAR radio maps for odd radio circles, using Meta's vi
 
 Odd radio circles are faint rings of radio emission about an arcminute across, seen only at radio wavelengths, with no agreed explanation. This project screens sources from the LOFAR Two-metre Sky Survey (LoTSS DR3) with Muse Wonder, checks each ring-like source against known classes of lookalike in code, and reports how many of the 18 published LoTSS circles it recovers end to end. Results are candidates or needs second look, never discoveries.
 
-## Status
+## Results
 
-Work in progress. Before building, the model was tested on known answers: Muse Wonder called 13 of 18 published circles ring-like and rejected 53 of 60 non-circles, where a simple ring-detection rule flagged none of the circles (`docs/reports/2026-10-31-probe-orc.md`). A zoomed view made no measurable difference (`docs/reports/2026-10-31-probe-orc-zoom.md`).
+<!-- results: written by scripts/case_board.py from its summary.json -->
+<!-- end of results -->
+
+## Before the search
+
+Before building, the model was tested on known answers: Muse Wonder called 13 of 18 published circles ring-like and rejected 53 of 60 non-circles, where a simple ring-detection rule flagged none of the circles (`docs/reports/2026-10-31-probe-orc.md`). A zoomed view made no measurable difference (`docs/reports/2026-10-31-probe-orc-zoom.md`).
 
 ## Data and credit
 
