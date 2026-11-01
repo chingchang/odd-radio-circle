@@ -1,0 +1,46 @@
+{
+ "rule": "docs/proposals/prefilter-v2.md",
+ "search_table_rows": 1105581,
+ "list_size": 1200,
+ "box_sizes": {
+  "M": 238,
+  "S": 962
+ },
+ "tuning_circles_kept": 4,
+ "tuning_circles": 9,
+ "lookalikes_kept": 0,
+ "lookalikes": 30,
+ "random_kept": 0,
+ "random": 30,
+ "boxes": [
+  {
+   "major_min": 40.0,
+   "major_max": 120.0,
+   "axial_min": 0.6,
+   "sb_max": 0.05,
+   "peak_ratio_max": 0.075,
+   "total_min": 20.0,
+   "total_max": 50.0,
+   "s_code": "M",
+   "isolation": [
+    1000.0,
+    3.0
+   ]
+  },
+  {
+   "major_min": 50.0,
+   "major_max": 180.0,
+   "axial_min": 0.8,
+   "sb_max": 0.05,
+   "peak_ratio_max": 0.02,
+   "total_min": 50.0,
+   "total_max": null,
+   "s_code": "S",
+   "isolation": [
+    1000.0,
+    6.0
+   ]
+  }
+ ],
+ "goes_forward": "v1"
+}
