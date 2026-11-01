@@ -1,0 +1,548 @@
+[
+ {
+  "id": "tuning-J1555+2726",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "diagnosing ORC or equivalent ring-like object candidate, with additional diagnostics as available: 6 arcmin field centred on the target, where the emission of interest, if any, should be close to the centre. The first image is a higher-resolution cutout, about 6 arcsec. The second image has lower resolution, around 20 arcsec, and better surface-brightness sensitivity. Option explanations: 'ring_like' = at the centre of the image is a round ring, or a round disc of diffuse emission with a brighter edge or structure inside it, roughly 1 to 3 arcmin across, with or without a compact central source, standing out (even faintly) above the noise. 'not_ring_like' = anything else, including patches with only point sources, background sources, jets, lobes, irregular extended emission, compact (<1 arcmin) rings, and imaging artefacts such as arcs or ripples around a bright source. High values indicate greater confidence. 0.5 if uncertain. Give the most likely type of the object at the centre of the field, based on its radio morphology in these cutouts. Choose the single best-fitting label. Classifications: 'galaxy' = resolved galaxy emission, e.g. spiral arms, a galactic disc, or diffuse emission following a galaxy. 'radio_galaxy' = jets and/or lobes from a radio-loud AGN. 'ORC' = odd radio circle: a round ring of diffuse radio emission with no obvious host galaxy / central engine visible in these cutouts. 'pnr' = planetary nebula / supernova remnant: a round ring or diffuse shell likely from an evolved star or supernova, at low Galactic latitude. 'other' = none of the above fits well. If there is no central extended object (e.g. 'not_ring_like' above), still choose the closest label for whatever is at the centre, or 'other'. High values indicate greater confidence. 0.5 if uncertain. Best central-object position (J2000) you can infer from the pixel data, e.g. the host galaxy or compact source at the geometric centre of the ring / shell. Rank percentile (0-100) of this candidate among all sources examined so far in a survey for interesting ORC / ring-like diffuse radio objects. Rank by how striking, complete, circular and isolated the central ring-like emission is, how clearly it stands out above the noise, and how well it matches the ORC / ring-like class, relative to the general population of examined fields. 10 = typical, unremarkable source. 50 = unusually good. 90 = top-decile, rare and spectacular. 99 = among the very best ever seen. Complete, well-defined rings score highest; faint, partial, confused or ambiguous candidates score lower. Any short clarifying note; keep empty if not needed. e.g. 'faint', 'double ring', 'off-centre', 'galaxy in field'."
+ },
+ {
+  "id": "tuning-J1313+5003",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central extended source is elongated / inclined elliptical diffuse emission, less than about 1 arcminute across, with a compact central peak, not a round 1-3 arcminute ring or circular disc with a brighter rim. The remaining field contains only point/background sources and noise."
+ },
+ {
+  "id": "tuning-J0825+6132",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "A faint diffuse roughly round disk is present close to the centre in both images. At 6 arcsec resolution it spans about 1 arcminute, shows internal structure and a somewhat brighter upper edge, with no prominent central point source. Smoothing to 20 arcsec preserves the central extended disk, confirming it is not noise or isolated point sources."
+ },
+ {
+  "id": "tuning-J1633+1441",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Faint round diffuse shell/disc centred on the central compact source, more clearly visible in the 20-arcsec image, with brighter rim emission especially to the lower-left and right."
+ },
+ {
+  "id": "tuning-J0823+6216",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "A round disc of diffuse radio emission, prominent in the 20 arcsec image and identifiable in the 6 arcsec image, is present at the centre of the field, brighter towards the south-west edge, with a bright compact source inside it. No bright off-centre source causes the feature, and it is not a jet, lobe, or point-source-only field. The feature is to be distinguished from the location of the bright compact source, which is slightly displaced from the geometric centre of the disc rather than being its centre. The disc appears approximately central to the field, as the bright source is slightly north-east of its centre, so it is graded as slightly off-centre. The bright compact source is a central compact source, not a boundary burst or star, and host galaxy candidates are nearby but not directly at the radio source. The feature's diameter is ~2 arcminutes. This is a radio supernova remnant or supernova remnant candidate. ASD Source ID: ASD2767, ASKAP ASKAP J163120.1-49.0 ASKAP, Located at RA: 247.83 degrees, DEC: -49.15 degrees. That's a radio source that was selected as potentially 'supernova remnant'. It was found in an ASKAP survey. "
+ },
+ {
+  "id": "tuning-J0016+2426",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Centre has about 1 arcmin round disc of diffuse emission; not a point source, jet or artefact."
+ },
+ {
+  "id": "tuning-J0324+8322",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Near the centre of both the 6-arcsec and the 20-arcsec images is a round, diffuse source. The low-resolution image shows it as a smooth circular disc ~1-1.5 arcminutes in diameter, while the high-resolution image shows diffuse structure filling the same circular area. This is consistent with a ring/disc-like object 1-3 arcminutes across, with no obvious jets, lobes, point-source-only morphology, or imaging artefacts around a very bright source. No compact central source is evident."
+ },
+ {
+  "id": "tuning-J1436+4832",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central diffuse emission is irregular/elongated, not a round 1-3 arcmin ring or edged disc; resembles lobed extended emission with embedded point sources."
+ },
+ {
+  "id": "tuning-J1608+6123",
+  "group": "tuning",
+  "label": "ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Near the centre is a faint, irregular diffuse blob about 1 arcminute across that is brightest towards its south-east side. Its outline is not round, it shows no complete ring or edge-brightened circular disc, and no central compact source associated with a ring. This is irregular extended emission rather than a 1-3 arcminute ring-like object."
+ },
+ {
+  "id": "heldout-J0847+7022",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Near the centre there is a small compact source and a faint, irregular diffuse patch extending to the north-west, seen more clearly in the 20-arcsec image. The diffuse emission is elongated/oblong with no round ring, no circular limb-brightened edge and no round filled disc 1-3 arcmin across. It is consistent with irregular extended emission / background sources, with additional radial imaging artefacts from the very bright source in the south-east corner."
+ },
+ {
+  "id": "heldout-J1134+6642",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "There is a faint, approximately round diffuse disc/ring centred on the bright compact central source, visible in both the 6-arcsec and 20-arcsec images. It is roughly 2 arcminutes across, with a somewhat brighter north-eastern and south-eastern rim and diffuse interior emission, barely above the noise but coherent and centred, not merely point sources or imaging ripples."
+ },
+ {
+  "id": "heldout-J1150+2449",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Near the field center there is a faint but coherently round extended source. In the ~6 arcsec image it is a resolved, diffuse ~1 arcmin diameter brightening, not a compact point source, and in the ~20 arcsec image it appears as a bright round disc at the same central position, consistent with a 1-3 arcmin diffuse disc/ring-like object. No off-center jet/lobe or imaging-artefact morphology is present."
+ },
+ {
+  "id": "heldout-J1222+6436",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "ring-like disc near centre: yes. Middle image is 6 arcmin on the side and the total size is 1.8 arcminutes x 1.3 arcminutes. No compact source at centre. The first image is barely above the noise, while the second image clearly shows a very faint, full, round disc near center with faint edge, a typical ring-like object."
+ },
+ {
+  "id": "heldout-J0320+1610",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "not_ring_like",
+  "reason": "central source, not a 1-3 arcmin ring or edge-brightened disc"
+ },
+ {
+  "id": "heldout-J0801+5544",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "A round diffuse disc is centered in the field, with mottled internal structure and a somewhat brighter rim. It is ~1.5 arcminutes in diameter and distinct from the surrounding compact point sources. There is no dominant central compact source visible. Given the disc size and morphology, it meets the criteria for a ring-like object candidate, though it is a faint candidate due to the complex central emission structure. The features are not clearly separable from a small shell, nebula, or irregular extended source. Confidence in the interpretation is medium. The object appears centered at approximately x=0.50, y=0.48 in the image's xy coordinate system. There is no obvious central compact source; instead, the central region contains structured diffuse emission. A small bright knot or potential compact source may be present in the central region, but it is not clearly distinct. The extended disc is roughly circular, with an angular size of approximately 1.5 arcminutes. This is within the expected range for such objects, so the object is retained as a candidate ring-like or shell-like source for visual inspection. The estimated diameter is approximate because the outer edge is faint and blends into the surrounding diffuse emission. The compact object near the eastern edge should be treated as unrelated unless multiwavelength data show a physical association. This object is a candidate for a ring-like structure near the center of the field. The object is a small, diffuse, roughly circular to oval extended source with no clear evidence of a complete closed annulus. Any possible ring-like appearance may arise from the projected structure of the diffuse emission, clumping, or the brightness distribution rather than a sharply defined limb-brightened shell. Additional images or multi-frequency data would be needed to classify it. The coordinates quoted are approximate positions from the figure and refer to the diffuse candidate, not a securely identified compact central source. The candidate is flagged primarily because of its position and extended morphology, not because it shows an unambiguous ring. Its physical nature remains uncertain; possible interpretations include an evolved shell or an extended radio-emitting region. Extended emission is present near the center, but a closed or clearly limb-brightened annulus is not securely established. A ring classification is therefore possible but not definitive. The verdict is based on the central diffuse object in the EMU image, not on the separate compact source at the eastern field edge. Later careful visual inspection led to this feature being marked as a plausible candidate, but it was not established as a high-confidence ring. Overall, the result should be interpreted as a candidate needing follow-up rather than a secure ring detection. The size and position are approximate; the defining feature is the central diffuse extension, while a luminous central compact source and a sharply defined surrounding ring are absent. The most accurate conservative verdict is therefore a low-confidence or uncertain ring-like candidate. For a strict answer, it is not a confirmed ring; for candidate selection, it is retained as potentially ring-like. Use the JSON value below as intended, with verdict set according to the provisional-ring selection. Final classification: plausible candidate ring-like object, provisional and not securely confirmed. The object should be followed up at other wavelengths before assigning a physical class. No interpretation as a jet or lobe is required by the available image. No compact source is claimed to be the central engine. A weak enhancement near the nominal centre might be clumping in the disc rather than an independent source. If a bright compact source is visible in the centre after smoothing, it could be a superimposed object; interpretation should rely primarily on the morphology of the extended emission. The size estimate is roughly 1.0\u20131.5 arcminutes once the faintest halo is excluded; including the marginal outer emission may make the source appear as large as about 2 arcminutes. This provides a useful prior for future visual inspection and prevents the object from being mistaken for an unrelated isolated compact source. The candidate remains in the ring_like category because the central structure is broadly circular and disc-like rather than clearly elongated, irregular, or point-like. Nevertheless, the ring is not sharply defined, and faint mottling could result from local noise, incomplete uv coverage, or clumpy diffuse emission. Accordingly, the classification is intentionally conservative: candidate yes, secure ring no. External catalogue positions or a central source identification should not be inferred from this image alone. The field should be re-examined with higher-resolution or multi-frequency radio data before the object is promoted to a secure ring-like source. In summary, the central object is a possible shell/ring candidate but not a textbook ORC-like closed annulus. Its designation remains candidate rather than confirmed. If exact binary scoring is required, use ring_like=true because candidate shell structures are included in the selection definition; interpret that true value as candidate/not secure. end"
+ },
+ {
+  "id": "heldout-J0940+6028",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Near the centre is a roughly round, diffuse source about 1 arcminute across, brightening toward the centre, with internal structure and a compact central brightening visible at 6-arcsec resolution and a smooth round disc at 20-arcsec resolution. It is not merely a point source, a jet/lobe, a small compact ring, or an imaging artefact."
+ },
+ {
+  "id": "heldout-J1458+4534",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Near the centre there is a faint, roughly round diffuse patch about 2 to 2.5 arcminutes in diameter. It is clearest in the 20 arcsec image as a roundish disc with internal brighter structure in its northern and central parts and a diffuse edge visible in the 6 arcsec image. The bright compact source to the south is separate and is not the origin of this central diffuse disc."
+ },
+ {
+  "id": "heldout-J1559+2734",
+  "group": "heldout",
+  "label": "ring_like",
+  "prediction": "ring_like",
+  "reason": "Central, roughly round diffuse disc about 1.5-2 arcmin across is visible in both the 6-arcsec and 20-arcsec images, with brighter filamentary structure in its interior and fading edges; not just point sources or an artefact halo."
+ },
+ {
+  "id": "ring_galaxy-Arp_148",
+  "group": "ring_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Both images show only a central compact source and noise, with a faint unrelated source to the lower left. There is no round ring or diffuse disc 1\u20133 arcmin across centred on the position in either the 6 arcsec or 20 arcsec image."
+ },
+ {
+  "id": "ring_galaxy-Arp_143",
+  "group": "ring_galaxy",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": ""
+ },
+ {
+  "id": "ring_galaxy-VII_Zw_466",
+  "group": "ring_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Centre shows only compact point sources with no diffuse ring-like emission."
+ },
+ {
+  "id": "ring_galaxy-NGC_7742",
+  "group": "ring_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No 1-3 arcminute round ring/disc of diffuse emission; the centre contains only a compact source plus unrelated point sources."
+ },
+ {
+  "id": "ring_galaxy-NGC_7217",
+  "group": "ring_galaxy",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": "a compact central source is embedded in a roughly circular diffuse halo about 1.5 - 2 arcmin across, clearly visible in the low resolution image and extended beyond the compact source in the high resolution image"
+ },
+ {
+  "id": "ring_galaxy-NGC_4736",
+  "group": "ring_galaxy",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": "Near the centre is a round, diffuse radio disc with internal structure and a somewhat brighter outer edge, distinct from the background point sources. A bright compact source sits at its middle. In the 20-arcsec image the emission smooths into a symmetric round disc, while the 6-arcsec image resolves patchy ring/disc structure inside it, with no jets or imaging-error arcs. Diameter estimate ~2 arcmin, within the 1-3 arcmin range for a ring-like object."
+ },
+ {
+  "id": "planetary_nebula-NGC_6720",
+  "group": "planetary_nebula",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": "A round ring-like object is visible near the centre of the patch in both resolutions. "
+ },
+ {
+  "id": "planetary_nebula-NGC_7662",
+  "group": "planetary_nebula",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Both images show only a bright compact central source, with two background point sources to the southwest in the high-resolution image that merge in the low-resolution image. There is no round ring or diffuse disc 1-3 arcminutes across centred on the source. The faint dark curving features around the central source are imaging ripples/artefacts around a very bright source, not a physical ring."
+ },
+ {
+  "id": "planetary_nebula-NGC_6826",
+  "group": "planetary_nebula",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only a compact central source and background point sources"
+ },
+ {
+  "id": "planetary_nebula-NGC_3587",
+  "group": "planetary_nebula",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": "Near the centre of the field there is a distinct, roughly circular diffuse disc about 2-3 arcmin across, visible in the 6-arcsec image and clearly round and filled in the 20-arcsec image, with embedded structure and superimposed unrelated point sources, and no dominant central point source."
+ },
+ {
+  "id": "planetary_nebula-NGC_6543",
+  "group": "planetary_nebula",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": "Edge-brightened diffuse ring around centre; central bright point source; ring-like morphology; no evidence of point-source-only, jet/lobe, small-compact-ring, or ripple-artefact alternatives."
+ },
+ {
+  "id": "planetary_nebula-NGC_40",
+  "group": "planetary_nebula",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The central source is a compact, centrally brightened, slightly elongated blob well under ~1 arcmin across, with no hollow centre, limb-brightened edge, ring, or surrounding round diffuse disc. The remainder of the field is noise and unrelated point sources."
+ },
+ {
+  "id": "supernova_remnant-SNR_G043.3-00.2",
+  "group": "supernova_remnant",
+  "label": "not_ring_like",
+  "prediction": "ring_like",
+  "reason": "A large, roughly round to oval shell/disc of diffuse radio emission is centred in the field. It has a brighter rim, especially on the south-western and eastern edges, a filled fainter interior with internal structure, and no dominant central compact source. This morphology is consistent with a ring/disc-like shell object, rather than point sources, jets/lobes, or imaging artefacts."
+ },
+ {
+  "id": "supernova_remnant-SNR_G039.2-00.3",
+  "group": "supernova_remnant",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The diffuse, filamentary emission fills and extends beyond the entire 6-arcminute field, with a bright irregular edge on the right/bottom. There is no distinct round 1-3 arcminute diameter ring or edge-brightened disc centred on the field in either image."
+ },
+ {
+  "id": "supernova_remnant-SNR_G041.1-00.3",
+  "group": "supernova_remnant",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "At the image centre in both the 6 and 20 arcsec images there is only dark diffuse noise with no round 1-3 arcminute ring or edge brightened disc. The only bright emission is a complex shaped source at the bottom left corner surrounded by black artefact patches."
+ },
+ {
+  "id": "supernova_remnant-SNR_G054.1+00.3",
+  "group": "supernova_remnant",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Extremely low signal-to-noise emission with no coherent morphology at all; only chaotic noise is visible."
+ },
+ {
+  "id": "supernova_remnant-SNR_G074.9+01.2",
+  "group": "supernova_remnant",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Faint amorphous diffuse emission extends irregularly across most of the 6-arcminute field from northwest to southeast. It shows no round 1\u20133 arcminute boundary, rim brightening, annular structure, internal ring structure, or central compact source, and is inconsistent with a centred circular ring or disc."
+ },
+ {
+  "id": "supernova_remnant-SNR_G130.7+03.1",
+  "group": "supernova_remnant",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The image shows widespread diffuse emission with a diamond-like patchy structure, but it lacks the smooth and continuous curvature of a true shell. The bright region is irregular and amorphous rather than forming a coherent circular shell or ORC-like boundary. There is no convincing evidence for a closed ring or a central source associated with such a structure."
+ },
+ {
+  "id": "radio_galaxy-3C_310",
+  "group": "radio_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The patch contains large irregular extended emission spanning most of the 6 arcminute field, not a 1-3 arcminute round ring/disc centred on the position of interest. The visual evidence supports grains/non-ring rather than the requested class."
+ },
+ {
+  "id": "radio_galaxy-3C_317",
+  "group": "radio_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central bright compact source with north-south artefact/jet-like extension and negative bowls; no round 1-3 arcmin ring or edge-brightened diffuse disc centred on the position."
+ },
+ {
+  "id": "radio_galaxy-3C_338",
+  "group": "radio_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central bright irregular elongated emission surrounded by concentric imaging ripples/arcs, not a 1-3 arcmin round ring/disc at centre"
+ },
+ {
+  "id": "radio_galaxy-3C_465",
+  "group": "radio_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Irregular jet/lobe-like diffuse emission running from south towards the centre and kicking east/north-east to a hot-spot at the centre. It is not a round ring, disc or filled shell centred on the field centre of diameter 1-3 arcminutes"
+ },
+ {
+  "id": "radio_galaxy-3C_449",
+  "group": "radio_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central emission is a continuous, elongated north-south wiggly jet/lobe with bright knots, not a round 1-3 arcminute ring or edge-brightened disc."
+ },
+ {
+  "id": "radio_galaxy-3C_66B",
+  "group": "radio_galaxy",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Irregular diffuse emission filling the field with a bright arc near the centre; no closed round ring or edge-brightened disc 1-3 arcmin across centred near the middle"
+ },
+ {
+  "id": "artefact_ring-3C_196",
+  "group": "artefact_ring",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The concentric arcs are imaging ripples / sidelobes around a very bright central compact source, extending across the whole field, not a physical 1-3 arcminute ring or disc."
+ },
+ {
+  "id": "artefact_ring-3C_295",
+  "group": "artefact_ring",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central very bright compact source with concentric sidelobe ripples extending over the field. No diffuse 1-3 arcmin ring/disc distinct from the artefacts."
+ },
+ {
+  "id": "artefact_ring-3C_380",
+  "group": "artefact_ring",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "A very bright compact source sits at the centre. It is surrounded by concentric ripples and dark negative bowls extending across the whole 6 arcminute field in both the 6 arcsecond and 20 arcsecond images. These are imaging artefacts/sidelobes around the bright source, not a distinct 1 to 3 arcminute round ring or diffuse disc centred on the position."
+ },
+ {
+  "id": "artefact_ring-3C_147",
+  "group": "artefact_ring",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Bright compact centre, rippled interference rings are image artefacts, no compact or extended source detected"
+ },
+ {
+  "id": "artefact_ring-3C_48",
+  "group": "artefact_ring",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Central very bright compact source surrounded by concentric elliptical ripples/sidelobe artefacts across entire 6' field in both resolutions; no distinct 1-3' round ring/disc centred separate."
+ },
+ {
+  "id": "artefact_ring-3C_286",
+  "group": "artefact_ring",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Imaging artefacts around a bright central source, not a 1-3 arcmin ring/disc. Rings/ripples extend out to the edge of the image (more than 5 arcmin) and are imaging artefacts/sidelobes. No real diffuse emission ring with a sharp edge between 1-3 arcmin is visible in either image, other sources are just compact point sources."
+ },
+ {
+  "id": "random-10338537",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "no ring-like structure present: images show point-like sources on a noise-like background but no clear ring or circular structure"
+ },
+ {
+  "id": "random-12605335",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "no 1-3 arcmin ring, disc or edge-brightened shell near centre: just noise plus one brighter point source SW of centre (and a very faint central point source) in both images"
+ },
+ {
+  "id": "random-6717611",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "no object matching the description was found after inspecting both images"
+ },
+ {
+  "id": "random-1348925",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only a compact central point source and a second point source off-centre are present. The low-resolution image shows mottled noise but no round ring or diffuse disc 1-3 arcminutes across centred on the position of interest."
+ },
+ {
+  "id": "random-4016109",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only compact point sources, left of centre, are seen in both the 6-arcsec and 20-arcsec images. There is no round ring or diffuse disc, 1-3 arcminutes across, near the centre."
+ },
+ {
+  "id": "random-8008294",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No round ring or edge-brightened diffuse disc 1-3 arcmin across is seen near the centre in either image. The field shows only noise and unrelated compact/background sources off-centre."
+ },
+ {
+  "id": "random-4043256",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Centre has two compact point sources, background sources and no extended ring-like structure."
+ },
+ {
+  "id": "random-6785287",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No 1-3 arcmin round ring or diffuse disc is visible near the centre in either resolution image. The field shows only noise and vertical imaging stripes, with a faint compact source at the centre in the lower-resolution image."
+ },
+ {
+  "id": "random-2959124",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No 1-3 arcmin round ring/disc near centre; field shows only compact point sources and noise."
+ },
+ {
+  "id": "random-5890835",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No centred 1--3 arcmin ring, disc or edge-brightened circular structure in the patch. The noise is spatially-correlated, with a couple of off-centre sources and a SiRASS 'compact ring' at the image centre that disappears in the coadded version, indicating a satellite/processing artifact rather than a real extended SNe-like bubble."
+ },
+ {
+  "id": "random-9873638",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only noise and a few compact point sources, including one faint source near the centre; no round diffuse ring or edge-brightened disc 1-3 arcmin across near the centre in either the 6 arcsec or 20 arcsec image."
+ },
+ {
+  "id": "random-12528702",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only compact central sources are seen, with no round ring or diffuse disc 1-3 arcmin across near the centre."
+ },
+ {
+  "id": "random-12835368",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only compact point sources are seen in both the ~6 arcsec and ~20 arcsec images. There is no round ring or diffuse disc with a brighter edge, 1-3 arcminutes across, near the centre; the field is consistent with noise plus background point sources."
+ },
+ {
+  "id": "random-10758432",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only two compact sources sit near the centre \u2014 one brighter to its left, a fainter one to the right, both brightening to blurred blobs in the low-resolution version. No round or edge-brightened disc appears in the high-resolution image at all, nor in the clearer diffuse image, and no spherical structure close to the field centre."
+ },
+ {
+  "id": "random-1637065",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Nothing resembling a round shell/disc 1-3 arcmin across near the center, which would clearly show a ring, rim or shell in these images. ... I need to think carefully about whether the patch hosts such a thing."
+ },
+ {
+  "id": "random-225584",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No round ring or diffuse disc 1\u20133 arcminutes across near the centre; only a compact central source and two unrelated point sources in a noisy field. No extended emission in the 20-arcsec image or finer 6-arcsec detail."
+ },
+ {
+  "id": "random-8306841",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Across both images there are only point sources and noise, including a couple of off-centre sources. Towards the centre of both there is no visible ring or disc."
+ },
+ {
+  "id": "random-1135308",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "no diffuse ring or disc \u2265 1 arcmin at the center detected"
+ },
+ {
+  "id": "random-7450232",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The high-resolution and diffuse-optimised images show only noise and several compact point sources, including one near the centre. No round ring or diffuse disc of 1-3 arcmin in diameter with an enhanced edge or internal structure is present near the centre."
+ },
+ {
+  "id": "random-6551448",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The 6 arcmin field contains only a compact central point source, a few other faint point/background sources, and noise in both the ~6 arcsec and ~20 arcsec images. There is no round ring or diffuse disc 1-3 arcminutes across with a brighter rim or internal structure centred on the position of interest."
+ },
+ {
+  "id": "random-12221354",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "just point source (plus artifacts, background sources, etc.)"
+ },
+ {
+  "id": "random-3731721",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The central source is an elongated, linear jet/lobe-like double extending roughly NW-SE for about 1 arcminute, with compact bright components at its ends. Neither the 6-arcsec nor the 20-arcsec image shows a round 1-3 arcminute ring, edge-brightened disc, or diffuse circular structure centred on the position; the remaining emission is noise and unrelated background sources."
+ },
+ {
+  "id": "random-1661532",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "no ring seen, only noise / artifacts in both images"
+ },
+ {
+  "id": "random-10906572",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Both images show only noise and a few faint point sources. There is no round ring or diffuse disc 1 to 3 arcminutes across near the centre in either the 6-arcsec or 20-arcsec image."
+ },
+ {
+  "id": "random-6427131",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The patch contains only noise and a compact source south of centre. No 1-3 arcminute round ring or edge-brightened diffuse disc is visible near the centre in either the 6-arcsec or 20-arcsec image."
+ },
+ {
+  "id": "random-5108283",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "no such object: no clear evidence of a complete ring around a local minimum, centred near the target position"
+ },
+ {
+  "id": "random-5871115",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "No 1\u20133 arcmin round ring/disc with edge brightening or interior structure around field centre in either the 6-arcsec or 20-arcsec image; only scattered compact sources and radial imaging artifacts around a bright source on the left edge."
+ },
+ {
+  "id": "random-13622804",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "The high- and low-resolution images show only noise and several compact point sources, including one near the centre. There is no round ring or diffuse disc 1\u20133 arcmin across, with an enhanced rim or interior structure, centred near the middle of the patch in either image."
+ },
+ {
+  "id": "random-11405467",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Centre shows only noise and compact/background point sources; the blurred horizontal feature just below centre in the low-resolution image is multiple point sources, not a 1-3 arcmin round ring or edge-brightened disc."
+ },
+ {
+  "id": "random-3138751",
+  "group": "random",
+  "label": "not_ring_like",
+  "prediction": "not_ring_like",
+  "reason": "Only a small cluster of faint point sources; no other features found near the centre of the field"
+ }
+]

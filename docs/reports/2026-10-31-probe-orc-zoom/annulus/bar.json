@@ -1,0 +1,46 @@
+{
+ "circles_called_ring_like": 0,
+ "circles": 18,
+ "others_called_not_ring_like": 55,
+ "others": 60,
+ "others_fraction": 0.9167,
+ "bar_needs": {
+  "circles_ring_like": 14,
+  "others_not_ring_like_fraction": 0.8
+ },
+ "passes": false,
+ "groups": {
+  "tuning": {
+   "n": 9,
+   "called_ring_like": 0
+  },
+  "heldout": {
+   "n": 9,
+   "called_ring_like": 0
+  },
+  "ring_galaxy": {
+   "n": 6,
+   "called_ring_like": 0
+  },
+  "planetary_nebula": {
+   "n": 6,
+   "called_ring_like": 1
+  },
+  "supernova_remnant": {
+   "n": 6,
+   "called_ring_like": 0
+  },
+  "radio_galaxy": {
+   "n": 6,
+   "called_ring_like": 0
+  },
+  "artefact_ring": {
+   "n": 6,
+   "called_ring_like": 4
+  },
+  "random": {
+   "n": 30,
+   "called_ring_like": 0
+  }
+ }
+}

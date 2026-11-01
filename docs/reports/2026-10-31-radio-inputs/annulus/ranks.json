@@ -1,0 +1,14 @@
+{
+ "circle_outranks_other": 0.4204,
+ "circle_outranks_group": {
+  "artefact_ring": 0.0556,
+  "planetary_nebula": 0.5093,
+  "radio_galaxy": 0.8519,
+  "random": 0.3056,
+  "ring_galaxy": 0.787,
+  "supernova_remnant": 0.4722
+ },
+ "best_circle_score": 2.26,
+ "median_circle_score": -0.11,
+ "threshold": 3.0
+}

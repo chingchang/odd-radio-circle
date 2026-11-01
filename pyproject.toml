@@ -1,0 +1,39 @@
+[project]
+name = "model-probes"
+version = "0.0.1"
+description = "Quick tests of whether Meta's models can do a task at all, on examples whose answers are known."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "landers",
+  "numpy>=1.26",
+  "astropy>=6",
+  "matplotlib>=3.8",
+  "requests>=2.31",
+  "lightkurve>=2.4",
+  "pyvo>=1.5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.uv.sources]
+landers = { path = "../finding-landers", editable = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["probe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

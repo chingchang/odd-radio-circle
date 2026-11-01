@@ -1,0 +1,16 @@
+{
+  "rule": "Sealed blind key. Never read by an agent. Read only by scripts/score.py when a person runs the blind evaluation after the freeze tag. Positions in degrees (J2000) from De Gasperin et al. 2026 (arXiv:2602.18294, Table 1). A detection counts if its centre lies within max(30 arcsec, half the object's extent) of the position.",
+  "sealed_on": "2026-10-31",
+  "sealed_by": "oracle (Claude) before any code exists",
+  "objects": [
+    {"name": "J0847+7022", "ra": 131.784, "dec": 70.369, "class": "double-headed ORC"},
+    {"name": "J1134+6642", "ra": 173.740, "dec": 66.716, "class": "ORC", "note": "best seen at 20 arcsec"},
+    {"name": "J1150+2449", "ra": 177.585, "dec": 24.821, "class": "ORC"},
+    {"name": "J1222+6436", "ra": 185.544, "dec": 64.611, "class": "ORC", "note": "best seen at 20 arcsec"},
+    {"name": "J0320+1610", "ra": 50.039, "dec": 16.176, "class": "candidate"},
+    {"name": "J0801+5544", "ra": 120.265, "dec": 55.740, "class": "candidate"},
+    {"name": "J0940+6028", "ra": 145.213, "dec": 60.480, "class": "candidate"},
+    {"name": "J1458+4534", "ra": 224.557, "dec": 45.568, "class": "candidate"},
+    {"name": "J1559+2734", "ra": 239.971, "dec": 27.577, "class": "candidate"}
+  ]
+}

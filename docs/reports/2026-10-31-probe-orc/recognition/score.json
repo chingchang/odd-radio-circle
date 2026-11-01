@@ -1,0 +1,36 @@
+{
+ "probe": "radio_ring_recognition",
+ "backend": "real",
+ "correct": 2,
+ "n": 3,
+ "accuracy": 0.6667,
+ "wilson_95": [
+  0.2077,
+  0.9385
+ ],
+ "labels": [
+  "not_recognised"
+ ],
+ "predictions": [
+  "not_recognised",
+  "recognised"
+ ],
+ "confusion": {
+  "not_recognised": {
+   "not_recognised": 2,
+   "recognised": 1
+  }
+ },
+ "per_label": {
+  "not_recognised": {
+   "correct": 2,
+   "n": 3,
+   "accuracy": 0.6667,
+   "wilson_95": [
+    0.2077,
+    0.9385
+   ]
+  }
+ },
+ "cost_usd": 0.0973
+}

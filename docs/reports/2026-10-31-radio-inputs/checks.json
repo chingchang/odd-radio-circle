@@ -1,0 +1,18 @@
+{
+ "items": 78,
+ "images_checked": 156,
+ "distinct_images": 156,
+ "fields_with_a_9_arcsec_map_by_group": {
+  "tuning": 1,
+  "ring_galaxy": 1,
+  "supernova_remnant": 3,
+  "radio_galaxy": 1,
+  "random": 4
+ },
+ "fine_map_beams_arcsec": [
+  6.0,
+  9.0
+ ],
+ "largest_no_data_fraction": 0.0001,
+ "catalogue_rows_read": 60
+}

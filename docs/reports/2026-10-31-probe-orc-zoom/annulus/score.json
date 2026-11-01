@@ -1,0 +1,49 @@
+{
+ "probe": "radio_ring_zoom",
+ "backend": "annulus",
+ "correct": 55,
+ "n": 78,
+ "accuracy": 0.7051,
+ "wilson_95": [
+  0.5962,
+  0.7948
+ ],
+ "labels": [
+  "not_ring_like",
+  "ring_like"
+ ],
+ "predictions": [
+  "not_ring_like",
+  "ring_like"
+ ],
+ "confusion": {
+  "not_ring_like": {
+   "not_ring_like": 55,
+   "ring_like": 5
+  },
+  "ring_like": {
+   "not_ring_like": 18,
+   "ring_like": 0
+  }
+ },
+ "per_label": {
+  "not_ring_like": {
+   "correct": 55,
+   "n": 60,
+   "accuracy": 0.9167,
+   "wilson_95": [
+    0.8193,
+    0.9639
+   ]
+  },
+  "ring_like": {
+   "correct": 0,
+   "n": 18,
+   "accuracy": 0.0,
+   "wilson_95": [
+    0.0,
+    0.1759
+   ]
+  }
+ }
+}

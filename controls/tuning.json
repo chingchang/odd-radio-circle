@@ -1,0 +1,16 @@
+{
+  "rule": "Tuning set: published odd radio circles and candidates in LoTSS DR3 that agents may look at and tune on. Positions are the published host or centre positions in degrees (J2000) from De Gasperin et al. 2026 (arXiv:2602.18294, Table 1). The other half of that table is sealed in controls/heldout.json for the blind run. Lookalikes (known non-circles) are for the agent to add from the literature, with a source for each.",
+  "source": "De Gasperin et al. 2026, Single- and double-headed odd radio circles in the LOFAR surveys, arXiv:2602.18294",
+  "objects": [
+    {"name": "J1555+2726", "ra": 238.853, "dec": 27.443, "class": "double-headed ORC", "note": "ORC 4, Norris et al. 2021"},
+    {"name": "J1313+5003", "ra": 198.446, "dec": 50.055, "class": "double-headed ORC", "note": "Hota et al. 2025"},
+    {"name": "J0825+6132", "ra": 126.260, "dec": 61.544, "class": "double-headed ORC"},
+    {"name": "J1633+1441", "ra": 248.434, "dec": 14.699, "class": "ORC", "note": "diameter near 3 arcmin; best seen at 20 arcsec resolution"},
+    {"name": "J0823+6216", "ra": 125.924, "dec": 62.273, "class": "ORC"},
+    {"name": "J0016+2426", "ra": 4.118, "dec": 24.436, "class": "candidate"},
+    {"name": "J0324+8322", "ra": 51.210, "dec": 83.367, "class": "candidate"},
+    {"name": "J1436+4832", "ra": 219.081, "dec": 48.536, "class": "candidate"},
+    {"name": "J1608+6123", "ra": 242.141, "dec": 61.399, "class": "candidate"}
+  ],
+  "lookalikes": []
+}

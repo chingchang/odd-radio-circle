@@ -1,0 +1,332 @@
+{
+ "first_run": {
+  "circles_called_ring_like": {
+   "count": 13,
+   "of": 18,
+   "wilson_95": [
+    0.4913,
+    0.875
+   ]
+  },
+  "confirmed_called": {
+   "count": 7,
+   "of": 9,
+   "wilson_95": [
+    0.4526,
+    0.9368
+   ]
+  },
+  "candidates_called": {
+   "count": 6,
+   "of": 9,
+   "wilson_95": [
+    0.3542,
+    0.8794
+   ]
+  },
+  "tuning_called": {
+   "count": 6,
+   "of": 9,
+   "wilson_95": [
+    0.3542,
+    0.8794
+   ]
+  },
+  "heldout_called": {
+   "count": 7,
+   "of": 9,
+   "wilson_95": [
+    0.4526,
+    0.9368
+   ]
+  },
+  "others_rejected": {
+   "count": 53,
+   "of": 60,
+   "wilson_95": [
+    0.7782,
+    0.9423
+   ]
+  },
+  "others_rejected_by_group": {
+   "ring_galaxy": {
+    "rejected": 3,
+    "of": 6
+   },
+   "planetary_nebula": {
+    "rejected": 3,
+    "of": 6
+   },
+   "supernova_remnant": {
+    "rejected": 5,
+    "of": 6
+   },
+   "radio_galaxy": {
+    "rejected": 6,
+    "of": 6
+   },
+   "artefact_ring": {
+    "rejected": 6,
+    "of": 6
+   },
+   "random": {
+    "rejected": 30,
+    "of": 30
+   }
+  },
+  "circles_missed": [
+   "tuning-J1313+5003",
+   "tuning-J1436+4832",
+   "tuning-J1608+6123",
+   "heldout-J0847+7022",
+   "heldout-J0320+1610"
+  ],
+  "others_called_ring_like": [
+   "ring_galaxy-Arp_143",
+   "ring_galaxy-NGC_7217",
+   "ring_galaxy-NGC_4736",
+   "planetary_nebula-NGC_6720",
+   "planetary_nebula-NGC_3587",
+   "planetary_nebula-NGC_6543",
+   "supernova_remnant-SNR_G043.3-00.2"
+  ]
+ },
+ "zoom_run": {
+  "circles_called_ring_like": {
+   "count": 13,
+   "of": 18,
+   "wilson_95": [
+    0.4913,
+    0.875
+   ]
+  },
+  "confirmed_called": {
+   "count": 7,
+   "of": 9,
+   "wilson_95": [
+    0.4526,
+    0.9368
+   ]
+  },
+  "candidates_called": {
+   "count": 6,
+   "of": 9,
+   "wilson_95": [
+    0.3542,
+    0.8794
+   ]
+  },
+  "tuning_called": {
+   "count": 6,
+   "of": 9,
+   "wilson_95": [
+    0.3542,
+    0.8794
+   ]
+  },
+  "heldout_called": {
+   "count": 7,
+   "of": 9,
+   "wilson_95": [
+    0.4526,
+    0.9368
+   ]
+  },
+  "others_rejected": {
+   "count": 54,
+   "of": 60,
+   "wilson_95": [
+    0.7985,
+    0.9534
+   ]
+  },
+  "others_rejected_by_group": {
+   "ring_galaxy": {
+    "rejected": 4,
+    "of": 6
+   },
+   "planetary_nebula": {
+    "rejected": 3,
+    "of": 6
+   },
+   "supernova_remnant": {
+    "rejected": 5,
+    "of": 6
+   },
+   "radio_galaxy": {
+    "rejected": 6,
+    "of": 6
+   },
+   "artefact_ring": {
+    "rejected": 6,
+    "of": 6
+   },
+   "random": {
+    "rejected": 30,
+    "of": 30
+   }
+  },
+  "circles_missed": [
+   "tuning-J1313+5003",
+   "tuning-J1436+4832",
+   "tuning-J1608+6123",
+   "heldout-J0847+7022",
+   "heldout-J0940+6028"
+  ],
+  "others_called_ring_like": [
+   "ring_galaxy-Arp_143",
+   "ring_galaxy-NGC_4736",
+   "planetary_nebula-NGC_6720",
+   "planetary_nebula-NGC_3587",
+   "planetary_nebula-NGC_6543",
+   "supernova_remnant-SNR_G043.3-00.2"
+  ]
+ },
+ "changed": [
+  {
+   "id": "heldout-J0320+1610",
+   "group": "heldout",
+   "class": "candidate",
+   "label": "ring_like",
+   "first": "not_ring_like",
+   "zoom": "ring_like",
+   "now_right": true,
+   "first_reason": "central source, not a 1-3 arcmin ring or edge-brightened disc",
+   "zoom_reason": "A round, ~1-2 arcmin diameter disc of diffuse emission is centred in the field in both the 6 arcsec and 20 arcsec images, persisting in the hard-stretch zooms as a large saturated round structure, with brighter emission inside toward its centre; it is not a point source, jet/lobe, small compact ring, or artefact."
+  },
+  {
+   "id": "heldout-J0940+6028",
+   "group": "heldout",
+   "class": "candidate",
+   "label": "ring_like",
+   "first": "ring_like",
+   "zoom": "not_ring_like",
+   "now_right": false,
+   "first_reason": "Near the centre is a roughly round, diffuse source about 1 arcminute across, brightening toward the centre, with internal structure and a compact central brightening visible at 6-arcsec resolution and a smooth round disc at 20-arcsec resolution. It is not merely a point source, a jet/lobe, a small compact ring, or an imaging artefact.",
+   "zoom_reason": "The central emission is a bright, filled and slightly elongated irregular blob about 1 arcminute across, saturated in the zoomed views. It shows no round annulus, limb-brightened edge, central depression, or disc with internal ring structure distinct from a compact extended source/lobe."
+  },
+  {
+   "id": "ring_galaxy-NGC_7217",
+   "group": "ring_galaxy",
+   "class": "",
+   "label": "not_ring_like",
+   "first": "ring_like",
+   "zoom": "not_ring_like",
+   "now_right": true,
+   "first_reason": "a compact central source is embedded in a roughly circular diffuse halo about 1.5 - 2 arcmin across, clearly visible in the low resolution image and extended beyond the compact source in the high resolution image",
+   "zoom_reason": "The centre is dominated by a compact bright source whose low-resolution/saturated appearance produces a roughly round halo, but there is no distinct 1-3 arcminute round ring or diffuse disc with a brighter edge or internal structure visible above the noise in the high-resolution or hard-stretch images."
+  }
+ ],
+ "changed_to_right": 2,
+ "changed_to_wrong": 1,
+ "zoom_run_cost_usd": 2.7679,
+ "zoom_run_reported_input_tokens": {
+  "least": 2798,
+  "most": 2798,
+  "total": 218244
+ },
+ "circle_saturation": {
+  "circles": {
+   "tuning-J1555+2726": {
+    "called": true,
+    "zoom_6": 0.163,
+    "zoom_20": 0.223
+   },
+   "tuning-J1313+5003": {
+    "called": false,
+    "zoom_6": 0.095,
+    "zoom_20": 0.183
+   },
+   "tuning-J0825+6132": {
+    "called": true,
+    "zoom_6": 0.005,
+    "zoom_20": 0.094
+   },
+   "tuning-J1633+1441": {
+    "called": true,
+    "zoom_6": 0.013,
+    "zoom_20": 0.041
+   },
+   "tuning-J0823+6216": {
+    "called": true,
+    "zoom_6": 0.042,
+    "zoom_20": 0.402
+   },
+   "tuning-J0016+2426": {
+    "called": true,
+    "zoom_6": 0.162,
+    "zoom_20": 0.277
+   },
+   "tuning-J0324+8322": {
+    "called": true,
+    "zoom_6": 0.172,
+    "zoom_20": 0.311
+   },
+   "tuning-J1436+4832": {
+    "called": false,
+    "zoom_6": 0.266,
+    "zoom_20": 0.588
+   },
+   "tuning-J1608+6123": {
+    "called": false,
+    "zoom_6": 0.084,
+    "zoom_20": 0.248
+   },
+   "heldout-J0847+7022": {
+    "called": false,
+    "zoom_6": 0.03,
+    "zoom_20": 0.366
+   },
+   "heldout-J1134+6642": {
+    "called": true,
+    "zoom_6": 0.01,
+    "zoom_20": 0.065
+   },
+   "heldout-J1150+2449": {
+    "called": true,
+    "zoom_6": 0.001,
+    "zoom_20": 0.068
+   },
+   "heldout-J1222+6436": {
+    "called": true,
+    "zoom_6": 0.0,
+    "zoom_20": 0.028
+   },
+   "heldout-J0320+1610": {
+    "called": true,
+    "zoom_6": 0.178,
+    "zoom_20": 0.312
+   },
+   "heldout-J0801+5544": {
+    "called": true,
+    "zoom_6": 0.146,
+    "zoom_20": 0.225
+   },
+   "heldout-J0940+6028": {
+    "called": false,
+    "zoom_6": 0.143,
+    "zoom_20": 0.284
+   },
+   "heldout-J1458+4534": {
+    "called": true,
+    "zoom_6": 0.019,
+    "zoom_20": 0.231
+   },
+   "heldout-J1559+2734": {
+    "called": true,
+    "zoom_6": 0.116,
+    "zoom_20": 0.187
+   }
+  },
+  "medians": {
+   "called": {
+    "zoom_6": 0.042,
+    "zoom_20": 0.223
+   },
+   "missed": {
+    "zoom_6": 0.095,
+    "zoom_20": 0.284
+   }
+  }
+ }
+}
