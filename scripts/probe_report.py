@@ -1,11 +1,10 @@
 """Copy a real run's results into a report folder and write what the report quotes: the wrong answers and their reasons.
 
-    uv run python -I scripts/probe_report.py tess docs/reports/2026-10-31-probe-tess
     uv run python -I scripts/probe_report.py radio_ring docs/reports/2026-10-31-probe-orc
     uv run python -I scripts/probe_report.py radio_ring_zoom docs/reports/2026-10-31-probe-orc-zoom
 
-``answers.json`` holds per item the label, the prediction and the reason, plus the group for the radio fields.
-``wrong.md`` lists the items the bar counts that were answered wrongly. The TESS sheets it lists are copied beside it.
+``answers.json`` holds per item the label, the prediction, the reason and the group. ``wrong.md`` lists the items
+answered wrongly.
 """
 
 from __future__ import annotations
@@ -18,9 +17,8 @@ from pathlib import Path
 
 from probe.harness import _read_rows
 
-BASELINES = {"tess": "code_rule", "radio_ring": "annulus", "radio_ring_zoom": "annulus"}
+BASELINES = {"radio_ring": "annulus", "radio_ring_zoom": "annulus"}
 FILES = ("score.json", "score.md", "score_all.json", "score_all.md", "bar.json", "ranks.json", "records.jsonl")
-SCORED = {"tess": ("planet", "eclipsing_binary")}
 
 
 def cell(text: str) -> str:
@@ -61,19 +59,13 @@ def main(argv=None) -> int:
         )
     (folder / "answers.json").write_text(json.dumps(answers, indent=1) + "\n")
 
-    scored = SCORED.get(a.probe)
-    wrong = [r for r in answers if r["label"] != r["prediction"] and (scored is None or r["label"] in scored)]
+    wrong = [r for r in answers if r["label"] != r["prediction"]]
     lines = ["| item | group | label | answer | reason given |", "|---|---|---|---|---|"]
     lines += [
         f"| {r['id']} | {r['group'] or ''} | {r['label']} | {r['prediction']} | {cell(r['reason'])} |" for r in wrong
     ]
     (folder / "wrong.md").write_text("\n".join(lines) + "\n")
-    if a.probe == "tess":
-        sheets = folder / "wrong_sheets"
-        sheets.mkdir(exist_ok=True)
-        for r in wrong:
-            shutil.copy2(root / records[r["id"]]["sheet"], sheets / f"{r['id']}.png")
-    print(f"{a.probe}: {len(answers)} answers, {len(wrong)} wrong among those the bar counts")
+    print(f"{a.probe}: {len(answers)} answers, {len(wrong)} wrong")
     return 0
 
 

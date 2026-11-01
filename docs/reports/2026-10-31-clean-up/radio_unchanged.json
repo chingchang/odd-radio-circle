@@ -1,0 +1,34 @@
+{
+ "requests": {
+  "first_run": {
+   "items": 78,
+   "recorded": 78,
+   "same_hash": 78
+  },
+  "zoom_run": {
+   "items": 78,
+   "recorded": 78,
+   "same_hash": 78
+  },
+  "recognition": {
+   "items": 3,
+   "recorded": 3,
+   "same_hash": 3
+  }
+ },
+ "baselines_byte_equal": {
+  "first_run": {
+   "score.json": true,
+   "bar.json": true,
+   "records.jsonl": true,
+   "score.md": true
+  },
+  "zoom_run": {
+   "score.json": true,
+   "bar.json": true,
+   "records.jsonl": true,
+   "score.md": true
+  }
+ },
+ "model_calls": 0
+}

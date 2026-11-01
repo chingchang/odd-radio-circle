@@ -32,7 +32,7 @@ def _rate(k: int, n: int) -> dict:
 def score(labels: list[str], predictions: list[str], only_labels: tuple[str, ...] | None = None) -> dict:
     """Score predictions against labels. A prediction outside the labels (``invalid``, ``no_answer``, a class not being
     scored) counts as wrong and keeps its own column, so a failed call can never raise the accuracy by being dropped.
-    ``only_labels`` keeps the items with those labels: planet against eclipsing binary, say, of a three-class list."""
+    ``only_labels`` keeps the items with those labels: two classes, say, of a three-class list."""
     if len(labels) != len(predictions):
         raise ValueError(f"{len(labels)} labels but {len(predictions)} predictions")
     pairs = [(y, p) for y, p in zip(labels, predictions, strict=True) if only_labels is None or y in only_labels]

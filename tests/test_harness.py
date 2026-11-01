@@ -1,14 +1,14 @@
 import json
-from pathlib import Path
 
+import numpy as np
 import pytest
 from landers.models.backend import FakeBackend, TransientError, WonderResult
+from landers.models.crops import to_png
 from landers.models.ledger import CapError, Ledger
 
 from probe import harness
 from probe.guard import LeakError
 from probe.harness import ImageTokenFloor, Item, ProbeClient, ProbeSpec, open_client, run_baseline, run_probe
-from scripts.smoke_probe import blank_png
 
 SCHEMA = {
     "type": "object",
@@ -17,7 +17,10 @@ SCHEMA = {
     "properties": {"answer": {"type": "string", "enum": ["yes", "no"]}},
 }
 SPEC = ProbeSpec("demo", "Is this image bright? Answer with the schema.", SCHEMA)
-ROOT = Path(__file__).resolve().parent.parent
+
+
+def blank_png(k: int) -> bytes:
+    return to_png(np.full((4, 4), k, np.uint8))
 
 
 def items(n=4):
@@ -68,7 +71,7 @@ def test_id_and_label_never_reach_the_model(tmp_path):
 
 
 def test_a_leak_in_any_prompt_stops_the_run_before_anything_is_sent(tmp_path):
-    spec = ProbeSpec("demo", "Is TIC 123456789 a planet?", SCHEMA)
+    spec = ProbeSpec("demo", "Is NGC 6543 ring-like?", SCHEMA)
     backend = Scripted(["no"] * 4)
     c = client(tmp_path, backend)
     with pytest.raises(LeakError):
@@ -195,12 +198,3 @@ def test_baseline_on_the_same_items(tmp_path):
 def test_spec_needs_a_required_enum_answer():
     with pytest.raises(ValueError):
         ProbeSpec("x", "p", {"properties": {"answer": {"type": "string"}}, "required": ["answer"]})
-
-
-def test_pass_bars_match_the_plan():
-    def bars(name):
-        text = (ROOT / "docs" / name).read_text()
-        section = text.split("## Pass bars", 1)[1].split("\n## ", 1)[0]
-        return [ln for ln in section.splitlines() if ln.startswith("- ")]
-
-    assert len(bars("plan.md")) == 3 and bars("plan.md") == bars("probes.md")

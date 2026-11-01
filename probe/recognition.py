@@ -1,4 +1,4 @@
-"""The recognition check: shown three of a probe's inputs, can the model say which object it is looking at?
+"""The recognition check: shown three of the radio fields, can the model say which object it is looking at?
 
 The inputs carry no names, but a famous object's shape might give it away, and then an answer could come from memory
 rather than from the pixels. Which three is fixed in ``docs/probes.md`` before the first call. A row's label is always
@@ -21,28 +21,14 @@ SCHEMA = {
         "reason": {"type": "string"},
     },
 }
-SHEET_PROMPT = """This sheet shows a periodic dip in the brightness of one star, from space-telescope photometry. The
-panels show the whole light curve and the light curve folded on the period of the dip.
-
-Do you recognise which specific star, or which planet or binary around it, this is? Answer recognised only if you can
-name it; give its usual name in the name field. Otherwise answer not_recognised and leave the name empty. Answer with
-the schema."""
 FIELD_PROMPT = """These two images show the same patch of sky in radio continuum, 6 arcminutes on a side and centred on
 the position of interest, at resolutions of about 6 and 20 arcsec.
 
 Do you recognise which specific astronomical object is at the centre? Answer recognised only if you can name it; give
 its usual name in the name field. Otherwise answer not_recognised and leave the name empty. Answer with the schema."""
-SHEET_SPEC = ProbeSpec("tess_recognition", SHEET_PROMPT, SCHEMA, schema_name="identity_answer")
 FIELD_SPEC = ProbeSpec("radio_ring_recognition", FIELD_PROMPT, SCHEMA, schema_name="identity_answer")
 
 FIELD_IDS = ("planetary_nebula-NGC_6720", "ring_galaxy-NGC_4736", "artefact_ring-3C_196")
-CHECKED = 3
-
-
-def sheet_ids(records: list[dict]) -> list[str]:
-    """The first three signals, in the fixed random order, that were known planets before this survey began. They are
-    the likeliest in the list to be famous."""
-    return [r["id"] for r in records if r["disposition"] == "KP"][:CHECKED]
 
 
 def checked_items(items: list[Item], ids: list[str] | tuple[str, ...]) -> list[Item]:

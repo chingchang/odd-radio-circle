@@ -24,7 +24,7 @@ from landers.models.ledger import TOTAL_CAP_USD, CapError, Ledger, spent_usd, to
 from probe import guard
 from probe.score import score, summary_markdown
 
-PROBES_CAP_USD = 10.0  # CLAUDE.md: the probes together
+PROBES_CAP_USD = 10.0  # the model tests together; a lower stop than the project's 40 USD (CLAUDE.md)
 # docs/models.md: 1,300 to 1,500 tokens per 1280 px image, but the API reported far fewer (497 for three images) and the
 # bill may be higher. The ledger charges at least this much, so the cap holds if the reported count is short.
 IMAGE_TOKENS_FLOOR = 1500
@@ -107,7 +107,7 @@ def open_client(
 ) -> ProbeClient:
     """A client on backend ``kind``: ``fake``, ``dry-run``, ``recorded``, or ``real``, which ``make_backend`` refuses
     without ``MODEL_API_KEY`` and ``LANDERS_REAL_CALLS=1``. The ledger continues from disk, so the cap holds over all
-    three probes. ``cap_usd`` can lower the cap for one plan item, never raise it. A real run also leaves the landers
+    runs. ``cap_usd`` can lower the cap for one plan item, never raise it. A real run also leaves the landers
     cumulative cap room, since both spend one credit."""
     out_root = Path(out_root)
     out_root.mkdir(parents=True, exist_ok=True)

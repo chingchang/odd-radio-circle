@@ -1,12 +1,10 @@
 # Probes
 
-The pass bars, written before any real call. They are copied unchanged from docs/plan.md, and a test holds them equal.
+The pass bar, written before any real call.
 
-## Pass bars
+## Pass bar
 
-- TESS: planet vs eclipsing binary correct on at least 80 percent of those 40, and better than the code baseline.
 - Radio circles: at least 14 of the 18 circles called ring-like, and at least 80 percent of the 60 others not.
-- Video: agrees with the published rating on at least 80 percent, and better than the majority class.
 
 ## How a probe is scored
 
@@ -14,20 +12,6 @@ The pass bars, written before any real call. They are copied unchanged from docs
 `score.json` and `score.md`; `run_baseline` writes the same beside it under the baseline's name. Accuracy comes with a
 95 percent Wilson interval and a confusion table. A failed call or an off-schema answer counts as wrong and keeps its
 own column.
-
-## TESS inputs and code rule
-
-`scripts/tess_inputs.py` picks 20 signals per class, in a fixed random order, and draws one sheet each; every signal it
-tried is in `out/tess/decisions.jsonl`. A planet is CP or KP in the candidate table and a false alarm is FA. An eclipsing
-binary is FP and also in the published eclipsing binary catalogue at the signal's period, half of it or twice it. A
-signal needs SPOC 2-minute data, and at least 10 cadences in its odd dips and 10 in its even ones.
-
-The code rule in `probe/tess.py`, on the same light curves, was fixed before its first run on these signals:
-
-- False alarm if the dip's signal to noise is below 7.
-- Otherwise eclipsing binary if any of these holds: depth over 3 percent; odd and even differ by at least 3 sigma and
-  10 percent of the depth; a dip at phase 0.5 of at least 3 sigma and 5 percent of the depth.
-- Otherwise planet.
 
 ## Radio circle inputs and annulus score
 
@@ -56,15 +40,14 @@ score is the first run's, on the same maps. The run stops at 4 USD of its own, 7
 
 ## Recognition check
 
-Written before the first real call. Each probe's inputs also go to the model with a second question, `probe/recognition.py`:
-do you recognise which object this is, and if so what is it called? The three sheets are the first three signals, in the
-fixed random order, with disposition KP, known planets from before the survey. The three fields are NGC 6720, NGC 4736 and
-3C 196, picked as the likeliest among the fields to be known by shape. The check does not change a probe's bar. A correct
-name is reported beside the probe's verdict, as a reason to doubt that answers came from the pixels; a wrong name, or none,
-means this check found no such doubt on those three, and says nothing of the other inputs.
+Written before the first real call. Three of the radio inputs also go to the model with a second question,
+`probe/recognition.py`: do you recognise which object this is, and if so what is it called? The three fields are NGC 6720,
+NGC 4736 and 3C 196, picked as the likeliest among the fields to be known by shape. The check does not change the probe's
+bar. A correct name is reported beside the probe's verdict, as a reason to doubt that answers came from the pixels; a wrong
+name, or none, means this check found no such doubt on those three, and says nothing of the other inputs.
 
 ## Cost
 
-The real ledger is `out/ledger.json`, shared by the three probes and capped at 10 USD. It charges a Wonder call at least
-1,500 input tokens per image, because the API's reported count may fall short of the bill; the recordings under
+The real ledger is `out/ledger.json`, capped at 10 USD for the model tests. It charges a Wonder call at least 1,500 input
+tokens per image, because the API's reported count may fall short of the bill; the recordings under
 `out/model_recordings/` keep what the API reported.

@@ -27,10 +27,10 @@ def test_score_and_confusion():
 
 
 def test_only_labels_keeps_a_wrong_class_as_wrong():
-    r = score(["planet", "eb", "alarm"], ["planet", "alarm", "alarm"], only_labels=("planet", "eb"))
+    r = score(["ring", "galaxy", "other"], ["ring", "other", "other"], only_labels=("ring", "galaxy"))
     assert (r["correct"], r["n"]) == (1, 2)
-    assert r["labels"] == ["eb", "planet"]
-    assert r["confusion"]["eb"]["alarm"] == 1
+    assert r["labels"] == ["galaxy", "ring"]
+    assert r["confusion"]["galaxy"]["other"] == 1
 
 
 def test_mismatched_lengths_refused():

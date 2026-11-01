@@ -2,7 +2,8 @@
 
 The landers guard (``landers.models.leak``) covers its own ids, dates and PNG metadata; this adds star and object ids,
 catalogue designations, coordinates, survey names, file names and URLs. As there, an error names the kind of leak and
-its offset, never the matched text.
+its offset, never the matched text. The lists are wider than radio needs on purpose: a name no prompt should carry stays
+refused.
 """
 
 from __future__ import annotations

@@ -43,9 +43,8 @@ def test_error_names_the_kind_not_the_text():
 @pytest.mark.parametrize(
     "text",
     [
-        "Panel 1 shows a light curve of a star. Panel 2 is folded on the period. Is the signal a planet?",
         "Is there a ring-like structure in this radio image at 6 or 20 arcsec resolution?",
-        "Which age rating fits this clip? Answer with the schema.",
+        "These two images show the same patch of sky in radio continuum, 6 arcminutes on a side.",
     ],
 )
 def test_passes_ordinary_prompts(text):

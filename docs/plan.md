@@ -5,7 +5,7 @@ calls. Background: the model tests in docs/reports/2026-10-31-probe-orc*.md (13 
 
 ## Now (in order; the agent keeps the status)
 
-1. [ ] Clean-up check. This repo was cut down from an earlier test workspace: everything for other tests was removed.
+1. [done, see docs/reports/2026-10-31-clean-up.md] Clean-up check. This repo was cut down from an earlier test workspace: everything for other tests was removed.
    Remove any code, tests, docs or imports that still refer to the removed TESS and video probes (probe/recognition.py,
    scripts/probe_report.py, scripts/recognition_check.py, tests/test_recognition.py and docs/probes.md mention them), keep
    the radio-circle path working, and make scripts/check.sh green. No behaviour change for the radio code. Report, done.

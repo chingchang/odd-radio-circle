@@ -9,7 +9,6 @@ dependencies = [
   "astropy>=6",
   "matplotlib>=3.8",
   "requests>=2.31",
-  "lightkurve>=2.4",
   "pyvo>=1.5",
 ]
 
