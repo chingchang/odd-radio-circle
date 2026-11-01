@@ -1,0 +1,126 @@
+{
+ "all": {
+  "where": "1=1",
+  "rows": 13667877,
+  "seconds": 11.5
+ },
+ "majax_ge_20": {
+  "where": "majax >= 20",
+  "rows": 1105581,
+  "seconds": 9.8
+ },
+ "majax_ge_30": {
+  "where": "majax >= 30",
+  "rows": 454087,
+  "seconds": 9.8
+ },
+ "majax_ge_40": {
+  "where": "majax >= 40",
+  "rows": 241013,
+  "seconds": 9.7
+ },
+ "majax_ge_60": {
+  "where": "majax >= 60",
+  "rows": 88069,
+  "seconds": 9.7
+ },
+ "majax_ge_90": {
+  "where": "majax >= 90",
+  "rows": 24170,
+  "seconds": 9.5
+ },
+ "majax_ge_120": {
+  "where": "majax >= 120",
+  "rows": 9564,
+  "seconds": 9.5
+ },
+ "majax_ge_30_round": {
+  "where": "majax >= 30 and minax >= 0.6*majax",
+  "rows": 164664,
+  "seconds": 9.9
+ },
+ "majax_ge_40_round": {
+  "where": "majax >= 40 and minax >= 0.6*majax",
+  "rows": 82648,
+  "seconds": 9.7
+ },
+ "majax_ge_60_round": {
+  "where": "majax >= 60 and minax >= 0.6*majax",
+  "rows": 28699,
+  "seconds": 9.6
+ },
+ "total_flux_ge_1000": {
+  "where": "total_flux >= 1000",
+  "rows": 17150,
+  "seconds": 9.2
+ },
+ "total_flux_ge_3000": {
+  "where": "total_flux >= 3000",
+  "rows": 3241,
+  "seconds": 9.2
+ },
+ "total_flux_ge_10000": {
+  "where": "total_flux >= 10000",
+  "rows": 336,
+  "seconds": 9.3
+ },
+ "all_gausses": {
+  "query": "select count(*) as n from lotss_dr3.main_gausses",
+  "rows": 16943656,
+  "seconds": 16.1
+ },
+ "strip_sources_majax_ge_20": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where majax >= 20 and ra >= 10 and ra < 11",
+  "rows": 3033,
+  "seconds": 9.9
+ },
+ "strip_gausses": {
+  "query": "select count(*) as n from lotss_dr3.main_gausses where ra >= 10 and ra < 11",
+  "rows": 41348,
+  "seconds": 13.9
+ },
+ "strip_component_rows": {
+  "query": "select source_name, count(*) as n from lotss_dr3.main_gausses where ra >= 10 and ra < 11 group by source_name",
+  "rows": 41347,
+  "sources_with_2_or_more": 1,
+  "sources_with_5_or_more": 0,
+  "seconds": 16.7
+ },
+ "strip_sources": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where ra >= 10 and ra < 11",
+  "rows": 32633,
+  "seconds": 11.0
+ },
+ "strip_sources_code_s": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where s_code = 'S' and ra >= 10 and ra < 11",
+  "rows": 28650,
+  "seconds": 10.5
+ },
+ "strip_sources_code_m": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where s_code = 'M' and ra >= 10 and ra < 11",
+  "rows": 3970,
+  "seconds": 10.6
+ },
+ "strip_sources_code_c": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where s_code = 'C' and ra >= 10 and ra < 11",
+  "rows": 13,
+  "seconds": 10.5
+ },
+ "all_sources_code_m": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where s_code = 'M'",
+  "rows": 1570076,
+  "seconds": 11.9
+ },
+ "all_sources_code_m_majax_ge_20": {
+  "query": "select count(*) as n from lotss_dr3.main_sources where s_code = 'M' and majax >= 20",
+  "rows": 283299,
+  "seconds": 10.3
+ },
+ "largest_source_gausses": {
+  "source": "ILTJ004242.77+135149.8",
+  "majax": 187.553179755617,
+  "gausses_within_major_axis": 10,
+  "gausses_named_for_the_source": 0,
+  "distinct_names": 10
+ }
+}
