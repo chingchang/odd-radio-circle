@@ -300,15 +300,68 @@ def heldout(data: Path, controls: Path, out: Path) -> int:
     return 0
 
 
+def summary(out: Path) -> int:
+    """The totals and the per-circle table the report quotes, from the files the other steps wrote."""
+    held = json.loads((out / "heldout.json").read_text())
+    versions = {}
+    names = {"v1": "tuning_circles.json", "v2": "tuning_circles_v2.json", "v3": "tuning_circles_v3.json"}
+    for version, name in names.items():
+        tuning = json.loads((out / name).read_text())
+        kept = [n for n, o in tuning.items() if o["kept"]]
+        kept_held = [n for n, o in held[version]["objects"].items() if o["kept"]]
+        total = len(kept) + len(kept_held)
+        count = len(tuning) + len(held[version]["objects"])
+        versions[version] = {
+            "tuning_kept": kept,
+            "tuning_kept_at_60_arcsec": sum(o["kept_at_60_arcsec"] for o in tuning.values()),
+            "heldout_kept": kept_held,
+            "heldout_wilson_95": held[version]["kept_wilson_95"],
+            "all_circles_kept": total,
+            "all_circles": count,
+            "all_circles_wilson_95": [round(v, 4) for v in wilson(total, count)],
+        }
+    forward = held["goes_forward"]
+    tuning = json.loads((out / "tuning_circles.json").read_text())
+    table = {}
+    for group, objects in (("tuning", tuning), ("heldout", held[forward]["objects"])):
+        for name, o in objects.items():
+            rows = o["rows_at_or_above_floor_within_60_arcsec"]
+            table[name] = {
+                "group": group,
+                "radius_arcsec": o["radius_arcsec"],
+                "kept": o["kept"],
+                "rows_within_60_arcsec_at_or_above_floor": len(rows),
+                "rows": [
+                    {
+                        "major": round(r["majax"], 1),
+                        "axial": round(r["minax"] / r["majax"], 2),
+                        "total_mjy": round(r["total_flux"], 1),
+                        "peak_ratio": round(r["peak_flux"] / r["total_flux"], 4),
+                        "s_code": r["s_code"],
+                        "listed": r["listed"],
+                    }
+                    for r in rows
+                ],
+            }
+    with (out / "prefilter_list.csv").open() as f:
+        listed = sum(1 for _ in f) - 1
+    result = {"goes_forward": forward, "list_rows_in_file": listed, "versions": versions, "circles": table}
+    (out / "summary.json").write_text(json.dumps(result, indent=1) + "\n")
+    print(json.dumps(result, indent=1))
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("step", choices=("fetch", "fit", "fit2", "fit3", "heldout"))
+    ap.add_argument("step", choices=("fetch", "fit", "fit2", "fit3", "heldout", "summary"))
     ap.add_argument("--data", default="data/prefilter")
     ap.add_argument("--controls", default="controls")
     ap.add_argument("--items", default="docs/reports/2026-10-31-radio-inputs/items.json")
     ap.add_argument("--out", default="docs/reports/2026-10-31-prefilter")
     a = ap.parse_args(argv)
     data, controls, out = Path(a.data), Path(a.controls), Path(a.out)
+    if a.step == "summary":
+        return summary(out)
     if a.step == "fetch":
         return fetch(data)
     if a.step == "fit":
