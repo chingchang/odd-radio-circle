@@ -254,9 +254,9 @@ def ring_score(image: np.ndarray, arcsec_per_pixel: float, beam_arcsec: float) -
     return best if np.isfinite(best) else float("nan")
 
 
-def annulus_rule(score_6: float, score_20: float) -> str:
+def annulus_rule(score_6: float, score_20: float, threshold: float = RING_SCORE_THRESHOLD) -> str:
     """Ring-like if either map's score reaches the threshold; a NaN score fails its comparison."""
-    return RING if score_6 >= RING_SCORE_THRESHOLD or score_20 >= RING_SCORE_THRESHOLD else NOT_RING
+    return RING if score_6 >= threshold or score_20 >= threshold else NOT_RING
 
 
 def detected(image: np.ndarray, arcsec_per_pixel: float) -> bool:
