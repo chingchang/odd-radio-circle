@@ -236,8 +236,8 @@ are on the <a href="circles.html">circles page</a>.</p>
 candidate rows, {named} carry a class Wonder named on a vote, {jets} of them radio_galaxy; those sort after the {plain}
 with none. Wonder's class moves no verdict here. The {objects['board_rows']} rows on this board are
 {objects['board_objects']} objects when rows within 3 arcmin are linked. These maps went to Wonder with no name,
-position or survey; those shown here are for people. Wonder's reasons are shown as given and are not evidence: Wonder saw
-two images and nothing else, so a reason that cites other surveys, spectra or the literature is invented.</p>"""
+position or survey; those shown here are for people. Wonder's reasons are shown as given and are not evidence: Wonder
+saw two images and nothing else, so a reason that cites other surveys, spectra or the literature is invented.</p>"""
     nav = '<a href="circles.html">The 18 known circles</a>'
     return page("Case board", nav, head + "\n" + "\n".join(map(_card, cards)))
 

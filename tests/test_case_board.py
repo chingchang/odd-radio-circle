@@ -1,11 +1,17 @@
 import hashlib
+import html
+import json
+import re
 
 import pytest
 
 from probe import case_board as cb
 from probe import radio
 from probe import screen as sc
+from scripts import case_board as runner
 from scripts.prefilter import committed_unchanged
+
+REPORT = runner.REPORT
 
 
 def vote(item, number, prediction=radio.RING, known_class="no_known_class"):
@@ -174,7 +180,18 @@ def summary():
             "candidate_rows_by_class": {"radio_galaxy": 50},
         },
         "objects": {"board_rows": 132, "board_objects": 130},
-        "circles": {k: c for k in ("on_list", "one_vote", "left", "candidate", "candidate_with_no_named_class")},
+        "circles": {
+            k: c
+            for k in (
+                "on_list",
+                "one_vote",
+                "left",
+                "candidate",
+                "candidate_with_no_named_class",
+                "tuning_candidate",
+                "heldout_candidate",
+            )
+        },
         "circles_lost_at": dict.fromkeys(cb.LOST_STAGES, 1),
         "published_positions_removed": 2,
         "cost": {"stop_usd": 36.0, "ledger_usd": 35.971},
@@ -228,7 +245,8 @@ def test_a_ruled_out_word_in_a_rows_own_fields_stops_the_page():
 
 
 def test_intervals_round_half_up_as_the_earlier_reports_do():
-    assert cb.share({"called": 5, "n": 18, "wilson_95": [0.125, 0.5087]}) == "5 of 18 (95 percent interval 0.13 to 0.51)"
+    five = {"called": 5, "n": 18, "wilson_95": [0.125, 0.5087]}
+    assert cb.share(five) == "5 of 18 (95 percent interval 0.13 to 0.51)"
     assert cb.two_places(0.0) == "0.00"
 
 
@@ -246,3 +264,46 @@ def test_the_readme_section_comes_from_the_summary_and_needs_its_markers():
 
 def test_an_uncommitted_rule_would_refuse(tmp_path):
     assert not committed_unchanged(tmp_path / "unknown.md")
+
+
+def committed_result():
+    return json.loads((REPORT / "summary.json").read_text()), json.loads((REPORT / "verdicts.json").read_text())
+
+
+def test_the_committed_verdicts_are_what_the_rows_and_votes_give():
+    _, verdicts = committed_result()
+    votes = sc.read_votes(runner.VOTES)
+    cut_rows = json.loads((runner.CUT / "rows.json").read_text())
+    assert [v["id"] for v in verdicts] == [r["id"] for r in cut_rows]
+    for v, row in zip(verdicts, cut_rows, strict=True):
+        assert v["verdict"] in cb.VERDICTS
+        assert v["verdict"] == cb.verdict(votes[v["id"], sc.FIRST], votes.get((v["id"], sc.SECOND)), row["removed_by"])
+        assert v["verdict"] != cb.CANDIDATE or not row["removed_by"]
+
+
+def test_the_committed_pages_show_each_board_row_with_the_maps_that_were_voted_on():
+    _, verdicts = committed_result()
+    text = (REPORT / "board.html").read_text()
+    votes = sc.read_votes(runner.VOTES)
+    on_board = [v for v in verdicts if v["verdict"] in (cb.CANDIDATE, cb.SECOND_LOOK) and not v["known_circle"]]
+    in_order = [g["id"] for g in cb.board_rows({v["id"]: v for v in on_board})]
+    assert re.findall(r'<article id="([^"]+)"', text) == in_order
+    for v in on_board:
+        for digest, kind in zip(votes[v["id"], sc.FIRST]["images"], ("6", "20"), strict=True):
+            name = f"images/{v['id']}-{kind}.png"
+            assert f'src="{name}"' in text
+            assert hashlib.sha256((REPORT / name).read_bytes()).hexdigest() == digest["sha256"]
+    assert not {v["id"] for v in verdicts if v["known_circle"]} & set(re.findall(r'<article id="([^"]+)"', text))
+    circles = (REPORT / "circles.html").read_text()
+    assert len(re.findall(r"<article id=", circles)) == 18
+    for name in re.findall(r'src="([^"]+)"', text + circles):
+        assert (REPORT / html.unescape(name)).exists()
+
+
+def test_the_readme_results_are_the_ones_the_runner_wrote():
+    summary_file, _ = committed_result()
+    assert cb.results_section(summary_file) in runner.README.read_text()
+
+
+def test_the_readme_names_no_event():
+    assert not re.search(r"hackathon|competition|challenge|prize", runner.README.read_text(), re.I)
