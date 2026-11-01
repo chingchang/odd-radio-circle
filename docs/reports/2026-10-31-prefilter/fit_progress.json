@@ -1,0 +1,33 @@
+{
+ "done": [
+  20.0,
+  25.0,
+  30.0,
+  40.0,
+  50.0,
+  60.0,
+  80.0,
+  100.0
+ ],
+ "best": {
+  "circles": 4,
+  "lookalikes": 1,
+  "randoms": 0,
+  "size": 1200,
+  "box": {
+   "major_min": 40.0,
+   "major_max": 240.0,
+   "axial_min": 0.6,
+   "sb_max": null,
+   "peak_ratio_max": 0.05,
+   "total_min": 5.0,
+   "total_max": 1000.0,
+   "s_code": "M",
+   "isolation": [
+    1000.0,
+    6.0
+   ]
+  }
+ },
+ "tried": 761005
+}

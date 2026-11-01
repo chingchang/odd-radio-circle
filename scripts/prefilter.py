@@ -2,10 +2,11 @@
 
     uv run python -I scripts/prefilter.py fetch    # rows with majax >= 20 by strip, and the bright sources
     uv run python -I scripts/prefilter.py fit      # picks the box on the tuning circles, lookalikes and random sources
+    uv run python -I scripts/prefilter.py fit2     # the same for a pair of boxes, one per s_code
     (commit the frozen cuts)
     uv run python -I scripts/prefilter.py heldout  # writes the list and counts the held-out circles once
 
-The rule is in docs/proposals/prefilter-v1.md. ``fit`` reads no held-out position.
+The rules are in docs/proposals/prefilter-v1.md and prefilter-v2.md. ``fit`` and ``fit2`` read no held-out position.
 """
 
 from __future__ import annotations
@@ -120,13 +121,7 @@ def fit(data: Path, controls: Path, items: Path, out: Path) -> int:
     out.mkdir(parents=True, exist_ok=True)
     rows, bright = load(data)
     objects = pf.load_fit_objects(controls, items)
-    field = pf.FIELD_RADIUS_ARCMIN * 60
-    radius = pf.circle_radius_arcsec
-    targets = {
-        "tuning": [pf.rows_near(rows, o["ra"], o["dec"], radius(o["name"])) for o in objects["tuning"]],
-        "lookalike": [pf.rows_near(rows, o["ra"], o["dec"], field) for o in objects["lookalike"]],
-        "random": [pf.rows_near(rows, o["ra"], o["dec"], field) for o in objects["random"]],
-    }
+    targets = fit_targets(rows, objects)
     print(f"{len(rows['ra'])} rows; tuning rows per circle {[len(t) for t in targets['tuning']]}", flush=True)
     path = out / "fit_progress.json"
     progress = json.loads(path.read_text()) if path.exists() else {"done": [], "best": None, "tried": 0}
@@ -173,6 +168,69 @@ def fit(data: Path, controls: Path, items: Path, out: Path) -> int:
     return 0
 
 
+def fit_targets(rows: dict, objects: dict) -> dict:
+    field = pf.FIELD_RADIUS_ARCMIN * 60
+    radius = pf.circle_radius_arcsec
+    return {
+        "tuning": [pf.rows_near(rows, o["ra"], o["dec"], radius(o["name"])) for o in objects["tuning"]],
+        "lookalike": [pf.rows_near(rows, o["ra"], o["dec"], field) for o in objects["lookalike"]],
+        "random": [pf.rows_near(rows, o["ra"], o["dec"], field) for o in objects["random"]],
+    }
+
+
+def footprint_for(rows: dict, bright: dict, targets: dict, code: str, data: Path) -> dict:
+    """One s_code's footprint, kept on disk as it lands so that a rerun skips it."""
+    path = data / f"footprint_{code}.json"
+    if path.exists():
+        stored = json.loads(path.read_text())
+        return {tuple(entry["key"]): {int(s): c for s, c in entry["sizes"].items()} for entry in stored}
+    found = pf.footprints(rows, bright, targets, code)
+    stored = [{"key": list(key), "sizes": {str(s): c for s, c in sizes.items()}} for key, sizes in found.items()]
+    tmp = path.with_name(path.name + ".part")
+    tmp.write_text(json.dumps(stored))
+    tmp.rename(path)
+    return found
+
+
+def fit2(data: Path, controls: Path, items: Path, out: Path) -> int:
+    rows, bright = load(data)
+    objects = pf.load_fit_objects(controls, items)
+    targets = fit_targets(rows, objects)
+    start = clock.monotonic()
+    found = {}
+    for code in pf.V2_CODES:
+        found[code] = footprint_for(rows, bright, targets, code, data)
+        print(f"{code}: {len(found[code])} sets of objects, {clock.monotonic() - start:.0f} s", flush=True)
+    best = pf.best_pair(found["M"], found["S"])
+    if best is None:
+        print("no pair of boxes fits the list size", file=sys.stderr)
+        return 1
+    boxes = [pf.box_from_cuts(cuts, code) for cuts, code in zip(best["cuts"], pf.V2_CODES, strict=True)]
+    chosen = pf.union_mask(rows, bright, boxes)
+    if int(chosen.sum()) != sum(best["sizes"]):
+        raise RuntimeError(f"the boxes give {int(chosen.sum())} rows, the search counted {best['sizes']}")
+    v1 = json.loads((out / "frozen_cuts.json").read_text())
+    result = {
+        "rule": "docs/proposals/prefilter-v2.md",
+        "search_table_rows": int(len(rows["ra"])),
+        "list_size": int(chosen.sum()),
+        "box_sizes": dict(zip(pf.V2_CODES, best["sizes"], strict=True)),
+        "tuning_circles_kept": best["circles"].bit_count(),
+        "tuning_circles": len(objects["tuning"]),
+        "lookalikes_kept": best["lookalikes"].bit_count(),
+        "lookalikes": len(objects["lookalike"]),
+        "random_kept": best["randoms"].bit_count(),
+        "random": len(objects["random"]),
+        "boxes": [box.to_json() for box in boxes],
+        "goes_forward": pf.go_forward(v1["tuning_circles_kept"], best["circles"].bit_count()),
+    }
+    (out / "frozen_cuts_v2.json").write_text(json.dumps(result, indent=1) + "\n")
+    per_object = objects_report(rows, objects["tuning"], chosen, lambda o: pf.circle_radius_arcsec(o["name"]))
+    (out / "tuning_circles_v2.json").write_text(json.dumps(per_object, indent=1) + "\n")
+    print(json.dumps(result, indent=1))
+    return 0
+
+
 def committed_unchanged(path: Path) -> bool:
     """Is this file in a commit and the same as that commit? The held-out count must follow the freeze."""
     tracked = subprocess.run(["git", "ls-files", "--error-unmatch", str(path)], capture_output=True)
@@ -181,32 +239,21 @@ def committed_unchanged(path: Path) -> bool:
     return subprocess.run(["git", "diff", "--quiet", "HEAD", "--", str(path)], capture_output=True).returncode == 0
 
 
-def heldout(data: Path, controls: Path, cuts: Path, out: Path) -> int:
-    if not committed_unchanged(cuts):
-        print(f"{cuts} must be committed and unchanged before the held-out count", file=sys.stderr)
-        return 1
-    result_path = out / "heldout.json"
-    if result_path.exists():
-        print(f"{result_path} exists; the held-out count is made once", file=sys.stderr)
-        return 1
-    frozen = json.loads(cuts.read_text())
-    box = pf.Box.from_json(frozen["box"])
-    rows, bright = load(data)
-    chosen = pf.box_mask(rows, bright, box)
-    if int(chosen.sum()) != frozen["list_size"]:
-        raise RuntimeError(f"the frozen box gives {int(chosen.sum())} rows, the fit counted {frozen['list_size']}")
+def write_list(path: Path, rows: dict, chosen: np.ndarray) -> None:
     indices = np.flatnonzero(chosen)
     order = indices[np.argsort(rows["source_name"][indices])]
     lines = [",".join(pf.COLUMNS)]
     for i in order:
         r = row_json(rows, int(i))
         lines.append(",".join(str(r[name]) if isinstance(r[name], str) else f"{r[name]:.6f}" for name in pf.COLUMNS))
-    (out / "prefilter_list.csv").write_text("\n".join(lines) + "\n")
-    objects = json.loads((controls / "heldout.json").read_text())["objects"]
+    path.write_text("\n".join(lines) + "\n")
+
+
+def count_heldout(rows: dict, chosen: np.ndarray, objects: list[dict]) -> dict:
     per_object = objects_report(rows, objects, chosen, lambda o: pf.circle_radius_arcsec(o["name"]))
     kept = sum(o["kept"] for o in per_object.values())
     loose = sum(o["kept_at_60_arcsec"] for o in per_object.values())
-    result = {
+    return {
         "list_size": int(chosen.sum()),
         "heldout_circles": len(objects),
         "kept": kept,
@@ -215,14 +262,46 @@ def heldout(data: Path, controls: Path, cuts: Path, out: Path) -> int:
         "kept_at_60_arcsec_wilson_95": [round(v, 4) for v in wilson(loose, len(objects))],
         "objects": per_object,
     }
+
+
+def heldout(data: Path, controls: Path, out: Path) -> int:
+    paths = {"v1": out / "frozen_cuts.json", "v2": out / "frozen_cuts_v2.json"}
+    for path in paths.values():
+        if not committed_unchanged(path):
+            print(f"{path} must be committed and unchanged before the held-out count", file=sys.stderr)
+            return 1
+    result_path = out / "heldout.json"
+    if result_path.exists():
+        print(f"{result_path} exists; the held-out count is made once", file=sys.stderr)
+        return 1
+    v1, v2 = (json.loads(path.read_text()) for path in paths.values())
+    rows, bright = load(data)
+    masks = {
+        "v1": pf.box_mask(rows, bright, pf.Box.from_json(v1["box"])),
+        "v2": pf.union_mask(rows, bright, [pf.Box.from_json(box) for box in v2["boxes"]]),
+    }
+    for name, frozen in (("v1", v1), ("v2", v2)):
+        if int(masks[name].sum()) != frozen["list_size"]:
+            raise RuntimeError(f"{name} gives {int(masks[name].sum())} rows, the fit counted {frozen['list_size']}")
+    forward = pf.go_forward(v1["tuning_circles_kept"], v2["tuning_circles_kept"])
+    write_list(out / "prefilter_list.csv", rows, masks[forward])
+    objects = json.loads((controls / "heldout.json").read_text())["objects"]
+    result = {
+        "goes_forward": forward,
+        "chosen_from": "tuning counts in the frozen files, before this count",
+        "v1": count_heldout(rows, masks["v1"], objects),
+        "v2": count_heldout(rows, masks["v2"], objects),
+    }
     result_path.write_text(json.dumps(result, indent=1) + "\n")
-    print({k: v for k, v in result.items() if k != "objects"})
+    for name in ("v1", "v2"):
+        print(name, {k: v for k, v in result[name].items() if k != "objects"})
+    print("goes forward:", forward)
     return 0
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("step", choices=("fetch", "fit", "heldout"))
+    ap.add_argument("step", choices=("fetch", "fit", "fit2", "heldout"))
     ap.add_argument("--data", default="data/prefilter")
     ap.add_argument("--controls", default="controls")
     ap.add_argument("--items", default="docs/reports/2026-10-31-radio-inputs/items.json")
@@ -233,7 +312,9 @@ def main(argv=None) -> int:
         return fetch(data)
     if a.step == "fit":
         return fit(data, controls, Path(a.items), out)
-    return heldout(data, controls, out / "frozen_cuts.json", out)
+    if a.step == "fit2":
+        return fit2(data, controls, Path(a.items), out)
+    return heldout(data, controls, out)
 
 
 if __name__ == "__main__":

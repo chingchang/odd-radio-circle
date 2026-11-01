@@ -84,6 +84,16 @@ radii, with 95 percent Wilson intervals.
 There is no pass bar in the plan, and I set none. **The cuts are not refitted after the held-out count, whatever it is.** If a
 later item wants different cuts it writes a v2 and shows both.
 
+## Frozen cuts (added after the fit, before the held-out count)
+
+From `docs/reports/2026-10-31-prefilter/frozen_cuts.json`: major 40 to 240 arcsec, axial at least 0.6, peak_ratio at most
+0.05, total 5 to 1000 mJy, s_code M, no source of 1 Jy or more within 6 arcmin, no cut on sb. List size 1,200 sources; it keeps
+4 of 9 tuning circles, 1 of 30 lookalikes and 0 of 30 random sources.
+
+The first fit gave 0 of 9 because `rows_near` returned row 0 for every object, a bug of mine and not a result. I fixed it, added
+a test that fails on it, and refitted with the grid and the rule unchanged. A second rule, `prefilter-v2.md`, was written after
+seeing these counts and before any held-out row.
+
 ## Limits known in advance
 
 - 17 million boxes fitted on 9 circles can overfit, and the held-out count is the only check of that.

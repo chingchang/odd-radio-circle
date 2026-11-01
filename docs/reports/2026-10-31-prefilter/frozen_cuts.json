@@ -1,0 +1,28 @@
+{
+ "rule": "docs/proposals/prefilter-v1.md",
+ "grid_boxes": 16934400,
+ "boxes_counted": 761005,
+ "search_table_rows": 1105581,
+ "bright_rows": 17150,
+ "list_size": 1200,
+ "tuning_circles_kept": 4,
+ "tuning_circles": 9,
+ "lookalikes_kept": 1,
+ "lookalikes": 30,
+ "random_kept": 0,
+ "random": 30,
+ "box": {
+  "major_min": 40.0,
+  "major_max": 240.0,
+  "axial_min": 0.6,
+  "sb_max": null,
+  "peak_ratio_max": 0.05,
+  "total_min": 5.0,
+  "total_max": 1000.0,
+  "s_code": "M",
+  "isolation": [
+   1000.0,
+   6.0
+  ]
+ }
+}

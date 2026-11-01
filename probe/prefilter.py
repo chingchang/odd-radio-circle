@@ -149,13 +149,13 @@ def rows_near(rows: dict[str, np.ndarray], ra: float, dec: float, radius_arcsec:
         return np.array([], int)
     here = SkyCoord([ra] * deg, [dec] * deg)
     there = SkyCoord(rows["ra"] * deg, rows["dec"] * deg)
-    _, found, _, _ = here.search_around_sky(there, radius_arcsec * arcsec)
+    found, _, _, _ = here.search_around_sky(there, radius_arcsec * arcsec)  # the first index is into ``there``
     return np.unique(found)
 
 
 def load_fit_objects(controls: Path, items_path: Path) -> dict[str, list[dict]]:
-    """The objects the fit may read: tuning circles, lookalikes, random sources. The held-out circles are never returned,
-    though the items file holds them, and an unknown group stops the run rather than being guessed at."""
+    """The objects the fit may read: tuning circles, lookalikes, random sources. The held-out circles are never
+    returned, though the items file holds them, and an unknown group stops the run rather than being guessed at."""
     tuning = json.loads((controls / "tuning.json").read_text())["objects"]
     out: dict[str, list[dict]] = {"tuning": tuning, "lookalike": [], "random": []}
     for item in json.loads(items_path.read_text()):
@@ -249,6 +249,114 @@ def search(
         if on_unit is not None:
             on_unit(value, state["best"], state["tried"])
     return state["best"]
+
+
+V2_CODES = ("M", "S")
+V2_DIMENSIONS = tuple(name for name in DIMENSIONS if name != "s_code")
+
+
+def footprints(
+    rows: dict[str, np.ndarray], bright: dict[str, np.ndarray], targets: dict[str, list[np.ndarray]], code: str
+) -> dict[tuple[int, int, int], dict[int, list]]:
+    """Over the v2 grid with s_code fixed: for each set of objects a box keeps (circles, lookalikes, random, as bit
+    masks), each list size of at most MAX_LIST it can have, and the first box in grid order giving it. A box keeping no
+    circle is left out, and so is every box under it, which is what makes this quick."""
+    masks = cut_masks(rows, bright)
+    keep_code = masks["s_code"][code] if code in masks["s_code"] else rows["s_code"] == code
+    tracked = np.unique(np.concatenate([i for group in targets.values() for i in group] or [np.array([], int)]))
+    position = {int(row): k for k, row in enumerate(tracked)}
+
+    def bits_of(name: str):
+        near = [np.array([position[int(i)] for i in n], int) for n in targets.get(name, [])]
+        return [(1 << k, n) for k, n in enumerate(near) if len(n)]
+
+    tuning, lookalike, random = bits_of("tuning"), bits_of("lookalike"), bits_of("random")
+
+    def bits(small: np.ndarray, group: list) -> int:
+        out = 0
+        for bit, near in group:
+            if small[near].any():
+                out |= bit
+        return out
+
+    small_masks = {n: {v: m[tracked] for v, m in masks[n].items()} for n in V2_DIMENSIONS}
+    words = {n: {v: pack(m) for v, m in masks[n].items()} for n in V2_DIMENSIONS}
+    del masks
+    found: dict[tuple[int, int, int], dict[int, list]] = {}
+    last = len(V2_DIMENSIONS) - 1
+
+    def walk(level: int, small: np.ndarray, big: np.ndarray, chosen: tuple) -> None:
+        name = V2_DIMENSIONS[level]
+        for value in GRID[name]:
+            next_small = small & small_masks[name][value]
+            circles = bits(next_small, tuning)
+            if not circles:
+                continue
+            next_big = big & words[name][value]
+            if level < last:
+                walk(level + 1, next_small, next_big, (*chosen, value))
+                continue
+            size = int(np.bitwise_count(next_big).sum())
+            if size > MAX_LIST:
+                continue
+            key = (circles, bits(next_small, lookalike), bits(next_small, random))
+            found.setdefault(key, {}).setdefault(size, [*chosen, value])
+
+    walk(0, keep_code[tracked], pack(keep_code), ())
+    return found
+
+
+def bit_count(value: int) -> int:
+    return value.bit_count()
+
+
+def best_pair(first: dict, second: dict) -> dict | None:
+    """The best union of a box from each footprint, by the v2 rule. Sizes add, because the two boxes hold different
+    s_codes, so a list's rows never overlap. Every pair is tried."""
+    best = None
+    for key_a in sorted(first):
+        sizes_a = np.array(sorted(first[key_a]))
+        for key_b in sorted(second):
+            sizes_b = np.array(sorted(second[key_b]))
+            if sizes_a[0] + sizes_b[0] > MAX_LIST:
+                continue
+            union = tuple(a | b for a, b in zip(key_a, key_b, strict=True))
+            partial = (bit_count(union[0]), -bit_count(union[1]), -bit_count(union[2]))
+            if best is not None and partial < best["rank"][:3]:
+                continue
+            room = MAX_LIST - sizes_a
+            at = np.searchsorted(sizes_b, room, side="right") - 1  # the largest size_b that fits each size_a
+            totals = np.where(at >= 0, sizes_a + sizes_b[np.clip(at, 0, None)], -1)
+            chosen = int(np.argmax(totals))
+            size = int(totals[chosen])
+            current = (*partial, size)
+            if best is None or current > best["rank"]:
+                size_a, size_b = int(sizes_a[chosen]), int(sizes_b[at[chosen]])
+                best = {
+                    "rank": current,
+                    "circles": union[0],
+                    "lookalikes": union[1],
+                    "randoms": union[2],
+                    "sizes": (size_a, size_b),
+                    "cuts": (first[key_a][size_a], second[key_b][size_b]),
+                }
+    return best
+
+
+def box_from_cuts(cuts: list, code: str) -> Box:
+    return Box.from_json(dict(zip(V2_DIMENSIONS, cuts, strict=True)) | {"s_code": code})
+
+
+def union_mask(rows: dict[str, np.ndarray], bright: dict[str, np.ndarray], boxes: list[Box]) -> np.ndarray:
+    keep = np.zeros(len(rows["ra"]), bool)
+    for box in boxes:
+        keep |= box_mask(rows, bright, box)
+    return keep
+
+
+def go_forward(v1_circles: int, v2_circles: int) -> str:
+    """Decided from tuning counts alone, before the held-out count: v2 only if it keeps more circles than v1."""
+    return "v2" if v2_circles > v1_circles else "v1"
 
 
 def combine_strips(paths: list[Path]) -> dict[str, np.ndarray]:

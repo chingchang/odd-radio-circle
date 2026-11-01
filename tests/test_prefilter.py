@@ -1,5 +1,6 @@
 import json
 import subprocess
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -88,6 +89,18 @@ def test_a_circle_is_kept_at_the_control_files_radius_only():
     assert pf.rows_near(rows, 10.0, 10.0, pf.circle_radius_arcsec("J0000+0000")).tolist() == [0]
     assert pf.rows_near(rows, 20.0, 10.0, pf.circle_radius_arcsec("J0000+0000")).tolist() == []
     assert pf.circle_radius_arcsec("J1633+1441") == 90.0
+
+
+def test_rows_near_returns_the_rows_near_the_position_and_not_the_first_row():
+    rows = table(
+        (10.0, 10.0, 1, 1, 50, 50, "M"),
+        (50.0, 40.0, 1, 1, 50, 50, "M"),
+        (90.0, 20.0, 1, 1, 50, 50, "M"),
+        (90.0, 20 + 20 / 3600, 1, 1, 50, 50, "M"),
+    )
+    assert pf.rows_near(rows, 50.0, 40.0, 30.0).tolist() == [1]
+    assert pf.rows_near(rows, 90.0, 20.0, 30.0).tolist() == [2, 3]
+    assert pf.rows_near(rows, 200.0, -10.0, 30.0).tolist() == []
 
 
 def test_the_fit_never_receives_the_held_out_circles(tmp_path):
@@ -194,7 +207,15 @@ def test_the_box_survives_its_json_form():
 
 def test_the_grid_has_the_nine_cuts_written_in_the_rule():
     assert pf.DIMENSIONS == (
-        "major_min", "major_max", "axial_min", "sb_max", "peak_ratio_max", "total_min", "total_max", "s_code", "isolation",
+        "major_min",
+        "major_max",
+        "axial_min",
+        "sb_max",
+        "peak_ratio_max",
+        "total_min",
+        "total_max",
+        "s_code",
+        "isolation",
     )
     assert min(pf.GRID["major_min"]) == pf.FLOOR_MAJOR_ARCSEC
 
@@ -227,4 +248,94 @@ def test_the_held_out_step_refuses_before_the_freeze_and_reads_nothing(tmp_path,
     run_git(tmp_path, "init")
     monkeypatch.chdir(tmp_path)
     (tmp_path / "frozen_cuts.json").write_text("{}\n")
-    assert runner.heldout(tmp_path / "no_data", tmp_path / "no_controls", tmp_path / "frozen_cuts.json", tmp_path) == 1
+    (tmp_path / "frozen_cuts_v2.json").write_text("{}\n")
+    assert runner.heldout(Path("no_data"), Path("no_controls"), Path(".")) == 1
+    run_git(tmp_path, "add", "frozen_cuts.json")
+    run_git(tmp_path, "commit", "-m", "only the first")
+    assert runner.heldout(Path("no_data"), Path("no_controls"), Path(".")) == 1  # the second is not committed yet
+
+
+def test_the_held_out_count_is_made_once(tmp_path, monkeypatch):
+    run_git(tmp_path, "init")
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "frozen_cuts.json").write_text("{}\n")
+    (tmp_path / "frozen_cuts_v2.json").write_text("{}\n")
+    run_git(tmp_path, "add", ".")
+    run_git(tmp_path, "commit", "-m", "both")
+    (tmp_path / "heldout.json").write_text("{}\n")
+    assert runner.heldout(Path("no_data"), Path("no_controls"), Path(".")) == 1
+
+
+def v2_targets():
+    # row 0 M circle a; row 1 S circle b; row 2 S lookalike near the S box; rows 3.. filler
+    return {"tuning": [np.array([0]), np.array([1])], "lookalike": [np.array([2])], "random": []}
+
+
+def v2_rows():
+    return table(
+        (10.0, 10.0, 12.0, 0.5, 110.0, 100.0, "M"),
+        (20.0, 10.0, 12.0, 0.1, 110.0, 100.0, "S"),
+        (30.0, 10.0, 900.0, 300.0, 110.0, 100.0, "S"),
+        (40.0, 10.0, 12.0, 0.5, 110.0, 100.0, "M"),
+        (50.0, 10.0, 12.0, 0.1, 110.0, 100.0, "S"),
+        (60.0, 10.0, 12.0, 0.1, 110.0, 100.0, "C"),
+    )
+
+
+def v2_grid(monkeypatch):
+    grid = dict.fromkeys(pf.GRID, (pf.OFF,))
+    grid["major_min"] = (100.0, 20.0)
+    grid["sb_max"] = (5e-2, pf.OFF)
+    grid["s_code"] = ("M", pf.OFF)
+    monkeypatch.setattr(pf, "GRID", grid)
+
+
+def test_each_footprint_holds_only_its_own_s_code_and_skips_boxes_with_no_circle(monkeypatch):
+    v2_grid(monkeypatch)
+    rows, targets = v2_rows(), v2_targets()
+    assert set(pf.footprints(rows, NO_BRIGHT, targets, "M")) == {(0b01, 0, 0)}
+    found = pf.footprints(rows, NO_BRIGHT, targets, "S")
+    assert set(found) == {(0b10, 0, 0), (0b10, 1, 0)}
+    assert set(found[(0b10, 0, 0)]) == {2}  # circle b and the other S filler, without the lookalike
+    assert set(found[(0b10, 1, 0)]) == {3}
+
+
+def test_the_best_pair_keeps_both_circles_and_drops_the_lookalike_on_the_tie(monkeypatch):
+    v2_grid(monkeypatch)
+    rows, targets = v2_rows(), v2_targets()
+    best = pf.best_pair(pf.footprints(rows, NO_BRIGHT, targets, "M"), pf.footprints(rows, NO_BRIGHT, targets, "S"))
+    assert best["circles"] == 0b11
+    assert best["lookalikes"] == 0
+    assert best["sizes"] == (2, 2)
+    boxes = [pf.box_from_cuts(cuts, code) for cuts, code in zip(best["cuts"], pf.V2_CODES, strict=True)]
+    mask = pf.union_mask(rows, NO_BRIGHT, boxes)
+    assert mask.tolist() == [True, True, False, True, True, False]  # no lookalike, no C source
+
+
+def test_a_pair_over_the_list_size_is_refused_and_the_largest_that_fits_wins():
+    first = {(0b01, 0, 0): {3: ["a3"], 5: ["a5"]}}
+    second = {(0b10, 0, 0): {4: ["b4"], 9: ["b9"]}}
+    original = pf.MAX_LIST
+    try:
+        pf.MAX_LIST = 6
+        assert pf.best_pair(first, second) is None  # 3 + 4 is over
+        pf.MAX_LIST = 10
+        best = pf.best_pair(first, second)
+        assert best["sizes"] == (5, 4)  # 3 + 9 is over, and 5 + 4 is larger than 3 + 4
+    finally:
+        pf.MAX_LIST = original
+
+
+def test_the_pair_rank_puts_circles_before_lookalikes_before_size():
+    first = {(0b001, 0, 0): {1: ["a"]}, (0b011, 1, 0): {1: ["b"]}}
+    second = {(0b100, 0, 0): {100: ["c"]}, (0b100, 1, 0): {1: ["d"]}}
+    best = pf.best_pair(first, second)
+    assert best["circles"] == 0b111  # three circles beat fewer lookalikes
+    assert best["lookalikes"] == 1
+    assert best["sizes"] == (1, 100)  # the same union either way, so the larger list wins
+
+
+def test_v2_goes_forward_only_when_it_keeps_more_tuning_circles():
+    assert pf.go_forward(4, 5) == "v2"
+    assert pf.go_forward(4, 4) == "v1"
+    assert pf.go_forward(4, 3) == "v1"
