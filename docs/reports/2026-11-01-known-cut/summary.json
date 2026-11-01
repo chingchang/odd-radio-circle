@@ -1,0 +1,838 @@
+{
+ "rule": "docs/proposals/known-cut-v1.md",
+ "threshold": 3.748433227089018,
+ "calibrators_resolved": [
+  "3C 147",
+  "3C 196",
+  "3C 286",
+  "3C 295",
+  "3C 345",
+  "3C 380",
+  "3C 454.3",
+  "3C 48",
+  "Cas A",
+  "Cyg A",
+  "Tau A",
+  "Vir A"
+ ],
+ "calibrators_unresolved": [],
+ "rows": {
+  "ring_like_rows": 200,
+  "known_circle_rows": 7,
+  "other_rows": 193,
+  "with_two_ring_like_votes": 166,
+  "removed_by_any_cut": 61,
+  "left": 139,
+  "left_known_circle_rows": 7,
+  "left_other_rows": 132,
+  "left_other_rows_with_two_votes": 108,
+  "left_other_rows_second_vote_not_ring_like": 23,
+  "left_other_rows_with_no_second_vote": [
+   "list-0409"
+  ],
+  "left_other_objects_within_3_arcmin": 130,
+  "left_other_objects_with_two_votes": 107,
+  "deep_with_no_bright_source": [
+   "list-0808"
+  ],
+  "rows_with_a_galaxy_of_no_size": 42,
+  "rows_with_a_galaxy_above_half_the_ring_only": 8,
+  "left_rows_with_a_galaxy_of_no_size": 30,
+  "left_rows_with_a_galaxy_above_half_the_ring": 6
+ },
+ "cuts": {
+  "galaxy_larger": {
+   "rows_removed": 35,
+   "known_circle_rows_removed": 0,
+   "other_rows_removed": 35,
+   "rows_only_this_cut_removes": 28,
+   "known_circles_removed": [],
+   "rows": [
+    "list-0019",
+    "list-0053",
+    "list-0054",
+    "list-0107",
+    "list-0136",
+    "list-0137",
+    "list-0243",
+    "list-0272",
+    "list-0320",
+    "list-0323",
+    "list-0337",
+    "list-0402",
+    "list-0406",
+    "list-0477",
+    "list-0484",
+    "list-0529",
+    "list-0573",
+    "list-0621",
+    "list-0623",
+    "list-0628",
+    "list-0630",
+    "list-0641",
+    "list-0685",
+    "list-0768",
+    "list-0810",
+    "list-0832",
+    "list-0851",
+    "list-0887",
+    "list-0965",
+    "list-1074",
+    "list-1080",
+    "list-1174",
+    "list-1184",
+    "list-1186",
+    "list-1190"
+   ]
+  },
+  "planetary_nebula": {
+   "rows_removed": 1,
+   "known_circle_rows_removed": 0,
+   "other_rows_removed": 1,
+   "rows_only_this_cut_removes": 1,
+   "known_circles_removed": [],
+   "rows": [
+    "list-0988"
+   ]
+  },
+  "supernova_remnant": {
+   "rows_removed": 1,
+   "known_circle_rows_removed": 0,
+   "other_rows_removed": 1,
+   "rows_only_this_cut_removes": 0,
+   "known_circles_removed": [],
+   "rows": [
+    "list-0641"
+   ]
+  },
+  "hii_region": {
+   "rows_removed": 17,
+   "known_circle_rows_removed": 0,
+   "other_rows_removed": 17,
+   "rows_only_this_cut_removes": 12,
+   "known_circles_removed": [],
+   "rows": [
+    "list-0136",
+    "list-0137",
+    "list-0160",
+    "list-0250",
+    "list-0251",
+    "list-0279",
+    "list-0287",
+    "list-0623",
+    "list-1025",
+    "list-1045",
+    "list-1046",
+    "list-1054",
+    "list-1055",
+    "list-1061",
+    "list-1063",
+    "list-1070",
+    "list-1190"
+   ]
+  },
+  "calibrator": {
+   "rows_removed": 0,
+   "known_circle_rows_removed": 0,
+   "other_rows_removed": 0,
+   "rows_only_this_cut_removes": 0,
+   "known_circles_removed": [],
+   "rows": []
+  },
+  "spokes": {
+   "rows_removed": 15,
+   "known_circle_rows_removed": 0,
+   "other_rows_removed": 15,
+   "rows_only_this_cut_removes": 12,
+   "known_circles_removed": [],
+   "rows": [
+    "list-0073",
+    "list-0108",
+    "list-0113",
+    "list-0189",
+    "list-0190",
+    "list-0221",
+    "list-0357",
+    "list-0477",
+    "list-0621",
+    "list-0631",
+    "list-0723",
+    "list-0844",
+    "list-1005",
+    "list-1025",
+    "list-1170"
+   ]
+  }
+ },
+ "chain": {
+  "circles": {
+   "J1555+2726": {
+    "group": "tuning",
+    "ring_like_rows": [
+     "list-0853",
+     "list-0854"
+    ],
+    "rows_removed_by": {},
+    "before_the_cuts": true,
+    "left": true,
+    "left_with_two_votes": true
+   },
+   "J1313+5003": {
+    "group": "tuning",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J0825+6132": {
+    "group": "tuning",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J1633+1441": {
+    "group": "tuning",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J0823+6216": {
+    "group": "tuning",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J0016+2426": {
+    "group": "tuning",
+    "ring_like_rows": [
+     "list-0012"
+    ],
+    "rows_removed_by": {},
+    "before_the_cuts": true,
+    "left": true,
+    "left_with_two_votes": true
+   },
+   "J0324+8322": {
+    "group": "tuning",
+    "ring_like_rows": [
+     "list-0176"
+    ],
+    "rows_removed_by": {},
+    "before_the_cuts": true,
+    "left": true,
+    "left_with_two_votes": true
+   },
+   "J1436+4832": {
+    "group": "tuning",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J1608+6123": {
+    "group": "tuning",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J0847+7022": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J1134+6642": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J1150+2449": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J1222+6436": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J0320+1610": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J0801+5544": {
+    "group": "heldout",
+    "ring_like_rows": [
+     "list-0396"
+    ],
+    "rows_removed_by": {},
+    "before_the_cuts": true,
+    "left": true,
+    "left_with_two_votes": false
+   },
+   "J0940+6028": {
+    "group": "heldout",
+    "ring_like_rows": [
+     "list-0475",
+     "list-0476"
+    ],
+    "rows_removed_by": {},
+    "before_the_cuts": true,
+    "left": true,
+    "left_with_two_votes": false
+   },
+   "J1458+4534": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   },
+   "J1559+2734": {
+    "group": "heldout",
+    "ring_like_rows": [],
+    "rows_removed_by": {},
+    "before_the_cuts": false,
+    "left": false,
+    "left_with_two_votes": false
+   }
+  },
+  "counts": {
+   "tuning": {
+    "before_the_cuts": {
+     "called": 3,
+     "n": 9,
+     "wilson_95": [
+      0.1206,
+      0.6458
+     ]
+    },
+    "left": {
+     "called": 3,
+     "n": 9,
+     "wilson_95": [
+      0.1206,
+      0.6458
+     ]
+    },
+    "left_with_two_votes": {
+     "called": 3,
+     "n": 9,
+     "wilson_95": [
+      0.1206,
+      0.6458
+     ]
+    }
+   },
+   "heldout": {
+    "before_the_cuts": {
+     "called": 2,
+     "n": 9,
+     "wilson_95": [
+      0.0632,
+      0.5474
+     ]
+    },
+    "left": {
+     "called": 2,
+     "n": 9,
+     "wilson_95": [
+      0.0632,
+      0.5474
+     ]
+    },
+    "left_with_two_votes": {
+     "called": 0,
+     "n": 9,
+     "wilson_95": [
+      0.0,
+      0.2991
+     ]
+    }
+   },
+   "all": {
+    "before_the_cuts": {
+     "called": 5,
+     "n": 18,
+     "wilson_95": [
+      0.125,
+      0.5087
+     ]
+    },
+    "left": {
+     "called": 5,
+     "n": 18,
+     "wilson_95": [
+      0.125,
+      0.5087
+     ]
+    },
+    "left_with_two_votes": {
+     "called": 3,
+     "n": 18,
+     "wilson_95": [
+      0.0584,
+      0.3922
+     ]
+    }
+   }
+  }
+ },
+ "published_positions": {
+  "n": 18,
+  "removed_by_any": 2,
+  "removed_by": {
+   "galaxy_larger": 1,
+   "planetary_nebula": 0,
+   "supernova_remnant": 0,
+   "hii_region": 0,
+   "calibrator": 0,
+   "spokes": 1
+  },
+  "by_circle": {
+   "J1555+2726": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 3.192,
+    "peak_over_noise": 49.7,
+    "neighbour": {
+     "total_flux_mjy": 1276.1,
+     "arcmin_away": 19.15
+    },
+    "matches": {}
+   },
+   "J1313+5003": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 2.701,
+    "peak_over_noise": 50.0,
+    "neighbour": {
+     "total_flux_mjy": 2295.9,
+     "arcmin_away": 14.87
+    },
+    "matches": {}
+   },
+   "J0825+6132": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 2.852,
+    "peak_over_noise": 26.6,
+    "neighbour": {
+     "total_flux_mjy": 2428.3,
+     "arcmin_away": 25.21
+    },
+    "matches": {}
+   },
+   "J1633+1441": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 2.608,
+    "peak_over_noise": 88.8,
+    "neighbour": null,
+    "matches": {}
+   },
+   "J0823+6216": {
+    "group": "tuning",
+    "removed_by": [
+     "galaxy_larger"
+    ],
+    "depth": 2.575,
+    "peak_over_noise": 33.6,
+    "neighbour": {
+     "total_flux_mjy": 2428.3,
+     "arcmin_away": 23.31
+    },
+    "matches": {
+     "galaxy_larger": [
+      "Z 287-74"
+     ]
+    }
+   },
+   "J0016+2426": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 2.904,
+    "peak_over_noise": 50.0,
+    "neighbour": null,
+    "matches": {}
+   },
+   "J0324+8322": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 2.899,
+    "peak_over_noise": 48.8,
+    "neighbour": null,
+    "matches": {}
+   },
+   "J1436+4832": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 1.957,
+    "peak_over_noise": 18.7,
+    "neighbour": null,
+    "matches": {}
+   },
+   "J1608+6123": {
+    "group": "tuning",
+    "removed_by": [],
+    "depth": 2.968,
+    "peak_over_noise": 353.3,
+    "neighbour": null,
+    "matches": {}
+   },
+   "J0847+7022": {
+    "group": "heldout",
+    "removed_by": [
+     "spokes"
+    ],
+    "depth": 6.023,
+    "peak_over_noise": 4883.6,
+    "neighbour": {
+     "total_flux_mjy": 1355.3,
+     "arcmin_away": 10.56
+    },
+    "matches": {}
+   },
+   "J1134+6642": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 2.822,
+    "peak_over_noise": 225.1,
+    "neighbour": {
+     "total_flux_mjy": 1045.4,
+     "arcmin_away": 11.96
+    },
+    "matches": {}
+   },
+   "J1150+2449": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 3.035,
+    "peak_over_noise": 6.9,
+    "neighbour": {
+     "total_flux_mjy": 2082.5,
+     "arcmin_away": 27.65
+    },
+    "matches": {}
+   },
+   "J1222+6436": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 3.075,
+    "peak_over_noise": 59.1,
+    "neighbour": {
+     "total_flux_mjy": 1176.7,
+     "arcmin_away": 24.72
+    },
+    "matches": {}
+   },
+   "J0320+1610": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 2.777,
+    "peak_over_noise": 133.8,
+    "neighbour": {
+     "total_flux_mjy": 6545.1,
+     "arcmin_away": 24.85
+    },
+    "matches": {}
+   },
+   "J0801+5544": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 3.259,
+    "peak_over_noise": 52.4,
+    "neighbour": null,
+    "matches": {}
+   },
+   "J0940+6028": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 2.866,
+    "peak_over_noise": 59.3,
+    "neighbour": {
+     "total_flux_mjy": 5101.0,
+     "arcmin_away": 10.92
+    },
+    "matches": {}
+   },
+   "J1458+4534": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 2.716,
+    "peak_over_noise": 40.9,
+    "neighbour": {
+     "total_flux_mjy": 1222.5,
+     "arcmin_away": 23.8
+    },
+    "matches": {}
+   },
+   "J1559+2734": {
+    "group": "heldout",
+    "removed_by": [],
+    "depth": 2.674,
+    "peak_over_noise": 41.0,
+    "neighbour": null,
+    "matches": {}
+   }
+  },
+  "circles_removed_by_cut": {
+   "galaxy_larger": [
+    "J0823+6216"
+   ],
+   "planetary_nebula": [],
+   "supernova_remnant": [],
+   "hii_region": [],
+   "calibrator": [],
+   "spokes": [
+    "J0847+7022"
+   ]
+  }
+ },
+ "chance_matches": {
+  "n": 200,
+  "removed_by_any": 1,
+  "removed_by": {
+   "galaxy_larger": 1,
+   "planetary_nebula": 0,
+   "supernova_remnant": 0,
+   "hii_region": 0,
+   "calibrator": 0,
+   "spokes": 0
+  }
+ },
+ "lookalikes": {
+  "artefact_ring": {
+   "n": 6,
+   "removed_by_any": 6,
+   "removed_by": {
+    "galaxy_larger": 0,
+    "planetary_nebula": 0,
+    "supernova_remnant": 0,
+    "hii_region": 0,
+    "calibrator": 6,
+    "spokes": 6
+   }
+  },
+  "planetary_nebula": {
+   "n": 6,
+   "removed_by_any": 6,
+   "removed_by": {
+    "galaxy_larger": 0,
+    "planetary_nebula": 6,
+    "supernova_remnant": 0,
+    "hii_region": 0,
+    "calibrator": 0,
+    "spokes": 0
+   }
+  },
+  "radio_galaxy": {
+   "n": 6,
+   "removed_by_any": 5,
+   "removed_by": {
+    "galaxy_larger": 4,
+    "planetary_nebula": 0,
+    "supernova_remnant": 0,
+    "hii_region": 0,
+    "calibrator": 0,
+    "spokes": 3
+   }
+  },
+  "ring_galaxy": {
+   "n": 6,
+   "removed_by_any": 3,
+   "removed_by": {
+    "galaxy_larger": 3,
+    "planetary_nebula": 1,
+    "supernova_remnant": 1,
+    "hii_region": 1,
+    "calibrator": 0,
+    "spokes": 0
+   }
+  },
+  "supernova_remnant": {
+   "n": 6,
+   "removed_by_any": 6,
+   "removed_by": {
+    "galaxy_larger": 0,
+    "planetary_nebula": 0,
+    "supernova_remnant": 6,
+    "hii_region": 1,
+    "calibrator": 0,
+    "spokes": 0
+   }
+  }
+ },
+ "random": {
+  "n": 30,
+  "removed_by_any": 2,
+  "removed_by": {
+   "galaxy_larger": 0,
+   "planetary_nebula": 0,
+   "supernova_remnant": 0,
+   "hii_region": 0,
+   "calibrator": 0,
+   "spokes": 2
+  }
+ },
+ "reading": {
+  "removed_by_any_of_rows": {
+   "called": 61,
+   "n": 200,
+   "wilson_95": [
+    0.2454,
+    0.372
+   ]
+  },
+  "removed_by_a_sky_cut_of_rows": {
+   "called": 49,
+   "n": 200,
+   "wilson_95": [
+    0.1906,
+    0.309
+   ]
+  },
+  "removed_by_spokes_of_rows": {
+   "called": 15,
+   "n": 200,
+   "wilson_95": [
+    0.046,
+    0.12
+   ]
+  },
+  "deepest_known_circle_row": 3.284,
+  "rows_flagged_had_the_threshold_been": {
+   "3.5": 16,
+   "3.75": 15,
+   "4.0": 11,
+   "4.5": 7,
+   "5.0": 6
+  },
+  "left_other_rows_by_the_models_class": {
+   "no_known_class": 59,
+   "radio_galaxy": 57,
+   "planetary_nebula": 10,
+   "supernova_remnant": 6
+  },
+  "chance_matches_of_positions": {
+   "called": 1,
+   "n": 200,
+   "wilson_95": [
+    0.0009,
+    0.0278
+   ]
+  },
+  "simbad_orc_names_at_published_positions": {
+   "tuning-J1555+2726": [
+    "ORC J1555+2726"
+   ],
+   "tuning-J1313+5003": [
+    "ORC J1313+5003"
+   ],
+   "tuning-J0825+6132": [
+    "ORC J0825+6132"
+   ],
+   "tuning-J1633+1441": [
+    "ORC J1633+1441"
+   ],
+   "tuning-J0823+6216": [
+    "ORC J0823+6216"
+   ],
+   "tuning-J0016+2426": [
+    "ORC J0016+2426"
+   ],
+   "tuning-J0324+8322": [
+    "ORC J0324+8322"
+   ],
+   "tuning-J1436+4832": [
+    "ORC J1436+4832"
+   ],
+   "tuning-J1608+6123": [
+    "ORC J1608+6123"
+   ],
+   "heldout-J0847+7022": [
+    "ORC J0847+7022"
+   ],
+   "heldout-J1134+6642": [
+    "ORC J1134+6642"
+   ],
+   "heldout-J1150+2449": [
+    "ORC J1150+2449"
+   ],
+   "heldout-J1222+6436": [
+    "ORC J1222+6436"
+   ],
+   "heldout-J0320+1610": [
+    "ORC J0320+1610"
+   ],
+   "heldout-J0801+5544": [
+    "ORC J0801+5544"
+   ],
+   "heldout-J0940+6028": [
+    "ORC J0940+6028"
+   ],
+   "heldout-J1458+4534": [
+    "ORC J1458+4534"
+   ],
+   "heldout-J1559+2734": [
+    "ORC J1559+2734"
+   ]
+  },
+  "simbad_orc_names_at_ring_like_rows": {
+   "list-0012": [
+    "ORC J0016+2426"
+   ],
+   "list-0176": [
+    "ORC J0324+8322"
+   ],
+   "list-0396": [
+    "ORC J0801+5544"
+   ],
+   "list-0475": [
+    "ORC J0940+6028"
+   ],
+   "list-0476": [
+    "ORC J0940+6028"
+   ],
+   "list-0853": [
+    "ORC J1555+2726"
+   ],
+   "list-0854": [
+    "ORC J1555+2726"
+   ]
+  }
+ },
+ "depth_of_ring_like_rows_percentiles_5_25_50_75_95": [
+  2.35,
+  2.7,
+  2.86,
+  3.01,
+  4.16
+ ]
+}

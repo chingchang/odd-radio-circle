@@ -177,6 +177,36 @@ def _sheet(records: list[dict], out: Path, path: Path, caption) -> None:
     sheet.save(path)
 
 
+def circle_names(rows: list[dict], cones: dict) -> dict[str, list[str]]:
+    """SIMBAD objects named as a circle in the cone, per position. Removes nothing; added after the first measure."""
+    named = {r["id"]: [m["main_id"] for m in cones[r["id"]] if "ORC" in m["main_id"]] for r in rows}
+    return {key: names for key, names in named.items() if names}
+
+
+def reading(rows: list[dict], left_others: list[dict], threshold: float, votes: dict) -> dict:
+    """Counts for reading the result, added after the first measure; none removes a row or moves another count. The
+    model's class is read here only, to describe what the cuts leave."""
+    n = len(rows)
+    classes = {}
+    for row in left_others:
+        name = votes[row["id"], sc.FIRST]["answer"]["known_class"]
+        classes[name] = classes.get(name, 0) + 1
+    circle_depths = [r["depth"] for r in rows if r["known_circle"]]
+    return {
+        "removed_by_any_of_rows": bl.count(sum(bool(r["removed_by"]) for r in rows), n),
+        "removed_by_a_sky_cut_of_rows": bl.count(sum(bool(set(r["removed_by"]) & set(kc.SKY_CUTS)) for r in rows), n),
+        "removed_by_spokes_of_rows": bl.count(sum(kc.SPOKES in r["removed_by"] for r in rows), n),
+        "deepest_known_circle_row": max(circle_depths),
+        "rows_flagged_had_the_threshold_been": {
+            str(value): sum(
+                kc.spoke_flag(r["depth"], r["peak_over_noise"], r["neighbour"], value) for r in rows
+            )
+            for value in (3.5, round(threshold, 2), 4.0, 4.5, 5.0)
+        },
+        "left_other_rows_by_the_models_class": dict(sorted(classes.items(), key=lambda kv: -kv[1])),
+    }
+
+
 def measure(report: Path, data: Path, earlier_data: Path, controls: Path, out: Path, votes: Path = VOTES) -> int:
     if refuse_unfrozen(report):
         return 1
@@ -275,6 +305,9 @@ def measure(report: Path, data: Path, earlier_data: Path, controls: Path, out: P
                     "depth": m["depth"],
                     "peak_over_noise": m["peak_over_noise"],
                     "neighbour": m["neighbour"],
+                    "matches": {
+                        cut: [hit["main_id"] for hit in m["found"][cut]] for cut in kc.CUTS if m["found"].get(cut)
+                    },
                 }
                 for m in published
             },
@@ -285,9 +318,15 @@ def measure(report: Path, data: Path, earlier_data: Path, controls: Path, out: P
         "chance_matches": kc.control_counts([m for m in measured if m["group"] == "shifted"]),
         "lookalikes": {g: kc.control_counts([m for m in measured if m["group"] == g]) for g in groups},
         "random": kc.control_counts([m for m in measured if m["group"] == "random"]),
+        "reading": reading(ring_rows, left_others, threshold, all_votes),
         "depth_of_ring_like_rows_percentiles_5_25_50_75_95": [
             round(float(v), 2) for v in np.percentile([r["depth"] for r in ring_rows], [5, 25, 50, 75, 95])
         ],
+    }
+    result["reading"] |= {
+        "chance_matches_of_positions": bl.count(result["chance_matches"]["removed_by_any"], len(ring_rows)),
+        "simbad_orc_names_at_published_positions": circle_names(published, cones),
+        "simbad_orc_names_at_ring_like_rows": circle_names(ring_rows, cones),
     }
     (report / "summary.json").write_text(json.dumps(result, indent=1) + "\n")
 
@@ -302,7 +341,7 @@ def measure(report: Path, data: Path, earlier_data: Path, controls: Path, out: P
     _sheet(pick, out, sheets / "spokes-6.png", lambda r: f"{r['id']} depth {r['depth']:.1f}")
     sky = [r for r in ring_rows if set(r["removed_by"]) & set(kc.SKY_CUTS)]
     _sheet(sky, out, sheets / "sky_cuts-6.png", lambda r: f"{r['id']} {','.join(r['removed_by'])[:24]}")
-    print(json.dumps({k: result[k] for k in ("rows", "chance_matches", "lookalikes", "random")}, indent=1))
+    print(json.dumps({k: result[k] for k in ("rows", "reading", "chance_matches")}, indent=1))
     return 0
 
 
