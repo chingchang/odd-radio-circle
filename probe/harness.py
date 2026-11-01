@@ -19,12 +19,13 @@ from dataclasses import dataclass, replace
 from pathlib import Path
 
 from landers.models.backend import Backend, ModelClient, WonderRequest, make_backend, request_hash
-from landers.models.ledger import TOTAL_CAP_USD, CapError, Ledger, spent_usd, total_cap_from_env
+from landers.models.ledger import TOTAL_CAP_USD, CapError, Ledger, caps_from_env, spent_usd, total_cap_from_env
 
 from probe import guard
 from probe.score import score, summary_markdown
 
-PROBES_CAP_USD = 10.0  # the model tests together; a lower stop than the project's 40 USD (CLAUDE.md)
+PROJECT_CAP_USD = 40.0  # CLAUDE.md
+PROBES_CAP_USD = 10.0  # the model tests together; a lower stop than the project's 40 USD
 # docs/models.md: 1,300 to 1,500 tokens per 1280 px image, but the API reported far fewer (497 for three images) and the
 # bill may be higher. The ledger charges at least this much, so the cap holds if the reported count is short.
 IMAGE_TOKENS_FLOOR = 1500
@@ -102,22 +103,35 @@ class ProbeClient(ModelClient):
             guard.check_text(text, f"text[{i}]")
 
 
+def open_backend(kind: str, directory: Path, env: dict | None = None) -> Backend:
+    """A backend recording in ``directory``. A real one charges the ledger at least the per-image floor."""
+    backend = make_backend(kind, directory, env)
+    return ImageTokenFloor(backend) if kind == "real" else backend
+
+
 def open_client(
-    kind: str = "fake", out_root: Path = Path("out"), env: dict | None = None, cap_usd: float = PROBES_CAP_USD
+    kind: str = "fake",
+    out_root: Path = Path("out"),
+    env: dict | None = None,
+    cap_usd: float = PROBES_CAP_USD,
+    ceiling_usd: float = PROBES_CAP_USD,
+    wonder_calls: int | None = None,
+    recordings: Path | None = None,
 ) -> ProbeClient:
     """A client on backend ``kind``: ``fake``, ``dry-run``, ``recorded``, or ``real``, which ``make_backend`` refuses
     without ``MODEL_API_KEY`` and ``LANDERS_REAL_CALLS=1``. The ledger continues from disk, so the cap holds over all
-    runs. ``cap_usd`` can lower the cap for one plan item, never raise it. A real run also leaves the landers
-    cumulative cap room, since both spend one credit."""
+    runs. ``cap_usd`` can lower the cap for one plan item, never raise it. Only the paid screen, under the plan's own
+    stop, passes a higher ``ceiling_usd`` and ``wonder_calls``, and nothing passes the project's cap. A real run also
+    leaves the landers cumulative cap room, since both spend one credit."""
     out_root = Path(out_root)
     out_root.mkdir(parents=True, exist_ok=True)
-    directory = {"dry-run": out_root / "model_requests"}.get(kind, out_root / "model_recordings")
-    backend = make_backend(kind, directory, env)
-    cap = min(PROBES_CAP_USD, cap_usd, total_cap_from_env())
+    directory = recordings or {"dry-run": out_root / "model_requests"}.get(kind, out_root / "model_recordings")
+    backend = open_backend(kind, directory, env)
+    cap = min(PROJECT_CAP_USD, ceiling_usd, cap_usd, total_cap_from_env())
     if kind == "real":
-        backend = ImageTokenFloor(backend)
         cap = min(cap, TOTAL_CAP_USD - spent_usd())
-    ledger = Ledger.load(out_root / ("ledger.json" if kind == "real" else f"ledger_{kind}.json"))
+    caps = caps_from_env() | ({"wonder": wonder_calls} if wonder_calls is not None else {})
+    ledger = Ledger.load(out_root / ("ledger.json" if kind == "real" else f"ledger_{kind}.json"), caps)
     ledger.total_cap_usd = cap
     return ProbeClient(backend, ledger, kind)
 

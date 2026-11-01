@@ -157,6 +157,14 @@ def test_a_lower_env_cap_wins_and_a_higher_one_does_not(tmp_path, monkeypatch):
     assert open_client("fake", tmp_path).ledger.total_cap_usd == 10.0
 
 
+def test_only_the_screen_lifts_the_caps_and_never_past_the_project_cap(tmp_path):
+    assert open_client("fake", tmp_path, cap_usd=36.0).ledger.total_cap_usd == 10.0
+    assert open_client("fake", tmp_path).ledger.caps["wonder"] == 300
+    lifted = open_client("fake", tmp_path, cap_usd=36.0, ceiling_usd=36.0, wonder_calls=3000).ledger
+    assert lifted.total_cap_usd == 36.0 and lifted.caps["wonder"] == 3000
+    assert open_client("fake", tmp_path, cap_usd=99.0, ceiling_usd=99.0).ledger.total_cap_usd == 40.0
+
+
 def test_real_needs_key_and_flag(tmp_path):
     with pytest.raises(RuntimeError, match="MODEL_API_KEY"):
         open_client("real", tmp_path, env={"LANDERS_REAL_CALLS": "1"})
