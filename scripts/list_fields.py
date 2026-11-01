@@ -26,12 +26,15 @@ from pathlib import Path
 import numpy as np
 from astropy.coordinates import SkyCoord
 from astropy.units import arcmin, deg
+from landers.models.backend import make_backend
 from landers.models.leak import check_png
+from landers.models.ledger import Ledger
 from PIL import Image, ImageDraw
 
 from probe import baselines as bl
 from probe import guard, radio
 from probe import prefilter as pf
+from probe.harness import ProbeClient
 from probe.score import wilson
 from scripts.prefilter import committed_unchanged
 from scripts.radio_inputs import ENDPOINTS, cutout, process, read_decisions, slug
@@ -168,6 +171,16 @@ def drawn_as_before(earlier: list[dict], earlier_data: Path, earlier_out: Path) 
                 for k in ENDPOINTS
             )
     return {"circles": len(circles), "same_scores": same_scores, "same_png_bytes": same_images}
+
+
+def requests_guarded(items_path: Path) -> int:
+    """Build the screen's request for every field from the items file and guard each one. No call is made."""
+    items, _ = radio.load_items(items_path)
+    with tempfile.TemporaryDirectory() as tmp:
+        client = ProbeClient(make_backend("fake", Path(tmp)), Ledger(path=Path(tmp) / "ledger.json"), "fake")
+        for item in items:
+            client._guard(radio.SPEC.request(item))
+    return len(items)
 
 
 def contact_sheet(records: list[dict], key: str, out: Path, path: Path) -> None:
@@ -324,6 +337,8 @@ def score(data: Path, out: Path, report: Path, controls: Path, earlier_data: Pat
     ]
     (out / "items.json").write_text(json.dumps(items, indent=1) + "\n")
     shutil.copy(out / "items.json", report / "items.json")
+    result["checks"]["requests_guarded"] = requests_guarded(out / "items.json")
+    (report / "baselines.json").write_text(json.dumps(result, indent=1) + "\n")
 
     sheets = report / "contact_sheets"
     sheets.mkdir(exist_ok=True)

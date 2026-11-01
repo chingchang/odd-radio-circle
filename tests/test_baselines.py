@@ -7,7 +7,7 @@ from astropy.io import fits
 from PIL import Image
 
 from probe import baselines as bl
-from probe import radio
+from probe import guard, radio
 from scripts import list_fields as runner
 
 
@@ -235,6 +235,38 @@ def test_a_network_failure_stops_the_run_and_keeps_what_landed(tmp_path, monkeyp
     assert runner.fetch(tmp_path / "d", tmp_path / "o", report, None, 1) == 1
     rows = (report / "fields.jsonl").read_text().splitlines()
     assert len(rows) == 1
+
+
+def drawn_earlier(tmp_path):
+    data, out = tmp_path / "earlier_data", tmp_path / "earlier_out"
+    (data / "cutouts").mkdir(parents=True)
+    (out / "images").mkdir(parents=True)
+    for k in runner.ENDPOINTS:
+        synthetic_cutout(data / "cutouts" / f"tuning-J1-{k}.fits", k)
+    name = {"name": "J1", "group": "tuning", "label": radio.RING, "ra": 10.0, "dec": 20.0}
+    return name | runner.process("tuning-J1", "tuning", radio.RING, 10.0, 20.0, data, out), data, out
+
+
+def test_the_redraw_matches_an_unchanged_earlier_run(tmp_path):
+    record, data, out = drawn_earlier(tmp_path)
+    assert runner.drawn_as_before([record], data, out) == {"circles": 1, "same_scores": 1, "same_png_bytes": 1}
+
+
+def test_the_redraw_tells_a_changed_image_and_a_changed_score(tmp_path):
+    record, data, out = drawn_earlier(tmp_path)
+    (out / record["image_6"]).write_bytes(b"other")
+    record["measures"]["score_20"] += 1
+    assert runner.drawn_as_before([record], data, out) == {"circles": 1, "same_scores": 0, "same_png_bytes": 0}
+
+
+def test_a_field_with_a_leaking_request_is_refused(tmp_path, monkeypatch):
+    record, _, out = drawn_earlier(tmp_path)
+    record |= {"id": "list-0001"}
+    (out / "items.json").write_text(json.dumps([record]))
+    assert runner.requests_guarded(out / "items.json") == 1
+    monkeypatch.setattr(radio, "SPEC", radio.ProbeSpec(radio.SPEC.name, "Is J1555+2726 ring-like?", radio.SCHEMA))
+    with pytest.raises(guard.LeakError):
+        runner.requests_guarded(out / "items.json")
 
 
 def test_score_refuses_until_every_listed_field_is_fetched(tmp_path, monkeypatch):
