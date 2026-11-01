@@ -1,0 +1,229 @@
+{
+ "J1555+2726": {
+  "radius_arcsec": 30.0,
+  "kept": true,
+  "kept_at_60_arcsec": true,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ155524.45+272631.6",
+    "ra": 238.851862841311,
+    "dec": 27.4421340649185,
+    "total_flux": 29.6901723597977,
+    "peak_flux": 1.05641176132431,
+    "majax": 49.141568249155,
+    "minax": 32.3614638755432,
+    "s_code": "M",
+    "listed": true
+   },
+   {
+    "source_name": "ILTJ155524.71+272636.4",
+    "ra": 238.852946145439,
+    "dec": 27.4434477890137,
+    "total_flux": 86.6873874361868,
+    "peak_flux": 0.880228949968685,
+    "majax": 58.7236981854773,
+    "minax": 37.6483696894619,
+    "s_code": "M",
+    "listed": false
+   }
+  ]
+ },
+ "J1313+5003": {
+  "radius_arcsec": 30.0,
+  "kept": true,
+  "kept_at_60_arcsec": true,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ131346.43+500318.7",
+    "ra": 198.443473263084,
+    "dec": 50.0552158289703,
+    "total_flux": 41.0638466460053,
+    "peak_flux": 1.90852284838869,
+    "majax": 41.4666465017156,
+    "minax": 27.5743147135698,
+    "s_code": "M",
+    "listed": true
+   }
+  ]
+ },
+ "J0825+6132": {
+  "radius_arcsec": 30.0,
+  "kept": true,
+  "kept_at_60_arcsec": true,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ082502.38+613246.7",
+    "ra": 126.259913189677,
+    "dec": 61.546309154344,
+    "total_flux": 98.3892738621138,
+    "peak_flux": 0.239956239674411,
+    "majax": 153.40199882452,
+    "minax": 96.2828448015962,
+    "s_code": "S",
+    "listed": true
+   }
+  ]
+ },
+ "J1633+1441": {
+  "radius_arcsec": 90.0,
+  "kept": false,
+  "kept_at_60_arcsec": false,
+  "rows_at_or_above_floor_within_60_arcsec": []
+ },
+ "J0823+6216": {
+  "radius_arcsec": 30.0,
+  "kept": false,
+  "kept_at_60_arcsec": false,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ082338.67+621642.3",
+    "ra": 125.911127667127,
+    "dec": 62.2784172613643,
+    "total_flux": 7.72067940628901,
+    "peak_flux": 0.466243986782518,
+    "majax": 21.005069437045,
+    "minax": 5.80936492747749,
+    "s_code": "M",
+    "listed": false
+   },
+   {
+    "source_name": "ILTJ082340.54+621615.5",
+    "ra": 125.918915656863,
+    "dec": 62.2709903659506,
+    "total_flux": 78.6891289593725,
+    "peak_flux": 0.298019384109743,
+    "majax": 130.398847826849,
+    "minax": 72.9125521818859,
+    "s_code": "S",
+    "listed": false
+   },
+   {
+    "source_name": "ILTJ082341.32+621617.5",
+    "ra": 125.92217160153,
+    "dec": 62.2715418412201,
+    "total_flux": 9.45296920226139,
+    "peak_flux": 1.75098260497701,
+    "majax": 43.0426156898104,
+    "minax": 8.18574127409103,
+    "s_code": "M",
+    "listed": false
+   }
+  ]
+ },
+ "J0016+2426": {
+  "radius_arcsec": 30.0,
+  "kept": false,
+  "kept_at_60_arcsec": false,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ001628.67+242608.6",
+    "ra": 4.11944476891284,
+    "dec": 24.4357415103372,
+    "total_flux": 299.7635540082,
+    "peak_flux": 4.80609111129514,
+    "majax": 46.4324456218329,
+    "minax": 38.7409879166719,
+    "s_code": "M",
+    "listed": false
+   }
+  ]
+ },
+ "J0324+8322": {
+  "radius_arcsec": 30.0,
+  "kept": false,
+  "kept_at_60_arcsec": false,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ032456.77+832136.8",
+    "ra": 51.2365228454591,
+    "dec": 83.3602218428104,
+    "total_flux": 23.9284053922954,
+    "peak_flux": 0.857608909031565,
+    "majax": 46.8100173189925,
+    "minax": 21.4701137572038,
+    "s_code": "S",
+    "listed": false
+   },
+   {
+    "source_name": "ILTJ032445.64+832209.2",
+    "ra": 51.1901541820133,
+    "dec": 83.3692446431831,
+    "total_flux": 142.153382991079,
+    "peak_flux": 3.00087100651975,
+    "majax": 51.4836341555997,
+    "minax": 38.4248837646682,
+    "s_code": "M",
+    "listed": false
+   },
+   {
+    "source_name": "ILTJ032456.46+832220.2",
+    "ra": 51.2352515521055,
+    "dec": 83.3722916471685,
+    "total_flux": 103.14118136381,
+    "peak_flux": 3.30258352337716,
+    "majax": 38.8782667037521,
+    "minax": 20.9787810865399,
+    "s_code": "M",
+    "listed": false
+   }
+  ]
+ },
+ "J1436+4832": {
+  "radius_arcsec": 30.0,
+  "kept": true,
+  "kept_at_60_arcsec": true,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ143622.78+483205.2",
+    "ra": 219.094900146201,
+    "dec": 48.5347951271215,
+    "total_flux": 4.36504255607961,
+    "peak_flux": 1.28497705871523,
+    "majax": 68.3782002285002,
+    "minax": 7.43586961930754,
+    "s_code": "M",
+    "listed": false
+   },
+   {
+    "source_name": "ILTJ143619.31+483210.0",
+    "ra": 219.080469108023,
+    "dec": 48.5361197749545,
+    "total_flux": 402.365497822005,
+    "peak_flux": 0.87939711567134,
+    "majax": 141.289932213741,
+    "minax": 116.641004703361,
+    "s_code": "S",
+    "listed": true
+   }
+  ]
+ },
+ "J1608+6123": {
+  "radius_arcsec": 30.0,
+  "kept": false,
+  "kept_at_60_arcsec": false,
+  "rows_at_or_above_floor_within_60_arcsec": [
+   {
+    "source_name": "ILTJ160840.33+612433.4",
+    "ra": 242.168040826714,
+    "dec": 61.4092819860072,
+    "total_flux": 12.9902894432032,
+    "peak_flux": 0.215107646040815,
+    "majax": 54.502068824725,
+    "minax": 39.924654018635,
+    "s_code": "S",
+    "listed": false
+   },
+   {
+    "source_name": "ILTJ160833.57+612403.6",
+    "ra": 242.139881764193,
+    "dec": 61.4010041523853,
+    "total_flux": 69.9513945080569,
+    "peak_flux": 0.994671850511266,
+    "majax": 52.5099699825164,
+    "minax": 48.2581431457496,
+    "s_code": "S",
+    "listed": false
+   }
+  ]
+ }
+}
