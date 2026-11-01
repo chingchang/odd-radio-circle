@@ -335,7 +335,32 @@ def test_the_pair_rank_puts_circles_before_lookalikes_before_size():
     assert best["sizes"] == (1, 100)  # the same union either way, so the larger list wins
 
 
-def test_v2_goes_forward_only_when_it_keeps_more_tuning_circles():
-    assert pf.go_forward(4, 5) == "v2"
-    assert pf.go_forward(4, 4) == "v1"
-    assert pf.go_forward(4, 3) == "v1"
+def test_the_version_with_the_most_tuning_circles_goes_forward_and_the_earliest_on_a_tie():
+    assert pf.go_forward({"v1": 4, "v2": 5, "v3": 3}) == "v2"
+    assert pf.go_forward({"v1": 4, "v2": 4, "v3": 4}) == "v1"
+    assert pf.go_forward({"v1": 4, "v2": 4, "v3": 7}) == "v3"
+    assert pf.go_forward({"v1": 5, "v2": 4, "v3": 4}) == "v1"
+
+
+def test_v3_only_adds_low_values_of_peak_ratio_to_the_grid():
+    for name in pf.GRID:
+        if name != "peak_ratio_max":
+            assert pf.GRID_V3[name] == pf.GRID[name], name
+    old = pf.GRID["peak_ratio_max"]
+    added = pf.GRID_V3["peak_ratio_max"][: -len(old)]
+    assert pf.GRID_V3["peak_ratio_max"][-len(old) :] == old
+    assert added == (0.002, 0.003, 0.005, 0.0075, 0.01, 0.015)
+
+
+def test_a_finer_peak_ratio_can_drop_what_the_v2_grid_could_not(monkeypatch):
+    v2_grid(monkeypatch)
+    rows = table(
+        (10.0, 10.0, 100.0, 0.2, 110.0, 100.0, "S"),  # the circle, peak_ratio 0.002
+        (20.0, 10.0, 100.0, 1.0, 110.0, 100.0, "S"),  # peak_ratio 0.01
+    )
+    targets = {"tuning": [np.array([0])], "lookalike": [], "random": []}
+    coarse = dict(pf.GRID)
+    coarse["peak_ratio_max"] = (0.02, pf.OFF)
+    fine = coarse | {"peak_ratio_max": (0.002, 0.02, pf.OFF)}
+    assert set(pf.footprints(rows, NO_BRIGHT, targets, "S", coarse)[(1, 0, 0)]) == {2}
+    assert set(pf.footprints(rows, NO_BRIGHT, targets, "S", fine)[(1, 0, 0)]) == {1, 2}

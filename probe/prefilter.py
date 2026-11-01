@@ -38,6 +38,8 @@ GRID = {
     "isolation": ((10000.0, 30.0), (10000.0, 15.0), (3000.0, 12.0), (3000.0, 6.0), (1000.0, 6.0), (1000.0, 3.0), OFF),
 }
 DIMENSIONS = tuple(GRID)
+# docs/proposals/prefilter-v3.md: the only change from GRID is a finer low end on peak_ratio.
+GRID_V3 = GRID | {"peak_ratio_max": (0.002, 0.003, 0.005, 0.0075, 0.01, 0.015, *GRID["peak_ratio_max"])}
 COLUMNS = ("source_name", "ra", "dec", "total_flux", "peak_flux", "majax", "minax", "s_code")
 
 
@@ -94,8 +96,9 @@ def isolated(ra: np.ndarray, dec: np.ndarray, bright: dict[str, np.ndarray], flu
     return keep
 
 
-def cut_masks(rows: dict[str, np.ndarray], bright: dict[str, np.ndarray]) -> dict[str, dict]:
+def cut_masks(rows: dict[str, np.ndarray], bright: dict[str, np.ndarray], grid: dict | None = None) -> dict[str, dict]:
     """For each dimension and each of its values, which rows pass. Off passes every row, even one with a NaN."""
+    grid = GRID if grid is None else grid
     d = derived(rows)
     with np.errstate(invalid="ignore"):
         tests = {
@@ -112,7 +115,7 @@ def cut_masks(rows: dict[str, np.ndarray], bright: dict[str, np.ndarray]) -> dic
         return {
             name: {
                 value: np.ones(len(rows["ra"]), bool) if value is OFF else np.asarray(tests[name](value), bool)
-                for value in GRID[name]
+                for value in grid[name]
             }
             for name in DIMENSIONS
         }
@@ -256,12 +259,17 @@ V2_DIMENSIONS = tuple(name for name in DIMENSIONS if name != "s_code")
 
 
 def footprints(
-    rows: dict[str, np.ndarray], bright: dict[str, np.ndarray], targets: dict[str, list[np.ndarray]], code: str
+    rows: dict[str, np.ndarray],
+    bright: dict[str, np.ndarray],
+    targets: dict[str, list[np.ndarray]],
+    code: str,
+    grid: dict | None = None,
 ) -> dict[tuple[int, int, int], dict[int, list]]:
     """Over the v2 grid with s_code fixed: for each set of objects a box keeps (circles, lookalikes, random, as bit
     masks), each list size of at most MAX_LIST it can have, and the first box in grid order giving it. A box keeping no
     circle is left out, and so is every box under it, which is what makes this quick."""
-    masks = cut_masks(rows, bright)
+    grid = GRID if grid is None else grid
+    masks = cut_masks(rows, bright, grid)
     keep_code = masks["s_code"][code] if code in masks["s_code"] else rows["s_code"] == code
     tracked = np.unique(np.concatenate([i for group in targets.values() for i in group] or [np.array([], int)]))
     position = {int(row): k for k, row in enumerate(tracked)}
@@ -287,7 +295,7 @@ def footprints(
 
     def walk(level: int, small: np.ndarray, big: np.ndarray, chosen: tuple) -> None:
         name = V2_DIMENSIONS[level]
-        for value in GRID[name]:
+        for value in grid[name]:
             next_small = small & small_masks[name][value]
             circles = bits(next_small, tuning)
             if not circles:
@@ -354,9 +362,10 @@ def union_mask(rows: dict[str, np.ndarray], bright: dict[str, np.ndarray], boxes
     return keep
 
 
-def go_forward(v1_circles: int, v2_circles: int) -> str:
-    """Decided from tuning counts alone, before the held-out count: v2 only if it keeps more circles than v1."""
-    return "v2" if v2_circles > v1_circles else "v1"
+def go_forward(tuning_kept: dict[str, int]) -> str:
+    """Decided from tuning counts alone, before the held-out count: the most circles, and on a tie the earliest version.
+    The dict's order is the versions' order."""
+    return max(tuning_kept, key=lambda version: tuning_kept[version])
 
 
 def combine_strips(paths: list[Path]) -> dict[str, np.ndarray]:

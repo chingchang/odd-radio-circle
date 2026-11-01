@@ -3,10 +3,11 @@
     uv run python -I scripts/prefilter.py fetch    # rows with majax >= 20 by strip, and the bright sources
     uv run python -I scripts/prefilter.py fit      # picks the box on the tuning circles, lookalikes and random sources
     uv run python -I scripts/prefilter.py fit2     # the same for a pair of boxes, one per s_code
+    uv run python -I scripts/prefilter.py fit3     # the pair again, with a finer low end on peak_ratio
     (commit the frozen cuts)
     uv run python -I scripts/prefilter.py heldout  # writes the list and counts the held-out circles once
 
-The rules are in docs/proposals/prefilter-v1.md and prefilter-v2.md. ``fit`` and ``fit2`` read no held-out position.
+The rules are in docs/proposals/prefilter-v1.md, -v2.md and -v3.md. The fit steps read no held-out position.
 """
 
 from __future__ import annotations
@@ -178,13 +179,13 @@ def fit_targets(rows: dict, objects: dict) -> dict:
     }
 
 
-def footprint_for(rows: dict, bright: dict, targets: dict, code: str, data: Path) -> dict:
-    """One s_code's footprint, kept on disk as it lands so that a rerun skips it."""
-    path = data / f"footprint_{code}.json"
+def footprint_for(rows: dict, bright: dict, targets: dict, code: str, data: Path, version: str, grid: dict) -> dict:
+    """One s_code's footprint for one version, kept on disk as it lands so that a rerun skips it."""
+    path = data / f"footprint_{version}_{code}.json"
     if path.exists():
         stored = json.loads(path.read_text())
         return {tuple(entry["key"]): {int(s): c for s, c in entry["sizes"].items()} for entry in stored}
-    found = pf.footprints(rows, bright, targets, code)
+    found = pf.footprints(rows, bright, targets, code, grid)
     stored = [{"key": list(key), "sizes": {str(s): c for s, c in sizes.items()}} for key, sizes in found.items()]
     tmp = path.with_name(path.name + ".part")
     tmp.write_text(json.dumps(stored))
@@ -192,14 +193,18 @@ def footprint_for(rows: dict, bright: dict, targets: dict, code: str, data: Path
     return found
 
 
-def fit2(data: Path, controls: Path, items: Path, out: Path) -> int:
+PAIR_VERSIONS = {"v2": (pf.GRID, "frozen_cuts_v2.json"), "v3": (pf.GRID_V3, "frozen_cuts_v3.json")}
+
+
+def fit_pair(version: str, data: Path, controls: Path, items: Path, out: Path) -> int:
+    grid, frozen_name = PAIR_VERSIONS[version]
     rows, bright = load(data)
     objects = pf.load_fit_objects(controls, items)
     targets = fit_targets(rows, objects)
     start = clock.monotonic()
     found = {}
     for code in pf.V2_CODES:
-        found[code] = footprint_for(rows, bright, targets, code, data)
+        found[code] = footprint_for(rows, bright, targets, code, data, version, grid)
         print(f"{code}: {len(found[code])} sets of objects, {clock.monotonic() - start:.0f} s", flush=True)
     best = pf.best_pair(found["M"], found["S"])
     if best is None:
@@ -209,9 +214,8 @@ def fit2(data: Path, controls: Path, items: Path, out: Path) -> int:
     chosen = pf.union_mask(rows, bright, boxes)
     if int(chosen.sum()) != sum(best["sizes"]):
         raise RuntimeError(f"the boxes give {int(chosen.sum())} rows, the search counted {best['sizes']}")
-    v1 = json.loads((out / "frozen_cuts.json").read_text())
     result = {
-        "rule": "docs/proposals/prefilter-v2.md",
+        "rule": f"docs/proposals/prefilter-{version}.md",
         "search_table_rows": int(len(rows["ra"])),
         "list_size": int(chosen.sum()),
         "box_sizes": dict(zip(pf.V2_CODES, best["sizes"], strict=True)),
@@ -222,11 +226,10 @@ def fit2(data: Path, controls: Path, items: Path, out: Path) -> int:
         "random_kept": best["randoms"].bit_count(),
         "random": len(objects["random"]),
         "boxes": [box.to_json() for box in boxes],
-        "goes_forward": pf.go_forward(v1["tuning_circles_kept"], best["circles"].bit_count()),
     }
-    (out / "frozen_cuts_v2.json").write_text(json.dumps(result, indent=1) + "\n")
+    (out / frozen_name).write_text(json.dumps(result, indent=1) + "\n")
     per_object = objects_report(rows, objects["tuning"], chosen, lambda o: pf.circle_radius_arcsec(o["name"]))
-    (out / "tuning_circles_v2.json").write_text(json.dumps(per_object, indent=1) + "\n")
+    (out / f"tuning_circles_{version}.json").write_text(json.dumps(per_object, indent=1) + "\n")
     print(json.dumps(result, indent=1))
     return 0
 
@@ -265,7 +268,7 @@ def count_heldout(rows: dict, chosen: np.ndarray, objects: list[dict]) -> dict:
 
 
 def heldout(data: Path, controls: Path, out: Path) -> int:
-    paths = {"v1": out / "frozen_cuts.json", "v2": out / "frozen_cuts_v2.json"}
+    paths = {"v1": out / "frozen_cuts.json"} | {v: out / name for v, (_, name) in PAIR_VERSIONS.items()}
     for path in paths.values():
         if not committed_unchanged(path):
             print(f"{path} must be committed and unchanged before the held-out count", file=sys.stderr)
@@ -274,34 +277,32 @@ def heldout(data: Path, controls: Path, out: Path) -> int:
     if result_path.exists():
         print(f"{result_path} exists; the held-out count is made once", file=sys.stderr)
         return 1
-    v1, v2 = (json.loads(path.read_text()) for path in paths.values())
+    frozen = {version: json.loads(path.read_text()) for version, path in paths.items()}
     rows, bright = load(data)
-    masks = {
-        "v1": pf.box_mask(rows, bright, pf.Box.from_json(v1["box"])),
-        "v2": pf.union_mask(rows, bright, [pf.Box.from_json(box) for box in v2["boxes"]]),
-    }
-    for name, frozen in (("v1", v1), ("v2", v2)):
-        if int(masks[name].sum()) != frozen["list_size"]:
-            raise RuntimeError(f"{name} gives {int(masks[name].sum())} rows, the fit counted {frozen['list_size']}")
-    forward = pf.go_forward(v1["tuning_circles_kept"], v2["tuning_circles_kept"])
+    masks = {}
+    for version, cuts in frozen.items():
+        boxes = cuts["boxes"] if "boxes" in cuts else [cuts["box"]]
+        masks[version] = pf.union_mask(rows, bright, [pf.Box.from_json(box) for box in boxes])
+        if int(masks[version].sum()) != cuts["list_size"]:
+            raise RuntimeError(f"{version} gives {int(masks[version].sum())} rows, the fit counted {cuts['list_size']}")
+    forward = pf.go_forward({version: cuts["tuning_circles_kept"] for version, cuts in frozen.items()})
     write_list(out / "prefilter_list.csv", rows, masks[forward])
     objects = json.loads((controls / "heldout.json").read_text())["objects"]
     result = {
         "goes_forward": forward,
         "chosen_from": "tuning counts in the frozen files, before this count",
-        "v1": count_heldout(rows, masks["v1"], objects),
-        "v2": count_heldout(rows, masks["v2"], objects),
     }
+    result |= {version: count_heldout(rows, mask, objects) for version, mask in masks.items()}
     result_path.write_text(json.dumps(result, indent=1) + "\n")
-    for name in ("v1", "v2"):
-        print(name, {k: v for k, v in result[name].items() if k != "objects"})
+    for version in masks:
+        print(version, {k: v for k, v in result[version].items() if k != "objects"})
     print("goes forward:", forward)
     return 0
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("step", choices=("fetch", "fit", "fit2", "heldout"))
+    ap.add_argument("step", choices=("fetch", "fit", "fit2", "fit3", "heldout"))
     ap.add_argument("--data", default="data/prefilter")
     ap.add_argument("--controls", default="controls")
     ap.add_argument("--items", default="docs/reports/2026-10-31-radio-inputs/items.json")
@@ -312,8 +313,8 @@ def main(argv=None) -> int:
         return fetch(data)
     if a.step == "fit":
         return fit(data, controls, Path(a.items), out)
-    if a.step == "fit2":
-        return fit2(data, controls, Path(a.items), out)
+    if a.step in ("fit2", "fit3"):
+        return fit_pair({"fit2": "v2", "fit3": "v3"}[a.step], data, controls, Path(a.items), out)
     return heldout(data, controls, out)
 
 
