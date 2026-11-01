@@ -1,0 +1,2444 @@
+[
+ {
+  "id": "list-0008",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ001132.54+090958.3",
+  "ra": 2.885593,
+  "dec": 9.166196
+ },
+ {
+  "id": "list-0012",
+  "known_circle": "J0016+2426",
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ001628.67+242608.6",
+  "ra": 4.119445,
+  "dec": 24.435742
+ },
+ {
+  "id": "list-0013",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ001726.05+403555.0",
+  "ra": 4.358524,
+  "dec": 40.598614
+ },
+ {
+  "id": "list-0014",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ001726.60+403551.5",
+  "ra": 4.360832,
+  "dec": 40.597661
+ },
+ {
+  "id": "list-0019",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ002213.74+102927.4",
+  "ra": 5.557265,
+  "dec": 10.490949
+ },
+ {
+  "id": "list-0037",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ003908.71+724735.0",
+  "ra": 9.786294,
+  "dec": 72.793073
+ },
+ {
+  "id": "list-0042",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ004303.45+540157.2",
+  "ra": 10.764369,
+  "dec": 54.032572
+ },
+ {
+  "id": "list-0051",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ005115.77+574749.8",
+  "ra": 12.815716,
+  "dec": 57.79719
+ },
+ {
+  "id": "list-0053",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ005204.50+473301.8",
+  "ra": 13.018771,
+  "dec": 47.550516
+ },
+ {
+  "id": "list-0054",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ005204.83+473313.0",
+  "ra": 13.020134,
+  "dec": 47.553618
+ },
+ {
+  "id": "list-0055",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ005340.92+413945.9",
+  "ra": 13.420502,
+  "dec": 41.662775
+ },
+ {
+  "id": "list-0057",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ005422.40+523723.9",
+  "ra": 13.593352,
+  "dec": 52.623316
+ },
+ {
+  "id": "list-0073",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ010745.55+735151.6",
+  "ra": 16.939785,
+  "dec": 73.864353
+ },
+ {
+  "id": "list-0090",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ013638.20+134820.0",
+  "ra": 24.159166,
+  "dec": 13.805579
+ },
+ {
+  "id": "list-0093",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ014154.21+274234.6",
+  "ra": 25.475886,
+  "dec": 27.709622
+ },
+ {
+  "id": "list-0104",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ015251.33+113544.0",
+  "ra": 28.213863,
+  "dec": 11.59557
+ },
+ {
+  "id": "list-0107",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ015742.30+355457.2",
+  "ra": 29.42625,
+  "dec": 35.91591
+ },
+ {
+  "id": "list-0108",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ015834.17+443430.6",
+  "ra": 29.642375,
+  "dec": 44.575173
+ },
+ {
+  "id": "list-0113",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ020939.38+015426.0",
+  "ra": 32.414081,
+  "dec": 1.907232
+ },
+ {
+  "id": "list-0134",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ023110.91+103415.2",
+  "ra": 37.795459,
+  "dec": 10.570891
+ },
+ {
+  "id": "list-0136",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "hii_region"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ023413.22+291843.1",
+  "ra": 38.555066,
+  "dec": 29.311987
+ },
+ {
+  "id": "list-0137",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "hii_region"
+  ],
+  "named_classes": [],
+  "name": "ILTJ023413.68+291838.3",
+  "ra": 38.557016,
+  "dec": 29.310664
+ },
+ {
+  "id": "list-0151",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ025150.68+622744.8",
+  "ra": 42.961168,
+  "dec": 62.462461
+ },
+ {
+  "id": "list-0155",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ025439.82+132334.3",
+  "ra": 43.665899,
+  "dec": 13.392866
+ },
+ {
+  "id": "list-0156",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ025531.71+104331.2",
+  "ra": 43.88214,
+  "dec": 10.725353
+ },
+ {
+  "id": "list-0160",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ030315.07+602754.1",
+  "ra": 45.812799,
+  "dec": 60.46503
+ },
+ {
+  "id": "list-0162",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ030503.78+051431.1",
+  "ra": 46.265733,
+  "dec": 5.241977
+ },
+ {
+  "id": "list-0165",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ030940.87+611232.1",
+  "ra": 47.420307,
+  "dec": 61.208924
+ },
+ {
+  "id": "list-0166",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ031251.90+044226.2",
+  "ra": 48.21626,
+  "dec": 4.707294
+ },
+ {
+  "id": "list-0167",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ031337.42+114744.5",
+  "ra": 48.405932,
+  "dec": 11.795714
+ },
+ {
+  "id": "list-0168",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ031745.30+012614.0",
+  "ra": 49.438752,
+  "dec": 1.437234
+ },
+ {
+  "id": "list-0169",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ031816.51+015621.0",
+  "ra": 49.568812,
+  "dec": 1.93918
+ },
+ {
+  "id": "list-0175",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ032306.96+554147.5",
+  "ra": 50.778984,
+  "dec": 55.696528
+ },
+ {
+  "id": "list-0176",
+  "known_circle": "J0324+8322",
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ032445.64+832209.2",
+  "ra": 51.190154,
+  "dec": 83.369245
+ },
+ {
+  "id": "list-0177",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ032456.65+195452.0",
+  "ra": 51.236042,
+  "dec": 19.914469
+ },
+ {
+  "id": "list-0180",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ033117.47+752015.5",
+  "ra": 52.8228,
+  "dec": 75.337639
+ },
+ {
+  "id": "list-0184",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ033627.73+483017.0",
+  "ra": 54.115542,
+  "dec": 48.504741
+ },
+ {
+  "id": "list-0187",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "galaxy"
+  ],
+  "name": "ILTJ034057.69+003244.3",
+  "ra": 55.240362,
+  "dec": 0.54566
+ },
+ {
+  "id": "list-0189",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ034242.56+152234.1",
+  "ra": 55.677332,
+  "dec": 15.376151
+ },
+ {
+  "id": "list-0190",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ034243.71+152230.5",
+  "ra": 55.682109,
+  "dec": 15.375145
+ },
+ {
+  "id": "list-0196",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ034904.61+053405.8",
+  "ra": 57.269203,
+  "dec": 5.568297
+ },
+ {
+  "id": "list-0201",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ035127.49+281605.2",
+  "ra": 57.864557,
+  "dec": 28.268112
+ },
+ {
+  "id": "list-0221",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ042009.74+040409.1",
+  "ra": 65.040573,
+  "dec": 4.069208
+ },
+ {
+  "id": "list-0243",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ043338.55+453007.9",
+  "ra": 68.410621,
+  "dec": 45.502198
+ },
+ {
+  "id": "list-0250",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ043649.41+505240.8",
+  "ra": 69.205863,
+  "dec": 50.878007
+ },
+ {
+  "id": "list-0251",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ043650.12+505240.2",
+  "ra": 69.208844,
+  "dec": 50.877841
+ },
+ {
+  "id": "list-0254",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ043734.90+541436.7",
+  "ra": 69.395419,
+  "dec": 54.243529
+ },
+ {
+  "id": "list-0266",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ044721.30+085658.8",
+  "ra": 71.838748,
+  "dec": 8.94969
+ },
+ {
+  "id": "list-0272",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ050044.09+621441.4",
+  "ra": 75.183707,
+  "dec": 62.244858
+ },
+ {
+  "id": "list-0279",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [],
+  "name": "ILTJ051325.82+372700.1",
+  "ra": 78.357571,
+  "dec": 37.450041
+ },
+ {
+  "id": "list-0285",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ052707.00+544455.8",
+  "ra": 81.779178,
+  "dec": 54.748845
+ },
+ {
+  "id": "list-0287",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ053128.71+341502.6",
+  "ra": 82.869612,
+  "dec": 34.250733
+ },
+ {
+  "id": "list-0292",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ060120.80+865637.7",
+  "ra": 90.336654,
+  "dec": 86.943816
+ },
+ {
+  "id": "list-0294",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ060245.75+322921.5",
+  "ra": 90.69061,
+  "dec": 32.489312
+ },
+ {
+  "id": "list-0295",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ060436.99+763633.3",
+  "ra": 91.154109,
+  "dec": 76.609258
+ },
+ {
+  "id": "list-0297",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ060555.09+562308.8",
+  "ra": 91.479558,
+  "dec": 56.385792
+ },
+ {
+  "id": "list-0304",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ061816.97+683338.5",
+  "ra": 94.570724,
+  "dec": 68.560696
+ },
+ {
+  "id": "list-0310",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ062427.40+555454.6",
+  "ra": 96.114151,
+  "dec": 55.915174
+ },
+ {
+  "id": "list-0317",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ064054.41+435702.4",
+  "ra": 100.226721,
+  "dec": 43.950686
+ },
+ {
+  "id": "list-0320",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ064241.25+530943.9",
+  "ra": 100.671883,
+  "dec": 53.162198
+ },
+ {
+  "id": "list-0323",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ064631.84+602013.2",
+  "ra": 101.632686,
+  "dec": 60.337009
+ },
+ {
+  "id": "list-0328",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ070026.78+831422.4",
+  "ra": 105.111569,
+  "dec": 83.239574
+ },
+ {
+  "id": "list-0336",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ070807.48+723024.7",
+  "ra": 107.031179,
+  "dec": 72.506884
+ },
+ {
+  "id": "list-0337",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ070810.88+504057.1",
+  "ra": 107.04534,
+  "dec": 50.682548
+ },
+ {
+  "id": "list-0340",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ070828.66+483825.8",
+  "ra": 107.119428,
+  "dec": 48.640508
+ },
+ {
+  "id": "list-0343",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ071343.28+070949.9",
+  "ra": 108.430353,
+  "dec": 7.163884
+ },
+ {
+  "id": "list-0357",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ072342.78+140437.4",
+  "ra": 110.928256,
+  "dec": 14.077077
+ },
+ {
+  "id": "list-0358",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ072616.99+500040.7",
+  "ra": 111.570784,
+  "dec": 50.01133
+ },
+ {
+  "id": "list-0361",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ072651.87+352703.9",
+  "ra": 111.716139,
+  "dec": 35.451084
+ },
+ {
+  "id": "list-0375",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ073701.87+510435.7",
+  "ra": 114.257784,
+  "dec": 51.076582
+ },
+ {
+  "id": "list-0381",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ074727.69+313204.4",
+  "ra": 116.865386,
+  "dec": 31.53458
+ },
+ {
+  "id": "list-0383",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ074823.27+320418.0",
+  "ra": 117.096958,
+  "dec": 32.071666
+ },
+ {
+  "id": "list-0388",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ075419.45+600446.3",
+  "ra": 118.58105,
+  "dec": 60.079547
+ },
+ {
+  "id": "list-0389",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ075525.14+010206.4",
+  "ra": 118.854731,
+  "dec": 1.035129
+ },
+ {
+  "id": "list-0392",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ075713.20+491919.6",
+  "ra": 119.305005,
+  "dec": 49.322123
+ },
+ {
+  "id": "list-0395",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ080034.02+244428.6",
+  "ra": 120.141754,
+  "dec": 24.741296
+ },
+ {
+  "id": "list-0396",
+  "known_circle": "J0801+5544",
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ080103.39+554423.8",
+  "ra": 120.26412,
+  "dec": 55.739944
+ },
+ {
+  "id": "list-0402",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ081455.72+733444.4",
+  "ra": 123.732163,
+  "dec": 73.579006
+ },
+ {
+  "id": "list-0406",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ081600.81+270434.1",
+  "ra": 124.003358,
+  "dec": 27.076163
+ },
+ {
+  "id": "list-0409",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ082017.31+143855.8",
+  "ra": 125.072108,
+  "dec": 14.648841
+ },
+ {
+  "id": "list-0412",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ082546.88+675004.8",
+  "ra": 126.445339,
+  "dec": 67.834674
+ },
+ {
+  "id": "list-0428",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ084236.94+702908.7",
+  "ra": 130.653903,
+  "dec": 70.485766
+ },
+ {
+  "id": "list-0430",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ084808.68+671449.1",
+  "ra": 132.036158,
+  "dec": 67.246981
+ },
+ {
+  "id": "list-0438",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ085515.97+145635.1",
+  "ra": 133.816552,
+  "dec": 14.943087
+ },
+ {
+  "id": "list-0442",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ090221.58+033104.9",
+  "ra": 135.589903,
+  "dec": 3.518042
+ },
+ {
+  "id": "list-0450",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ091037.59+314939.1",
+  "ra": 137.656619,
+  "dec": 31.827534
+ },
+ {
+  "id": "list-0462",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ092607.15+411637.3",
+  "ra": 141.529809,
+  "dec": 41.277028
+ },
+ {
+  "id": "list-0463",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ092608.20+411638.2",
+  "ra": 141.534149,
+  "dec": 41.277293
+ },
+ {
+  "id": "list-0475",
+  "known_circle": "J0940+6028",
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ094050.42+602836.5",
+  "ra": 145.210101,
+  "dec": 60.476812
+ },
+ {
+  "id": "list-0476",
+  "known_circle": "J0940+6028",
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ094052.52+602845.2",
+  "ra": 145.218848,
+  "dec": 60.479244
+ },
+ {
+  "id": "list-0477",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "spokes"
+  ],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ094203.83+002014.9",
+  "ra": 145.515955,
+  "dec": 0.337492
+ },
+ {
+  "id": "list-0479",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ094319.75+061848.5",
+  "ra": 145.832282,
+  "dec": 6.313485
+ },
+ {
+  "id": "list-0480",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ094324.98+122437.0",
+  "ra": 145.854095,
+  "dec": 12.410278
+ },
+ {
+  "id": "list-0482",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ094419.89+683117.0",
+  "ra": 146.082859,
+  "dec": 68.521403
+ },
+ {
+  "id": "list-0484",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ094508.67+683538.7",
+  "ra": 146.286106,
+  "dec": 68.594083
+ },
+ {
+  "id": "list-0490",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ094942.17+054607.9",
+  "ra": 147.425695,
+  "dec": 5.768878
+ },
+ {
+  "id": "list-0492",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ094952.65+291537.6",
+  "ra": 147.469381,
+  "dec": 29.260453
+ },
+ {
+  "id": "list-0493",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ095011.15+591547.1",
+  "ra": 147.546454,
+  "dec": 59.2631
+ },
+ {
+  "id": "list-0496",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ095428.93+060219.4",
+  "ra": 148.620553,
+  "dec": 6.038738
+ },
+ {
+  "id": "list-0502",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ095749.58+142633.8",
+  "ra": 149.456594,
+  "dec": 14.442744
+ },
+ {
+  "id": "list-0504",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ095840.06+382810.3",
+  "ra": 149.666937,
+  "dec": 38.469539
+ },
+ {
+  "id": "list-0506",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ100232.61+131024.3",
+  "ra": 150.635862,
+  "dec": 13.173423
+ },
+ {
+  "id": "list-0512",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ100655.58+564442.6",
+  "ra": 151.73157,
+  "dec": 56.745168
+ },
+ {
+  "id": "list-0524",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ101434.78+625249.3",
+  "ra": 153.644908,
+  "dec": 62.880374
+ },
+ {
+  "id": "list-0529",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "galaxy"
+  ],
+  "name": "ILTJ101653.44+732358.3",
+  "ra": 154.222654,
+  "dec": 73.399543
+ },
+ {
+  "id": "list-0539",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ102551.98+111355.6",
+  "ra": 156.46658,
+  "dec": 11.232121
+ },
+ {
+  "id": "list-0543",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ102725.34+141042.7",
+  "ra": 156.855582,
+  "dec": 14.178546
+ },
+ {
+  "id": "list-0573",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ105436.82+565929.3",
+  "ra": 163.653434,
+  "dec": 56.991487
+ },
+ {
+  "id": "list-0576",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ105909.92+170001.7",
+  "ra": 164.791323,
+  "dec": 17.000478
+ },
+ {
+  "id": "list-0579",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ110203.81+120428.9",
+  "ra": 165.515894,
+  "dec": 12.074709
+ },
+ {
+  "id": "list-0585",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ110754.60+450248.0",
+  "ra": 166.977507,
+  "dec": 45.046678
+ },
+ {
+  "id": "list-0611",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ113003.67+463228.3",
+  "ra": 172.515301,
+  "dec": 46.541194
+ },
+ {
+  "id": "list-0612",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ113537.94+285621.5",
+  "ra": 173.908067,
+  "dec": 28.939328
+ },
+ {
+  "id": "list-0620",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ114152.17+693342.9",
+  "ra": 175.467393,
+  "dec": 69.561927
+ },
+ {
+  "id": "list-0621",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ114441.53+355757.6",
+  "ra": 176.173025,
+  "dec": 35.966001
+ },
+ {
+  "id": "list-0623",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "hii_region"
+  ],
+  "named_classes": [
+   "galaxy"
+  ],
+  "name": "ILTJ114837.51+484236.0",
+  "ra": 177.156306,
+  "dec": 48.710015
+ },
+ {
+  "id": "list-0628",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ115342.62+475131.6",
+  "ra": 178.427576,
+  "dec": 47.858802
+ },
+ {
+  "id": "list-0629",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ115425.21+040502.2",
+  "ra": 178.605023,
+  "dec": 4.083966
+ },
+ {
+  "id": "list-0630",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ115458.36+582925.7",
+  "ra": 178.74316,
+  "dec": 58.490491
+ },
+ {
+  "id": "list-0631",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ115521.34+535404.7",
+  "ra": 178.8389,
+  "dec": 53.901306
+ },
+ {
+  "id": "list-0636",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ115743.26+420501.9",
+  "ra": 179.43026,
+  "dec": 42.083882
+ },
+ {
+  "id": "list-0637",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ115830.53+243855.3",
+  "ra": 179.627206,
+  "dec": 24.648716
+ },
+ {
+  "id": "list-0641",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "supernova_remnant"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ120023.58-010601.0",
+  "ra": 180.098257,
+  "dec": -1.100303
+ },
+ {
+  "id": "list-0643",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ120323.27+285602.6",
+  "ra": 180.84694,
+  "dec": 28.934077
+ },
+ {
+  "id": "list-0658",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ122523.25+752209.6",
+  "ra": 186.346881,
+  "dec": 75.369352
+ },
+ {
+  "id": "list-0671",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ124557.60+360340.3",
+  "ra": 191.490004,
+  "dec": 36.061203
+ },
+ {
+  "id": "list-0685",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ130039.27+023001.4",
+  "ra": 195.163617,
+  "dec": 2.5004
+ },
+ {
+  "id": "list-0687",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ130417.57+223818.1",
+  "ra": 196.073221,
+  "dec": 22.638381
+ },
+ {
+  "id": "list-0702",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ131601.60+083502.3",
+  "ra": 199.00668,
+  "dec": 8.583982
+ },
+ {
+  "id": "list-0723",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ134132.63+551520.0",
+  "ra": 205.385968,
+  "dec": 55.255581
+ },
+ {
+  "id": "list-0728",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ134429.98+104637.5",
+  "ra": 206.124905,
+  "dec": 10.777099
+ },
+ {
+  "id": "list-0733",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ134641.72+181950.4",
+  "ra": 206.673822,
+  "dec": 18.330681
+ },
+ {
+  "id": "list-0735",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ134808.89+092051.9",
+  "ra": 207.03705,
+  "dec": 9.347774
+ },
+ {
+  "id": "list-0737",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ134942.69+454525.1",
+  "ra": 207.427887,
+  "dec": 45.756977
+ },
+ {
+  "id": "list-0754",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ140819.40+623715.2",
+  "ra": 212.08085,
+  "dec": 62.620913
+ },
+ {
+  "id": "list-0761",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ141614.04+682037.0",
+  "ra": 214.058512,
+  "dec": 68.343624
+ },
+ {
+  "id": "list-0768",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ142740.59+694137.0",
+  "ra": 216.919112,
+  "dec": 69.693635
+ },
+ {
+  "id": "list-0795",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ145235.36+084628.3",
+  "ra": 223.14733,
+  "dec": 8.774534
+ },
+ {
+  "id": "list-0798",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ145452.19+330954.9",
+  "ra": 223.717474,
+  "dec": 33.165266
+ },
+ {
+  "id": "list-0808",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ150557.89+313139.9",
+  "ra": 226.491204,
+  "dec": 31.527766
+ },
+ {
+  "id": "list-0810",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ150711.04+013213.4",
+  "ra": 226.795984,
+  "dec": 1.537067
+ },
+ {
+  "id": "list-0812",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ150734.85+222200.3",
+  "ra": 226.895217,
+  "dec": 22.366763
+ },
+ {
+  "id": "list-0816",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ151032.41+425437.5",
+  "ra": 227.635027,
+  "dec": 42.910419
+ },
+ {
+  "id": "list-0830",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ152514.14+240216.6",
+  "ra": 231.3089,
+  "dec": 24.037953
+ },
+ {
+  "id": "list-0832",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ153037.04+424255.4",
+  "ra": 232.654345,
+  "dec": 42.715392
+ },
+ {
+  "id": "list-0844",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ154254.15+151627.9",
+  "ra": 235.725614,
+  "dec": 15.274437
+ },
+ {
+  "id": "list-0851",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ155256.40+210606.3",
+  "ra": 238.235005,
+  "dec": 21.101759
+ },
+ {
+  "id": "list-0853",
+  "known_circle": "J1555+2726",
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ155524.45+272631.6",
+  "ra": 238.851863,
+  "dec": 27.442134
+ },
+ {
+  "id": "list-0854",
+  "known_circle": "J1555+2726",
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ155524.71+272636.4",
+  "ra": 238.852946,
+  "dec": 27.443448
+ },
+ {
+  "id": "list-0864",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ161120.21+111115.1",
+  "ra": 242.83422,
+  "dec": 11.187552
+ },
+ {
+  "id": "list-0869",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ161306.77+460159.2",
+  "ra": 243.278201,
+  "dec": 46.033127
+ },
+ {
+  "id": "list-0882",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ162634.11+543136.8",
+  "ra": 246.642135,
+  "dec": 54.52691
+ },
+ {
+  "id": "list-0887",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ162952.26+394602.9",
+  "ra": 247.467759,
+  "dec": 39.767479
+ },
+ {
+  "id": "list-0903",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ164240.46+243054.2",
+  "ra": 250.668569,
+  "dec": 24.515082
+ },
+ {
+  "id": "list-0911",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ165056.82+570243.1",
+  "ra": 252.736763,
+  "dec": 57.045308
+ },
+ {
+  "id": "list-0912",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ165108.76+270021.8",
+  "ra": 252.786497,
+  "dec": 27.00606
+ },
+ {
+  "id": "list-0918",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ170000.49+830747.8",
+  "ra": 255.002041,
+  "dec": 83.129958
+ },
+ {
+  "id": "list-0937",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ173110.88+005511.7",
+  "ra": 262.795346,
+  "dec": 0.919919
+ },
+ {
+  "id": "list-0958",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ180022.38+575653.7",
+  "ra": 270.093255,
+  "dec": 57.948257
+ },
+ {
+  "id": "list-0965",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "galaxy"
+  ],
+  "name": "ILTJ181107.48+140533.5",
+  "ra": 272.781164,
+  "dec": 14.092643
+ },
+ {
+  "id": "list-0983",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ184858.52-015132.8",
+  "ra": 282.243831,
+  "dec": -1.859115
+ },
+ {
+  "id": "list-0988",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "planetary_nebula"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ185335.06+330143.7",
+  "ra": 283.396072,
+  "dec": 33.028816
+ },
+ {
+  "id": "list-0994",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ185919.55+034456.1",
+  "ra": 284.831447,
+  "dec": 3.748921
+ },
+ {
+  "id": "list-1004",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ191039.31+090955.7",
+  "ra": 287.663798,
+  "dec": 9.165471
+ },
+ {
+  "id": "list-1005",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [],
+  "name": "ILTJ191058.64+532540.5",
+  "ra": 287.744336,
+  "dec": 53.427936
+ },
+ {
+  "id": "list-1015",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ191948.51+224707.5",
+  "ra": 289.952137,
+  "dec": 22.785438
+ },
+ {
+  "id": "list-1025",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region",
+   "spokes"
+  ],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ192429.47+204729.7",
+  "ra": 291.122772,
+  "dec": 20.791586
+ },
+ {
+  "id": "list-1040",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ193646.49+841441.9",
+  "ra": 294.193696,
+  "dec": 84.24499
+ },
+ {
+  "id": "list-1045",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ194022.00+271840.5",
+  "ra": 295.091667,
+  "dec": 27.311265
+ },
+ {
+  "id": "list-1046",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [],
+  "name": "ILTJ194234.25+234941.5",
+  "ra": 295.642697,
+  "dec": 23.828203
+ },
+ {
+  "id": "list-1047",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ194328.36+232041.2",
+  "ra": 295.868179,
+  "dec": 23.344797
+ },
+ {
+  "id": "list-1054",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ195500.33+271256.2",
+  "ra": 298.751382,
+  "dec": 27.215616
+ },
+ {
+  "id": "list-1055",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ195500.67+271249.3",
+  "ra": 298.752781,
+  "dec": 27.21371
+ },
+ {
+  "id": "list-1059",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ195800.48+743622.9",
+  "ra": 299.501995,
+  "dec": 74.606377
+ },
+ {
+  "id": "list-1061",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ195908.92+312132.2",
+  "ra": 299.78718,
+  "dec": 31.358968
+ },
+ {
+  "id": "list-1063",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [],
+  "name": "ILTJ200053.16+332929.4",
+  "ra": 300.22152,
+  "dec": 33.491506
+ },
+ {
+  "id": "list-1070",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "hii_region"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ202523.78+372307.1",
+  "ra": 306.349097,
+  "dec": 37.385313
+ },
+ {
+  "id": "list-1074",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ203506.87+644807.5",
+  "ra": 308.778645,
+  "dec": 64.80211
+ },
+ {
+  "id": "list-1080",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [],
+  "name": "ILTJ204353.18+123036.5",
+  "ra": 310.971591,
+  "dec": 12.510152
+ },
+ {
+  "id": "list-1085",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ205054.15+310645.2",
+  "ra": 312.72563,
+  "dec": 31.112578
+ },
+ {
+  "id": "list-1095",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ205739.12+652110.4",
+  "ra": 314.412993,
+  "dec": 65.352913
+ },
+ {
+  "id": "list-1099",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ210213.01-014441.9",
+  "ra": 315.554194,
+  "dec": -1.74498
+ },
+ {
+  "id": "list-1128",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ221348.32+494606.9",
+  "ra": 333.451324,
+  "dec": 49.768596
+ },
+ {
+  "id": "list-1135",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ221918.79+515843.1",
+  "ra": 334.82829,
+  "dec": 51.978639
+ },
+ {
+  "id": "list-1140",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ222520.45+132922.7",
+  "ra": 336.335211,
+  "dec": 13.489641
+ },
+ {
+  "id": "list-1142",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ222840.31+562439.7",
+  "ra": 337.167938,
+  "dec": 56.411054
+ },
+ {
+  "id": "list-1146",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ223156.22+434527.1",
+  "ra": 337.984235,
+  "dec": 43.757544
+ },
+ {
+  "id": "list-1148",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ223522.49+275142.8",
+  "ra": 338.843698,
+  "dec": 27.861893
+ },
+ {
+  "id": "list-1149",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ223735.46+123313.8",
+  "ra": 339.397767,
+  "dec": 12.553843
+ },
+ {
+  "id": "list-1159",
+  "known_circle": null,
+  "verdict": "needs second look",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ225914.20+313042.2",
+  "ra": 344.809161,
+  "dec": 31.511743
+ },
+ {
+  "id": "list-1168",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ231527.17+351821.9",
+  "ra": 348.863208,
+  "dec": 35.30609
+ },
+ {
+  "id": "list-1170",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "spokes"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ232029.30+190030.9",
+  "ra": 350.122097,
+  "dec": 19.008605
+ },
+ {
+  "id": "list-1173",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "planetary_nebula",
+   "radio_galaxy"
+  ],
+  "name": "ILTJ232730.18+480301.2",
+  "ra": 351.875761,
+  "dec": 48.050349
+ },
+ {
+  "id": "list-1174",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "supernova_remnant"
+  ],
+  "name": "ILTJ233033.78+035408.1",
+  "ra": 352.640731,
+  "dec": 3.902252
+ },
+ {
+  "id": "list-1178",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ233427.75+060917.6",
+  "ra": 353.615632,
+  "dec": 6.154907
+ },
+ {
+  "id": "list-1180",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [],
+  "name": "ILTJ233759.89+125740.2",
+  "ra": 354.499539,
+  "dec": 12.961186
+ },
+ {
+  "id": "list-1184",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "radio_galaxy"
+  ],
+  "name": "ILTJ234328.59+131231.1",
+  "ra": 355.869116,
+  "dec": 13.208647
+ },
+ {
+  "id": "list-1186",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger"
+  ],
+  "named_classes": [
+   "planetary_nebula"
+  ],
+  "name": "ILTJ234510.61+070234.1",
+  "ra": 356.294207,
+  "dec": 7.042822
+ },
+ {
+  "id": "list-1190",
+  "known_circle": null,
+  "verdict": "likely known class",
+  "removed_by": [
+   "galaxy_larger",
+   "hii_region"
+  ],
+  "named_classes": [],
+  "name": "ILTJ234704.93+292904.7",
+  "ra": 356.770537,
+  "dec": 29.484657
+ },
+ {
+  "id": "list-1198",
+  "known_circle": null,
+  "verdict": "candidate",
+  "removed_by": [],
+  "named_classes": [
+   "radio_galaxy",
+   "supernova_remnant"
+  ],
+  "name": "ILTJ235715.07+201409.3",
+  "ra": 359.31279,
+  "dec": 20.235932
+ }
+]

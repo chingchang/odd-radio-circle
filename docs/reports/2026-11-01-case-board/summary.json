@@ -1,0 +1,130 @@
+{
+ "rule": "docs/proposals/case-board-v1.md",
+ "folder": "docs/reports/2026-11-01-case-board",
+ "report_name": "2026-11-01-case-board",
+ "threshold": 3.748433227089018,
+ "list": {
+  "rows": 1200,
+  "voted": 934,
+  "ring_like": {
+   "called": 200,
+   "n": 934,
+   "wilson_95": [
+    0.189,
+    0.2416
+   ]
+  }
+ },
+ "cost": {
+  "stop_usd": 36.0,
+  "ledger_usd": 35.971
+ },
+ "published_positions_removed": 2,
+ "images_copied_bytes": 12164533,
+ "verdicts": {
+  "other_rows": {
+   "candidate": 108,
+   "needs second look": 24,
+   "likely known class": 61,
+   "not assessed": 266,
+   "no verdict": 733
+  },
+  "known_circle_rows": {
+   "candidate": 4,
+   "needs second look": 3,
+   "likely known class": 0,
+   "not assessed": 0,
+   "no verdict": 1
+  }
+ },
+ "candidates_of_other_rows_voted": {
+  "called": 108,
+  "n": 926,
+  "wilson_95": [
+   0.0975,
+   0.1389
+  ]
+ },
+ "objects": {
+  "board_rows": 132,
+  "board_objects": 130,
+  "candidate_rows": 108,
+  "candidate_objects": 107
+ },
+ "class_reading": {
+  "candidate_rows_with_a_named_class": 83,
+  "candidate_rows_with_no_named_class": 25,
+  "candidate_rows_by_class": {
+   "radio_galaxy": 69,
+   "planetary_nebula": 13,
+   "supernova_remnant": 10
+  },
+  "known_circle_rows_at_candidate": 4,
+  "known_circle_rows_at_candidate_with_a_named_class": 4
+ },
+ "circles": {
+  "candidate": {
+   "called": 3,
+   "n": 18,
+   "wilson_95": [
+    0.0584,
+    0.3922
+   ]
+  },
+  "candidate_with_no_named_class": {
+   "called": 0,
+   "n": 18,
+   "wilson_95": [
+    0.0,
+    0.1759
+   ]
+  },
+  "left": {
+   "called": 5,
+   "n": 18,
+   "wilson_95": [
+    0.125,
+    0.5087
+   ]
+  },
+  "tuning_candidate": {
+   "called": 3,
+   "n": 9,
+   "wilson_95": [
+    0.1206,
+    0.6458
+   ]
+  },
+  "heldout_candidate": {
+   "called": 0,
+   "n": 9,
+   "wilson_95": [
+    0.0,
+    0.2991
+   ]
+  },
+  "on_list": {
+   "called": 6,
+   "n": 18,
+   "wilson_95": [
+    0.1628,
+    0.5625
+   ]
+  },
+  "one_vote": {
+   "called": 5,
+   "n": 18,
+   "wilson_95": [
+    0.125,
+    0.5087
+   ]
+  }
+ },
+ "circles_lost_at": {
+  "pre-filter": 12,
+  "first vote": 1,
+  "known-object cut": 0,
+  "second vote": 2,
+  "kept to candidate grade": 3
+ }
+}
