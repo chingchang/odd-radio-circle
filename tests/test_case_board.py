@@ -198,6 +198,8 @@ def card():
         "first": row,
         "second": None,
         "cone": [{"main_id": "NEW 1 <x>", "otype": "G"}],
+        "found": {"galaxy_no_size": [{"main_id": "NEW 1 <x>"}], "galaxy_above_half_the_ring": []},
+        "deep_with_no_bright_source": True,
         "neighbour": None,
         "depth": 2.5,
         "threshold": 3.75,
@@ -212,6 +214,8 @@ def test_a_card_has_both_maps_votes_and_the_cross_match_and_escapes_what_it_was_
     assert "Vote 2: not asked" in text
     assert "A &lt;b&gt;round&lt;/b&gt; shell" in text
     assert "NEW 1 &lt;x&gt;" in text
+    assert "galaxies with no listed size, which remove nothing: <span" in text
+    assert "with no bright source, so it is left" in text
     assert "Candidate is a screening grade" in text
     assert "lofar-surveys.org/credits.html" in text
     assert "108" in text
@@ -221,6 +225,11 @@ def test_a_ruled_out_word_in_a_rows_own_fields_stops_the_page():
     bad = card() | {"verdict": "confirmed"}
     with pytest.raises(ValueError, match="ruled-out"):
         cb.render_board(summary(), [bad])
+
+
+def test_intervals_round_half_up_as_the_earlier_reports_do():
+    assert cb.share({"called": 5, "n": 18, "wilson_95": [0.125, 0.5087]}) == "5 of 18 (95 percent interval 0.13 to 0.51)"
+    assert cb.two_places(0.0) == "0.00"
 
 
 def test_the_readme_section_comes_from_the_summary_and_needs_its_markers():

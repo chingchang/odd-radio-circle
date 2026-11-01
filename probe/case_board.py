@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import html
 import re
+from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 
 from probe import known_cut as kc
@@ -141,9 +142,14 @@ def as_given(value) -> str:
     return f'<span class="as-given">{e(value)}</span>'
 
 
+def two_places(value: float) -> str:
+    """Half up from the stored four places, so 0.125 reads 0.13 as the earlier reports have it."""
+    return str(Decimal(str(value)).quantize(Decimal("0.01"), ROUND_HALF_UP))
+
+
 def share(c: dict) -> str:
     low, high = c["wilson_95"]
-    return f"{c['called']} of {c['n']} (95 percent interval {low:.2f} to {high:.2f})"
+    return f"{c['called']} of {c['n']} (95 percent interval {two_places(low)} to {two_places(high)})"
 
 
 def page(title: str, nav: str, body: str) -> str:
@@ -182,11 +188,18 @@ def _cross_match(card: dict) -> str:
     bright = "none listed"
     if neighbour:
         bright = f"{neighbour['total_flux_mjy']:.0f} mJy at {neighbour['arcmin_away']:.1f} arcmin"
+    no_size = "; ".join(as_given(o["main_id"]) for o in card["found"]["galaxy_no_size"]) or "none"
+    half = "; ".join(as_given(o["main_id"]) for o in card["found"]["galaxy_above_half_the_ring"]) or "none"
+    deep = ""
+    if card["deep_with_no_bright_source"]:
+        deep = " Deep enough for the cut, but with no bright source, so it is left."
     return (
-        f"<p>Cross-match: no cut removes this row ({e(cuts)}). SIMBAD objects within 1 arcmin: {objects}.</p>"
+        f"<p>Cross-match: no cut removes this row ({e(cuts)}). SIMBAD objects within 1 arcmin: {objects}. "
+        f"Of those, galaxies with no listed size, which remove nothing: {no_size}. Galaxies above half the ring's size "
+        f"and not above it, which remove nothing: {half}.</p>"
         f"<p>Negative depth {card['depth']:.2f}, cut at {card['threshold']:.2f} with a bright source; peak "
         f"{card['peak_over_noise']:.1f} times the noise; brightest neighbour within 30 arcmin of at least 1 Jy: "
-        f"{e(bright)}.</p>"
+        f"{e(bright)}.{deep}</p>"
     )
 
 

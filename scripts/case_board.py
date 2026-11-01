@@ -16,6 +16,7 @@ from pathlib import Path
 from probe import case_board as cb
 from probe import radio
 from probe import screen as sc
+from scripts.known_cut import _sheet
 from scripts.list_fields import EARLIER_ITEMS
 from scripts.prefilter import committed_unchanged
 from scripts.radio_inputs import read_decisions
@@ -172,6 +173,10 @@ def build(report: Path, out: Path, earlier_out: Path, readme: Path) -> int:
     (report / "board.html").write_text(cb.render_board(summary, cards))
     (report / "circles.html").write_text(cb.render_circles(summary, circles))
     readme.write_text(cb.with_results(readme.read_text(), cb.results_section(summary)))
+    sheets = report / "contact_sheets"
+    sheets.mkdir(exist_ok=True)
+    plain = [c for c in cards if c["verdict"] == cb.CANDIDATE and not c["named_classes"]]
+    _sheet(plain, report, sheets / "candidates_no_named_class-6.png", lambda c: c["id"])
     print(json.dumps(summary, indent=1))
     return 0
 
