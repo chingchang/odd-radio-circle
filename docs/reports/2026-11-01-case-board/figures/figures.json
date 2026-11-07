@@ -1,0 +1,578 @@
+{
+ "plain": {
+  "file": "figures/candidates_no_named_class.png",
+  "columns": 5,
+  "tile": 288,
+  "rows": [
+   {
+    "id": "list-0042",
+    "label": "list-0042"
+   },
+   {
+    "id": "list-0051",
+    "label": "list-0051"
+   },
+   {
+    "id": "list-0057",
+    "label": "list-0057"
+   },
+   {
+    "id": "list-0168",
+    "label": "list-0168"
+   },
+   {
+    "id": "list-0169",
+    "label": "list-0169"
+   },
+   {
+    "id": "list-0336",
+    "label": "list-0336"
+   },
+   {
+    "id": "list-0392",
+    "label": "list-0392"
+   },
+   {
+    "id": "list-0428",
+    "label": "list-0428"
+   },
+   {
+    "id": "list-0463",
+    "label": "list-0463"
+   },
+   {
+    "id": "list-0492",
+    "label": "list-0492"
+   },
+   {
+    "id": "list-0493",
+    "label": "list-0493"
+   },
+   {
+    "id": "list-0512",
+    "label": "list-0512"
+   },
+   {
+    "id": "list-0524",
+    "label": "list-0524"
+   },
+   {
+    "id": "list-0543",
+    "label": "list-0543"
+   },
+   {
+    "id": "list-0611",
+    "label": "list-0611"
+   },
+   {
+    "id": "list-0636",
+    "label": "list-0636"
+   },
+   {
+    "id": "list-0728",
+    "label": "list-0728"
+   },
+   {
+    "id": "list-0733",
+    "label": "list-0733"
+   },
+   {
+    "id": "list-0795",
+    "label": "list-0795"
+   },
+   {
+    "id": "list-0812",
+    "label": "list-0812"
+   },
+   {
+    "id": "list-1040",
+    "label": "list-1040"
+   },
+   {
+    "id": "list-1047",
+    "label": "list-1047"
+   },
+   {
+    "id": "list-1142",
+    "label": "list-1142"
+   },
+   {
+    "id": "list-1148",
+    "label": "list-1148"
+   },
+   {
+    "id": "list-1180",
+    "label": "list-1180"
+   }
+  ]
+ },
+ "named": {
+  "file": "figures/candidates_named_class.png",
+  "columns": 9,
+  "tile": 160,
+  "rows": [
+   {
+    "id": "list-0013",
+    "label": "list-0013 PN"
+   },
+   {
+    "id": "list-0014",
+    "label": "list-0014 PN"
+   },
+   {
+    "id": "list-0285",
+    "label": "list-0285 PN"
+   },
+   {
+    "id": "list-0358",
+    "label": "list-0358 PN"
+   },
+   {
+    "id": "list-0450",
+    "label": "list-0450 PN"
+   },
+   {
+    "id": "list-0754",
+    "label": "list-0754 PN"
+   },
+   {
+    "id": "list-0808",
+    "label": "list-0808 PN"
+   },
+   {
+    "id": "list-0869",
+    "label": "list-0869 PN"
+   },
+   {
+    "id": "list-0958",
+    "label": "list-0958 PN"
+   },
+   {
+    "id": "list-0134",
+    "label": "list-0134 PN RG"
+   },
+   {
+    "id": "list-0201",
+    "label": "list-0201 PN RG"
+   },
+   {
+    "id": "list-0496",
+    "label": "list-0496 PN RG"
+   },
+   {
+    "id": "list-1173",
+    "label": "list-1173 PN RG"
+   },
+   {
+    "id": "list-0008",
+    "label": "list-0008 RG"
+   },
+   {
+    "id": "list-0037",
+    "label": "list-0037 RG"
+   },
+   {
+    "id": "list-0090",
+    "label": "list-0090 RG"
+   },
+   {
+    "id": "list-0093",
+    "label": "list-0093 RG"
+   },
+   {
+    "id": "list-0104",
+    "label": "list-0104 RG"
+   },
+   {
+    "id": "list-0151",
+    "label": "list-0151 RG"
+   },
+   {
+    "id": "list-0156",
+    "label": "list-0156 RG"
+   },
+   {
+    "id": "list-0162",
+    "label": "list-0162 RG"
+   },
+   {
+    "id": "list-0165",
+    "label": "list-0165 RG"
+   },
+   {
+    "id": "list-0167",
+    "label": "list-0167 RG"
+   },
+   {
+    "id": "list-0175",
+    "label": "list-0175 RG"
+   },
+   {
+    "id": "list-0177",
+    "label": "list-0177 RG"
+   },
+   {
+    "id": "list-0184",
+    "label": "list-0184 RG"
+   },
+   {
+    "id": "list-0254",
+    "label": "list-0254 RG"
+   },
+   {
+    "id": "list-0295",
+    "label": "list-0295 RG"
+   },
+   {
+    "id": "list-0297",
+    "label": "list-0297 RG"
+   },
+   {
+    "id": "list-0304",
+    "label": "list-0304 RG"
+   },
+   {
+    "id": "list-0310",
+    "label": "list-0310 RG"
+   },
+   {
+    "id": "list-0328",
+    "label": "list-0328 RG"
+   },
+   {
+    "id": "list-0343",
+    "label": "list-0343 RG"
+   },
+   {
+    "id": "list-0361",
+    "label": "list-0361 RG"
+   },
+   {
+    "id": "list-0375",
+    "label": "list-0375 RG"
+   },
+   {
+    "id": "list-0381",
+    "label": "list-0381 RG"
+   },
+   {
+    "id": "list-0395",
+    "label": "list-0395 RG"
+   },
+   {
+    "id": "list-0412",
+    "label": "list-0412 RG"
+   },
+   {
+    "id": "list-0430",
+    "label": "list-0430 RG"
+   },
+   {
+    "id": "list-0442",
+    "label": "list-0442 RG"
+   },
+   {
+    "id": "list-0482",
+    "label": "list-0482 RG"
+   },
+   {
+    "id": "list-0490",
+    "label": "list-0490 RG"
+   },
+   {
+    "id": "list-0502",
+    "label": "list-0502 RG"
+   },
+   {
+    "id": "list-0539",
+    "label": "list-0539 RG"
+   },
+   {
+    "id": "list-0585",
+    "label": "list-0585 RG"
+   },
+   {
+    "id": "list-0612",
+    "label": "list-0612 RG"
+   },
+   {
+    "id": "list-0620",
+    "label": "list-0620 RG"
+   },
+   {
+    "id": "list-0629",
+    "label": "list-0629 RG"
+   },
+   {
+    "id": "list-0637",
+    "label": "list-0637 RG"
+   },
+   {
+    "id": "list-0643",
+    "label": "list-0643 RG"
+   },
+   {
+    "id": "list-0658",
+    "label": "list-0658 RG"
+   },
+   {
+    "id": "list-0671",
+    "label": "list-0671 RG"
+   },
+   {
+    "id": "list-0687",
+    "label": "list-0687 RG"
+   },
+   {
+    "id": "list-0702",
+    "label": "list-0702 RG"
+   },
+   {
+    "id": "list-0737",
+    "label": "list-0737 RG"
+   },
+   {
+    "id": "list-0761",
+    "label": "list-0761 RG"
+   },
+   {
+    "id": "list-0798",
+    "label": "list-0798 RG"
+   },
+   {
+    "id": "list-0830",
+    "label": "list-0830 RG"
+   },
+   {
+    "id": "list-0864",
+    "label": "list-0864 RG"
+   },
+   {
+    "id": "list-0911",
+    "label": "list-0911 RG"
+   },
+   {
+    "id": "list-0912",
+    "label": "list-0912 RG"
+   },
+   {
+    "id": "list-0918",
+    "label": "list-0918 RG"
+   },
+   {
+    "id": "list-0983",
+    "label": "list-0983 RG"
+   },
+   {
+    "id": "list-0994",
+    "label": "list-0994 RG"
+   },
+   {
+    "id": "list-1004",
+    "label": "list-1004 RG"
+   },
+   {
+    "id": "list-1015",
+    "label": "list-1015 RG"
+   },
+   {
+    "id": "list-1085",
+    "label": "list-1085 RG"
+   },
+   {
+    "id": "list-1095",
+    "label": "list-1095 RG"
+   },
+   {
+    "id": "list-1135",
+    "label": "list-1135 RG"
+   },
+   {
+    "id": "list-1146",
+    "label": "list-1146 RG"
+   },
+   {
+    "id": "list-1149",
+    "label": "list-1149 RG"
+   },
+   {
+    "id": "list-1168",
+    "label": "list-1168 RG"
+   },
+   {
+    "id": "list-1178",
+    "label": "list-1178 RG"
+   },
+   {
+    "id": "list-0340",
+    "label": "list-0340 RG SNR"
+   },
+   {
+    "id": "list-0388",
+    "label": "list-0388 RG SNR"
+   },
+   {
+    "id": "list-0389",
+    "label": "list-0389 RG SNR"
+   },
+   {
+    "id": "list-0882",
+    "label": "list-0882 RG SNR"
+   },
+   {
+    "id": "list-1198",
+    "label": "list-1198 RG SNR"
+   },
+   {
+    "id": "list-0166",
+    "label": "list-0166 SNR"
+   },
+   {
+    "id": "list-0266",
+    "label": "list-0266 SNR"
+   },
+   {
+    "id": "list-0294",
+    "label": "list-0294 SNR"
+   },
+   {
+    "id": "list-0504",
+    "label": "list-0504 SNR"
+   },
+   {
+    "id": "list-1099",
+    "label": "list-1099 SNR"
+   }
+  ]
+ },
+ "second": {
+  "file": "figures/needs_second_look.png",
+  "columns": 6,
+  "tile": 240,
+  "rows": [
+   {
+    "id": "list-0055",
+    "label": "list-0055"
+   },
+   {
+    "id": "list-0155",
+    "label": "list-0155"
+   },
+   {
+    "id": "list-0180",
+    "label": "list-0180"
+   },
+   {
+    "id": "list-0187",
+    "label": "list-0187"
+   },
+   {
+    "id": "list-0196",
+    "label": "list-0196"
+   },
+   {
+    "id": "list-0292",
+    "label": "list-0292"
+   },
+   {
+    "id": "list-0317",
+    "label": "list-0317"
+   },
+   {
+    "id": "list-0383",
+    "label": "list-0383"
+   },
+   {
+    "id": "list-0409",
+    "label": "list-0409"
+   },
+   {
+    "id": "list-0438",
+    "label": "list-0438"
+   },
+   {
+    "id": "list-0462",
+    "label": "list-0462"
+   },
+   {
+    "id": "list-0479",
+    "label": "list-0479"
+   },
+   {
+    "id": "list-0480",
+    "label": "list-0480"
+   },
+   {
+    "id": "list-0506",
+    "label": "list-0506"
+   },
+   {
+    "id": "list-0576",
+    "label": "list-0576"
+   },
+   {
+    "id": "list-0579",
+    "label": "list-0579"
+   },
+   {
+    "id": "list-0735",
+    "label": "list-0735"
+   },
+   {
+    "id": "list-0816",
+    "label": "list-0816"
+   },
+   {
+    "id": "list-0903",
+    "label": "list-0903"
+   },
+   {
+    "id": "list-0937",
+    "label": "list-0937"
+   },
+   {
+    "id": "list-1059",
+    "label": "list-1059"
+   },
+   {
+    "id": "list-1128",
+    "label": "list-1128"
+   },
+   {
+    "id": "list-1140",
+    "label": "list-1140"
+   },
+   {
+    "id": "list-1159",
+    "label": "list-1159"
+   }
+  ]
+ },
+ "circles": {
+  "file": "figures/known_circles_on_the_board.png",
+  "columns": 5,
+  "tile": 288,
+  "rows": [
+   {
+    "id": "tuning-J0016+2426",
+    "label": "J0016+2426 candidate"
+   },
+   {
+    "id": "tuning-J0324+8322",
+    "label": "J0324+8322 candidate"
+   },
+   {
+    "id": "heldout-J0801+5544",
+    "label": "J0801+5544 needs second look"
+   },
+   {
+    "id": "heldout-J0940+6028",
+    "label": "J0940+6028 needs second look"
+   },
+   {
+    "id": "tuning-J1555+2726",
+    "label": "J1555+2726 candidate"
+   }
+  ]
+ }
+}

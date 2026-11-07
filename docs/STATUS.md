@@ -10,6 +10,7 @@ Work stopped here by the person's decision (11-01 00:26 PT). Nothing is running.
 - **Wonder screen** (docs/reports/2026-10-31-screen.md): stopped by the 36 USD cap after 934 of 1,200 rows; 200 ring-like. 5 of 18 known circles survive pre-filter plus a ring-like vote, including both held-out circles that reached the model.
 - **Known-object cut and case board** (docs/reports/2026-11-01-known-cut.md, docs/reports/2026-11-01-case-board.md): 132 rows left; the board's rule grades 108 candidate and 24 needs second look, but 83 of the 108 carry a known class Wonder named (69 radio galaxy), so most are probably not rings. 3 of 18 known circles reach candidate grade.
 - **Spend:** 35.971 USD on out/ledger.json (not committed).
+- **README figures (11-07):** the board's rows as panels, `scripts/readme_figures.py`, from item 6's files; no verdict changed.
 
 ## Planned, not started (plan items 7 to 12)
 

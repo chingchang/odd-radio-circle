@@ -27,3 +27,4 @@ calls. Background: the model tests in docs/reports/2026-10-31-probe-orc*.md (13 
 - 10-31 19:30 (person): fresh repo for the radio circle search only; earlier test workspace archived outside the repo.
 - 11-01 00:19 (person): use the cheaper contributor models (public data); the pre-filter must let the known circles through; reuse everything done so far (items 7 to 12).
 - 11-01 00:26 (person): work stopped after item 6; items 7 to 12 planned, not started. See docs/STATUS.md.
+- 11-07 (person): the README shows the candidate rows as images. Drawn from item 6's verdicts by scripts/readme_figures.py; no verdict changed.

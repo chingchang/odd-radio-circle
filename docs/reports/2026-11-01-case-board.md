@@ -74,3 +74,13 @@ One long read-only inspection command was denied at the start of the session, be
     scripts/check.sh
 
 The rule: `docs/proposals/case-board-v1.md`. Data: LoTSS DR3, Shimwell et al. 2026, A&A 707, A198, with the acknowledgements at https://www.lofar-surveys.org/credits.html. SIMBAD: Wenger et al. 2000, A&AS 143, 9. Known circles: De Gasperin et al. 2026 (arXiv:2602.18294).
+
+## Added 2026-11-07: figures in the README
+
+The README now shows the board's rows as four panels, drawn by `scripts/readme_figures.py` from `verdicts.json` and the
+board's own maps into `2026-11-01-case-board/figures/`: the candidate rows with no named class, the candidate rows with a
+named class, the needs second look rows, and the known circles that reached the board with their grade. `figures.json`
+there lists what each panel holds. The runner stops if a panel's count disagrees with `summary.json`, and a test requires
+the README's figures section to equal what it renders. No verdict, count or rule changed, and no call was made.
+
+    uv run python -I scripts/readme_figures.py

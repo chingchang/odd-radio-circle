@@ -6,6 +6,42 @@ Odd radio circles are faint rings of radio emission about an arcminute across, s
 
 ## Results
 
+<!-- figures: written by scripts/readme_figures.py from verdicts.json and summary.json -->
+**The rows the search left, as pictures.** Each tile is a reduced copy of the LoTSS DR3 map Wonder voted on, 6 arcmin
+on a side at the 6 arcsec resolution, labelled with the row's id on the [case board](docs/reports/2026-11-01-case-board/board.html), where the
+full-size maps at both resolutions, the votes, reasons and cross-match are. Candidate is a screening grade. It says the code checks passed and Wonder called the row ring-like twice. It does not say the row is a ring. Nothing in these figures has
+been followed up at other wavelengths.
+
+**Figure 1. The 25 candidate rows, of 108, with no class Wonder named on either vote.** These
+have the least against them: the code checks passed, two ring-like votes, and no class named. The report's reading of
+this panel by eye, which grades nothing, is that many are filled discs or bent doubles rather than rings, and a few have
+open or edge-bright shapes.
+
+![The candidate rows with no class named](docs/reports/2026-11-01-case-board/figures/candidates_no_named_class.png)
+
+**Figure 2. The other 83 candidate rows, with the class Wonder named on a vote** (RG radio galaxy, PN planetary
+nebula, SNR supernova remnant; 69 rows carry RG). A named class moves no verdict under the board's rule. It is shown
+because it is the main reason to doubt the row.
+
+![The candidate rows with a class named](docs/reports/2026-11-01-case-board/figures/candidates_named_class.png)
+
+**Figure 3. The 24 needs second look rows.** The code checks passed and the first vote was ring-like, and the
+second vote was not ring-like or did not arrive. A real ring that Wonder doubted once would sit here.
+
+![The needs second look rows](docs/reports/2026-11-01-case-board/figures/needs_second_look.png)
+
+**Figure 4. The 5 known circles, of 18, that reached the board,** with the 6 arcsec map (top) and the 20 arcsec
+map (bottom) at the published position, and the grade their rows took: 3 at candidate grade and
+2 at needs second look. They are the control for the grade, and the only published rings on
+these pages. The other 13 ended before the board,
+12 of them at the pre-filter; the [circles page](docs/reports/2026-11-01-case-board/circles.html) shows each.
+
+![The known circles that reached the board](docs/reports/2026-11-01-case-board/figures/known_circles_on_the_board.png)
+
+Figures drawn by `scripts/readme_figures.py` from `docs/reports/2026-11-01-case-board/verdicts.json` and the board's maps; what each panel holds
+is in `docs/reports/2026-11-01-case-board/figures/figures.json`.
+<!-- end of figures -->
+
 <!-- results: written by scripts/case_board.py from its summary.json -->
 **End to end, known circles, each counted once of 18 (95 percent Wilson intervals, from `docs/reports/2026-11-01-case-board/summary.json`):**
 
